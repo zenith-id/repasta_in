@@ -49,7 +49,7 @@ const testimonials: Testimonial[] = [
     role: 'Desainer Grafis',
   },
   {
-    text: 'Laptop tidak mau menyala sama sekali. Saya sudah pasrah, tapi Repasta berhasil perbaiki dalam satu hari. Ternyata masalah di kapasitor motherboard. Keren!',
+    text: 'Laptop tidak mau menyala sama sekali. Saya sudah pasrah, tapi Repasta berhasil perbaiki dalam satu hari. Ternyatta masalah di kapasitor motherboard. Keren!',
     image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=150&h=150',
     name: 'Ridwan Maulana',
     role: 'Programmer',
@@ -71,6 +71,8 @@ const testimonials: Testimonial[] = [
 const col1 = testimonials.slice(0, 3)
 const col2 = testimonials.slice(3, 6)
 const col3 = testimonials.slice(6, 9)
+
+const header = { title: 'Kata Pelanggan Kami', subtitle: 'Lebih dari 500 pelanggan...' }
 
 function TestimonialsColumn({
   className,
@@ -150,16 +152,16 @@ export function Testimonials() {
         {/* Header */}
         <div className="flex flex-col items-center justify-center max-w-lg mx-auto mb-16">
           <div className="section-tag mb-5">
-            Testimoni
+            {header.title}
           </div>
           <h2
             id="testimoni-heading"
             className="text-4xl md:text-5xl font-bold tracking-tight mt-2 text-center text-foreground font-poppins"
           >
-            Kata Pelanggan Kami
+            {header.title}
           </h2>
           <p className="text-center mt-4 text-muted-foreground text-lg leading-relaxed max-w-sm">
-            Lebih dari 500 pelanggan telah mempercayakan perangkat mereka kepada Repasta.
+            {header.subtitle}
           </p>
         </div>
 

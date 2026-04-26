@@ -19,7 +19,7 @@ const pricingPlans = [
     highlighted: false,
     badge: null,
     cta: 'Daftar Sekarang',
-    ctaMsg: 'Halo%20Repasta!%20Saya%20ingin%20diagnosa%20gratis.',
+    ctaMsg: 'Halo Repasta! Saya ingin diagnosa gratis.',
   },
   {
     name: 'Paket Standar',
@@ -36,7 +36,7 @@ const pricingPlans = [
     highlighted: true,
     badge: 'Paling Populer',
     cta: 'Pilih Paket Ini',
-    ctaMsg: 'Halo%20Repasta!%20Saya%20ingin%20Paket%20Standar.',
+    ctaMsg: 'Halo Repasta! Saya ingin Paket Standar.',
   },
   {
     name: 'Paket Premium',
@@ -53,16 +53,17 @@ const pricingPlans = [
     highlighted: false,
     badge: null,
     cta: 'Konsultasi Dulu',
-    ctaMsg: 'Halo%20Repasta!%20Saya%20ingin%20tanya%20Paket%20Premium.',
+    ctaMsg: 'Halo Repasta! Saya ingin tanya Paket Premium.',
   },
 ]
+
+const WHATSAPP_LINK = (msg: string) => `https://wa.me/621919423939?text=${encodeURIComponent(msg)}`
 
 export function Pricing() {
   return (
     <section id="harga" className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
 
-        {/* Header */}
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -84,7 +85,6 @@ export function Pricing() {
           </p>
         </motion.div>
 
-        {/* Cards */}
         <div className="grid md:grid-cols-3 gap-8 items-stretch">
           {pricingPlans.map((plan, index) => (
             <motion.div
@@ -99,7 +99,6 @@ export function Pricing() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              {/* Popular Badge — foreground (navy) */}
               {plan.badge && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                   <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-xs font-bold shadow-lg shadow-primary/25">
@@ -109,7 +108,6 @@ export function Pricing() {
                 </div>
               )}
 
-              {/* Plan name + desc */}
               <div className="mb-6">
                 <h3 className={`text-xl font-bold font-poppins mb-1 ${plan.highlighted ? 'text-background' : 'text-foreground'}`}>
                   {plan.name}
@@ -119,7 +117,6 @@ export function Pricing() {
                 </p>
               </div>
 
-              {/* Price */}
               <div className="mb-6">
                 <span className={`text-3xl sm:text-4xl font-bold font-poppins ${plan.highlighted ? 'text-background' : 'text-primary'}`}>
                   {plan.price}
@@ -129,9 +126,8 @@ export function Pricing() {
                 </p>
               </div>
 
-              {/* CTA */}
               <a
-                href={`https://wa.me/621919423939?text=${plan.ctaMsg}`}
+                href={WHATSAPP_LINK(plan.ctaMsg)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`block w-full py-3 rounded-xl font-semibold text-center mb-6 transition-all ${
@@ -143,7 +139,6 @@ export function Pricing() {
                 {plan.cta}
               </a>
 
-              {/* Features */}
               <div className="space-y-3 flex-1">
                 {plan.features.map((feature, fi) => (
                   <div key={fi} className="flex items-start gap-3">
@@ -162,7 +157,6 @@ export function Pricing() {
           ))}
         </div>
 
-        {/* Bottom note */}
         <motion.div
           className="mt-12 text-center"
           initial={{ opacity: 0 }}
@@ -174,7 +168,7 @@ export function Pricing() {
             Kerusakan khusus atau ingin harga terbaik?
           </p>
           <a
-            href="https://wa.me/621919423939?text=Halo%20Repasta!%20Saya%20ingin%20minta%20estimasi%20harga."
+            href={WHATSAPP_LINK('Halo Repasta! Saya ingin minta estimasi harga.')}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3 border-2 border-primary text-primary font-semibold rounded-xl hover:bg-primary/5 transition-colors"

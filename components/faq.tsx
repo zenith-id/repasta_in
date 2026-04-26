@@ -99,7 +99,6 @@ export function FAQ() {
     <section id="faq" className="py-20 px-4 sm:px-6 lg:px-8 bg-card">
       <div className="max-w-3xl mx-auto">
 
-        {/* Header */}
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
@@ -120,7 +119,6 @@ export function FAQ() {
           </p>
         </motion.div>
 
-        {/* Accordion */}
         <div className="flex flex-col gap-3">
           {faqs.map((item, i) => (
             <FAQItem key={i} q={item.q} a={item.a} idx={i} />

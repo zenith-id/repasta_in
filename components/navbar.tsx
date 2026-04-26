@@ -22,6 +22,8 @@ const mobileNav = [
   { label: 'FAQ',        href: '#faq',        id: 'faq'        },
 ]
 
+const WHATSAPP_LINK = (msg: string) => `https://wa.me/621919423939?text=${encodeURIComponent(msg)}`
+
 function ThemeToggle() {
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
@@ -139,7 +141,7 @@ export function Navbar() {
             <div className="flex items-center gap-2">
               <ThemeToggle />
               <a
-                href="https://wa.me/621919423939?text=Halo%20Repasta!%20Saya%20ingin%20konsultasi%20servis."
+                href={WHATSAPP_LINK('Halo Repasta! Saya ingin konsultasi servis.')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hidden sm:inline-flex items-center gap-2 px-5 py-2 bg-primary text-primary-foreground text-sm font-semibold rounded-xl hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20 transition-all"
@@ -167,8 +169,8 @@ export function Navbar() {
               transition={{ duration: 0.15 }}
               className="md:hidden mt-2 max-w-sm mx-4 bg-background/96 backdrop-blur-xl border border-border shadow-2xl rounded-2xl overflow-hidden"
             >
-              <div className="p-3 flex flex-col gap-0.5">
-                {mobileNav.map((item) => (
+<div className="p-3 flex flex-col gap-0.5">
+                  {mobileNav.map((item) => (
                   <a
                     key={item.label}
                     href={item.href}
@@ -191,7 +193,7 @@ export function Navbar() {
                     Lihat Semua Layanan →
                   </Link>
                   <a
-                    href="https://wa.me/621919423939?text=Halo%20Repasta!%20Saya%20ingin%20konsultasi%20servis."
+                    href={WHATSAPP_LINK('Halo Repasta! Saya ingin konsultasi servis.')}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setIsMobileOpen(false)}
