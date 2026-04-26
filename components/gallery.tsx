@@ -1,0 +1,217 @@
+'use client'
+
+import { useState } from 'react'
+import Image from 'next/image'
+import { motion, AnimatePresence } from 'framer-motion'
+import { X, ZoomIn } from 'lucide-react'
+
+const items = [
+  {
+    id: 1,
+    src: 'https://images.unsplash.com/photo-1588702547923-7408822a4b85?auto=format&fit=crop&w=800&q=80',
+    thumb: 'https://images.unsplash.com/photo-1588702547923-7408822a4b85?auto=format&fit=crop&w=500&q=70',
+    label: 'Motherboard Repair',
+    tag: 'Hardware',
+    tall: true,
+  },
+  {
+    id: 2,
+    src: 'https://images.unsplash.com/photo-1603481588273-2f908a9a7a1b?auto=format&fit=crop&w=800&q=80',
+    thumb: 'https://images.unsplash.com/photo-1603481588273-2f908a9a7a1b?auto=format&fit=crop&w=500&q=70',
+    label: 'Thermal Paste Repaste',
+    tag: 'Repaste',
+    tall: false,
+  },
+  {
+    id: 3,
+    src: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80',
+    thumb: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=500&q=70',
+    label: 'Komponen Internal',
+    tag: 'Hardware',
+    tall: false,
+  },
+  {
+    id: 4,
+    src: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=80',
+    thumb: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=500&q=70',
+    label: 'Laptop Setelah Deepclean',
+    tag: 'Deepclean',
+    tall: true,
+  },
+  {
+    id: 5,
+    src: 'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=800&q=80',
+    thumb: 'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=500&q=70',
+    label: 'Keyboard Cleaning',
+    tag: 'Cleaning',
+    tall: false,
+  },
+  {
+    id: 6,
+    src: 'https://images.unsplash.com/photo-1562408590-e32931084e23?auto=format&fit=crop&w=800&q=80',
+    thumb: 'https://images.unsplash.com/photo-1562408590-e32931084e23?auto=format&fit=crop&w=500&q=70',
+    label: 'Upgrade SSD & RAM',
+    tag: 'Upgrade',
+    tall: false,
+  },
+  {
+    id: 7,
+    src: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80',
+    thumb: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=500&q=70',
+    label: 'Laptop Gaming Repaste',
+    tag: 'Repaste',
+    tall: false,
+  },
+  {
+    id: 8,
+    src: 'https://images.unsplash.com/photo-1537498425277-c283d32ef9db?auto=format&fit=crop&w=800&q=80',
+    thumb: 'https://images.unsplash.com/photo-1537498425277-c283d32ef9db?auto=format&fit=crop&w=500&q=70',
+    label: 'Workspace Repasta',
+    tag: 'Workspace',
+    tall: true,
+  },
+]
+
+const tagColors: Record<string, string> = {
+  Repaste:   'bg-primary/10 text-primary border-primary/20',
+  Deepclean: 'bg-foreground/8 text-foreground border-foreground/15',
+  Hardware:  'bg-primary/10 text-primary border-primary/20',
+  Cleaning:  'bg-foreground/8 text-foreground border-foreground/15',
+  Upgrade:   'bg-primary/10 text-primary border-primary/20',
+  Workspace: 'bg-foreground/8 text-foreground border-foreground/15',
+}
+
+export function Gallery() {
+  const [selected, setSelected] = useState<typeof items[0] | null>(null)
+
+  return (
+    <section id="galeri" className="py-24 px-4 sm:px-6 lg:px-8 bg-background">
+      <div className="max-w-6xl mx-auto">
+
+        {/* Header */}
+        <motion.div
+          className="text-center mb-14"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="section-tag mb-4 mx-auto w-fit">Galeri Portofolio</div>
+          <h2 className="text-balance-title font-poppins mb-4">
+            Hasil Kerja{' '}
+            <span className="text-primary">Nyata</span>
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+            Setiap pekerjaan dikerjakan dengan presisi. Ini sebagian dokumentasi layanan kami.
+          </p>
+        </motion.div>
+
+        {/* Masonry grid — CSS columns */}
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+          {items.map((item, i) => (
+            <motion.div
+              key={item.id}
+              className="break-inside-avoid"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.06 }}
+            >
+              <button
+                onClick={() => setSelected(item)}
+                className="group relative w-full overflow-hidden rounded-2xl border border-border hover:border-primary/30 hover:shadow-xl hover:shadow-primary/8 transition-all duration-300 block"
+                aria-label={`Lihat ${item.label}`}
+              >
+                <div className={`relative w-full ${item.tall ? 'aspect-[3/4]' : 'aspect-[4/3]'}`}>
+                  <Image
+                    src={item.thumb}
+                    alt={item.label}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                </div>
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/50 transition-colors duration-300 flex items-end p-4">
+                  <div className="translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end justify-between w-full">
+                    <div className="text-left">
+                      <p className="text-background font-semibold text-sm font-poppins">{item.label}</p>
+                      <span className={`mt-1 inline-block text-[10px] font-bold px-2 py-0.5 rounded-full border ${tagColors[item.tag]}`}>
+                        {item.tag}
+                      </span>
+                    </div>
+                    <div className="w-8 h-8 rounded-full bg-background/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0">
+                      <ZoomIn size={14} className="text-background" />
+                    </div>
+                  </div>
+                </div>
+              </button>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* CTA note */}
+        <motion.p
+          className="text-center mt-10 text-muted-foreground text-sm"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+        >
+          Punya proyek servis laptop atau PC?{' '}
+          <a
+            href="https://wa.me/621919423939?text=Halo%20Repasta!%20Saya%20ingin%20konsultasi."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary font-semibold hover:underline underline-offset-4"
+          >
+            Hubungi kami sekarang →
+          </a>
+        </motion.p>
+      </div>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {selected && (
+          <motion.div
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-foreground/80 backdrop-blur-md"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelected(null)}
+          >
+            <motion.div
+              className="relative max-w-3xl w-full"
+              initial={{ scale: 0.92, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.92, opacity: 0 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 28 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={selected.src}
+                alt={selected.label}
+                width={1200}
+                height={900}
+                className="w-full rounded-2xl object-cover shadow-2xl max-h-[80vh]"
+                style={{ height: 'auto' }}
+                priority
+              />
+              <div className="absolute bottom-4 left-4 right-12">
+                <p className="text-background font-bold font-poppins drop-shadow">{selected.label}</p>
+                <span className="text-background/70 text-xs">{selected.tag}</span>
+              </div>
+              <button
+                onClick={() => setSelected(null)}
+                className="absolute top-3 right-3 w-9 h-9 rounded-full bg-foreground/60 backdrop-blur-sm flex items-center justify-center text-background hover:bg-foreground/80 transition-colors"
+                aria-label="Tutup"
+              >
+                <X size={16} />
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </section>
+  )
+}

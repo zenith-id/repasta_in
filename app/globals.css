@@ -1,0 +1,215 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  /* Brand navy — used for dark hero/CTA/footer sections */
+  --color-navy: hsl(var(--navy));
+  --color-navy-light: hsl(var(--navy-light));
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --font-sans: var(--geist-sans, "Geist", "system-ui", "sans-serif");
+  --font-poppins: var(
+    --bricolage,
+    "Bricolage Grotesque",
+    "system-ui",
+    "sans-serif"
+  );
+
+  --animate-fade-in: fadeIn 0.6s ease-out;
+  --animate-fade-up: fadeUp 0.6s ease-out;
+  --animate-slide-in-left: slideInLeft 0.6s ease-out;
+  --animate-slide-in-right: slideInRight 0.6s ease-out;
+  --animate-bounce-subtle: bounceSubtle 2s ease-in-out infinite;
+  --animate-pulse-glow: pulseGlow 3s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes bounceSubtle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+@keyframes pulseGlow {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.08);
+  }
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+/* ─────────────────────────────────────────────
+   Palette reference (all derived from brand):
+   #F9F7F7 → HSL(0,  14%, 97%)   background
+   #DBE2EF → HSL(219,38%, 90%)   card / muted
+   #3F72AF → HSL(213,47%, 47%)   primary
+   #112D4E → HSL(213,64%, 19%)   foreground / navy
+───────────────────────────────────────────── */
+
+:root {
+  --background: 0 14% 97%; /* #F9F7F7 */
+  --foreground: 213 64% 19%; /* #112D4E */
+  --card: 219 38% 90%; /* #DBE2EF */
+  --card-foreground: 213 64% 19%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 213 64% 19%;
+  --primary: 213 47% 47%; /* #3F72AF */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 213 64% 19%; /* #112D4E — navy */
+  --secondary-foreground: 0 0% 100%;
+  --muted: 219 38% 90%; /* #DBE2EF */
+  --muted-foreground: 213 30% 42%;
+  --accent: 213 47% 57%; /* lighter primary tint */
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 219 25% 82%; /* between card and bg */
+  --input: 219 25% 85%;
+  --ring: 213 47% 47%;
+  --radius: 0.875rem;
+
+  /* Dark section surfaces */
+  --navy: 213 64% 19%; /* #112D4E */
+  --navy-light: 213 55% 26%; /* slightly lighter navy */
+}
+
+.dark {
+  --background: 213 64% 9%; /* very deep navy */
+  --foreground: 0 14% 97%; /* #F9F7F7 */
+  --card: 213 60% 14%;
+  --card-foreground: 0 14% 97%;
+  --popover: 213 60% 14%;
+  --popover-foreground: 0 14% 97%;
+  --primary: 213 47% 58%; /* brighter in dark */
+  --primary-foreground: 213 64% 9%;
+  --secondary: 213 47% 57%; /* lighter primary for dark mode */
+  --secondary-foreground: 213 64% 9%;
+  --muted: 213 55% 22%;
+  --muted-foreground: 219 25% 60%;
+  --accent: 213 47% 58%;
+  --accent-foreground: 213 64% 9%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 213 50% 25%;
+  --input: 213 50% 25%;
+  --ring: 213 47% 58%;
+
+  --navy: 213 64% 9%;
+  --navy-light: 213 60% 14%;
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+    outline-color: hsl(var(--ring) / 0.5);
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .container-section {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .btn-primary {
+    @apply px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-xl
+      hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5
+      transition-all duration-200;
+  }
+  .btn-secondary {
+    @apply px-6 py-3 bg-secondary text-secondary-foreground font-semibold rounded-xl
+      hover:bg-secondary/90 hover:shadow-lg hover:shadow-secondary/25 hover:-translate-y-0.5
+      transition-all duration-200;
+  }
+  .text-balance-title {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold text-balance;
+  }
+  .section-tag {
+    @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold
+      bg-primary/10 text-primary border border-primary/20;
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1;
+  }
+}
