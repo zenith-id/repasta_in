@@ -67,8 +67,33 @@ WhatsApp Float        ← Tombol mengambang sudut kanan bawah
 
 | Kelas | Font | Sumber |
 |-------|------|--------|
-| `font-sans` | **Geist** | `next/font/google` → `--geist-sans` |
-| `font-poppins` | **Bricolage Grotesque** | `next/font/google` → `--bricolage` |
+| `font-sans` | **Inter** | `next/font/google` |
+| `font-poppins` | **Poppins** | `next/font/google` |
+
+---
+
+## Static Data (constants/)
+
+Semua konten statis dipisahkan ke folder `constants/`:
+
+| File | Konten |
+|------|-------|
+| `constants/contact.ts` | WhatsApp number, link helper |
+| `constants/navbar.ts` | Navigation links |
+| `constants/hero.ts` | Hero section content |
+| `constants/services.ts` | Laptop & PC services list |
+| `constants/features.ts` | Feature cards data |
+| `constants/testimonials.ts` | Customer testimonials |
+| `constants/pricing.ts` | Pricing plans |
+| `constants/cta.ts` | CTA section content |
+| `constants/footer.ts` | Footer columns |
+| `constants/gallery.ts` | Gallery items |
+| `constants/faq.ts` | FAQ questions |
+| `constants/how-it-works.ts` | Steps content |
+| `constants/layanan.ts` | Layanan page services |
+| `constants/index.ts` | Re-exports all |
+
+Import dari `@/constants` untuk komponen yang butuh static data.
 
 ---
 
@@ -143,3 +168,4 @@ Muncul di: `navbar.tsx`, `hero.tsx`, `how-it-works.tsx`, `services.tsx`, `cta.ts
 - Lenis instance di-expose via `LenisContext` dan hook `useLenis()`
 - Path alias `@/` → root project (`tsconfig.json`)
 - `lang="id"` di `app/layout.tsx` (Bahasa Indonesia)
+- OpenGraph image via `app/opengraph-image.tsx` — gunakan desain sederhana untuk size < 1MB

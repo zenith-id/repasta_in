@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, ZoomIn } from 'lucide-react'
 
-const items = [
+const galleryItems = [
   {
     id: 1,
     src: 'https://images.unsplash.com/photo-1588702547923-7408822a4b85?auto=format&fit=crop&w=800&q=80',
@@ -81,14 +81,15 @@ const tagColors: Record<string, string> = {
   Workspace: 'bg-foreground/8 text-foreground border-foreground/15',
 }
 
+const WHATSAPP_LINK = (msg: string) => `https://wa.me/621919423939?text=${encodeURIComponent(msg)}`
+
 export function Gallery() {
-  const [selected, setSelected] = useState<typeof items[0] | null>(null)
+  const [selected, setSelected] = useState<typeof galleryItems[0] | null>(null)
 
   return (
     <section id="galeri" className="py-24 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-6xl mx-auto">
 
-        {/* Header */}
         <motion.div
           className="text-center mb-14"
           initial={{ opacity: 0, y: 20 }}
@@ -106,9 +107,8 @@ export function Gallery() {
           </p>
         </motion.div>
 
-        {/* Masonry grid — CSS columns */}
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-          {items.map((item, i) => (
+          {galleryItems.map((item, i) => (
             <motion.div
               key={item.id}
               className="break-inside-avoid"
@@ -131,7 +131,6 @@ export function Gallery() {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
-                {/* Overlay */}
                 <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/50 transition-colors duration-300 flex items-end p-4">
                   <div className="translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end justify-between w-full">
                     <div className="text-left">
@@ -150,7 +149,6 @@ export function Gallery() {
           ))}
         </div>
 
-        {/* CTA note */}
         <motion.p
           className="text-center mt-10 text-muted-foreground text-sm"
           initial={{ opacity: 0 }}
@@ -160,7 +158,7 @@ export function Gallery() {
         >
           Punya proyek servis laptop atau PC?{' '}
           <a
-            href="https://wa.me/621919423939?text=Halo%20Repasta!%20Saya%20ingin%20konsultasi."
+            href={WHATSAPP_LINK('Halo Repasta! Saya ingin konsultasi.')}
             target="_blank"
             rel="noopener noreferrer"
             className="text-primary font-semibold hover:underline underline-offset-4"
@@ -170,7 +168,6 @@ export function Gallery() {
         </motion.p>
       </div>
 
-      {/* Lightbox */}
       <AnimatePresence>
         {selected && (
           <motion.div
