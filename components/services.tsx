@@ -4,6 +4,10 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Laptop, Monitor, Star, MessageCircle } from 'lucide-react'
 
+const WHATSAPP_LINK = (msg: string) => `https://wa.me/621919423939?text=${encodeURIComponent(msg)}`
+
+type Tab = 'laptop' | 'pc'
+
 const laptopServices = [
   {
     name: 'Repaste Regular',
@@ -76,7 +80,8 @@ const pcServices = [
   },
 ]
 
-type Tab = 'laptop' | 'pc'
+const servicesHeader = { tag: 'Layanan & Harga', title: 'Harga Transparan, Tanpa Biaya Tersembunyi', subtitle: 'Semua harga dikonfirmasi sebelum pengerjaan. Anda tahu persis berapa yang dibayar.' }
+const note = { text: 'Tidak yakin butuh layanan apa? ', highlight: 'Diagnosa gratis', detail: '— kami bantu cari tahu.', cta: { text: 'Konsultasi Gratis', message: 'Halo Repasta! Saya ingin tanya layanan yang sesuai.' } }
 
 function ServiceRow({ name, desc, price, popular, index }: {
   name: string; desc: string; price: string; popular: boolean; index: number
@@ -125,14 +130,14 @@ export function Services() {
           transition={{ duration: 0.6 }}
         >
           <div className="section-tag mb-4 mx-auto w-fit">
-            Layanan & Harga
+            {servicesHeader.tag}
           </div>
           <h2 className="text-balance-title mb-4 font-poppins">
-            Harga <span className="text-primary">Transparan</span>,<br className="hidden sm:block" />
-            Tanpa Biaya Tersembunyi
+            {servicesHeader.title.split(',')[0]},<br className="hidden sm:block" />
+            {servicesHeader.title.split(',')[1]}
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            Semua harga dikonfirmasi sebelum pengerjaan. Anda tahu persis berapa yang dibayar.
+            {servicesHeader.subtitle}
           </p>
         </motion.div>
 
@@ -192,17 +197,17 @@ export function Services() {
           transition={{ delay: 0.3 }}
         >
           <p className="text-sm text-foreground/70 text-center sm:text-left">
-            Tidak yakin butuh layanan apa?{' '}
-            <span className="text-foreground font-medium">Diagnosa gratis</span> — kami bantu cari tahu.
+            {note.text}
+            <span className="text-foreground font-medium">{note.highlight}</span> {note.detail}
           </p>
           <a
-            href="https://wa.me/621919423939?text=Halo%20Repasta!%20Saya%20ingin%20tanya%20layanan%20yang%20sesuai."
+            href={WHATSAPP_LINK(note.cta.message)}
             target="_blank"
             rel="noopener noreferrer"
             className="flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-primary-foreground font-semibold rounded-xl text-sm hover:bg-primary/90 hover:shadow-md hover:shadow-primary/20 transition-all"
           >
             <MessageCircle size={15} />
-            Konsultasi Gratis
+            {note.cta.text}
           </a>
         </motion.div>
 
