@@ -2,7 +2,7 @@
 
 Halaman marketing statis untuk jasa servis laptop & PC **Repasta** di Padang, Indonesia. Dibangun untuk mendorong konversi via WhatsApp.
 
-**Versi**: `1.0.1`
+**Versi**: `1.1.0`
 
 ---
 
@@ -35,9 +35,9 @@ Changelog di `CHANGELOG.md`.
 
 ## Stack
 
-| Teknologi     | Versi | Keterangan                        |
+| Teknologi     | Versi | Keterangan                         |
 | ------------- | ----- | ---------------------------------- |
-| Next.js       | 16.x  | App Router, SSG                   |
+| Next.js       | 16.x  | App Router, SSG                    |
 | React         | 19.x  | UI Framework                       |
 | TypeScript    | 5.x   | Type safety                        |
 | Tailwind CSS  | 4.x   | Utility-first styling              |
@@ -76,20 +76,22 @@ CTA                   ← Dark section dengan WhatsApp CTA
 Footer                ← 4-kolom dark footer dengan social links
 WhatsApp Float        ← Tombol mengambang sudut kanan bawah
 ```
-Navbar                ← 3 link (Layanan · Harga · Galeri) + CTA
-Hero                  ← GlowyWaves canvas + counter animation stats
-Problem Awareness     ← 2×2 kartu masalah dengan numbered overlay
-Services              ← Tab Laptop/PC, harga lengkap dari blueprint
-Features (Bento)      ← Bento-grid 5 kartu keunggulan
-How It Works          ← 3 langkah vertical timeline editorial
-Gallery               ← Masonry grid + lightbox portofolio
-Testimonials          ← 3-kolom infinite scroll
-FAQ                   ← Accordion 7 pertanyaan
-Pricing               ← 3 paket harga
-CTA                   ← Dark section dengan WhatsApp CTA
-Footer                ← 4-kolom dark footer dengan social links
-WhatsApp Float        ← Tombol mengambang sudut kanan bawah
-```
+
+Navbar ← 3 link (Layanan · Harga · Galeri) + CTA
+Hero ← GlowyWaves canvas + counter animation stats
+Problem Awareness ← 2×2 kartu masalah dengan numbered overlay
+Services ← Tab Laptop/PC, harga lengkap dari blueprint
+Features (Bento) ← Bento-grid 5 kartu keunggulan
+How It Works ← 3 langkah vertical timeline editorial
+Gallery ← Masonry grid + lightbox portofolio
+Testimonials ← 3-kolom infinite scroll
+FAQ ← Accordion 7 pertanyaan
+Pricing ← 3 paket harga
+CTA ← Dark section dengan WhatsApp CTA
+Footer ← 4-kolom dark footer dengan social links
+WhatsApp Float ← Tombol mengambang sudut kanan bawah
+
+````
 
 ---
 
@@ -152,7 +154,7 @@ import { useLenis } from "@/components/lenis-provider";
 
 const lenis = useLenis();
 lenis?.scrollTo("#section-id", { offset: -80, duration: 1.4 });
-```
+````
 
 Navbar menggunakan `lenis.scrollTo()` untuk semua link navigasi. Fallback ke `scrollIntoView` jika instance belum siap.
 
@@ -215,5 +217,5 @@ Muncul di: `navbar.tsx`, `hero.tsx`, `how-it-works.tsx`, `services.tsx`, `cta.ts
 - Lenis instance di-expose via `LenisContext` dan hook `useLenis()`
 - Path alias `@/` → root project (`tsconfig.json`)
 - `lang="id"` di `app/layout.tsx` (Bahasa Indonesia)
-- Versi project: `1.0.1` (SemVer)
+- Versi project: `1.1.0` (SemVer)
 - Changelog: `CHANGELOG.md`
