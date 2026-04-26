@@ -8,6 +8,8 @@ const nextConfig = {
       { protocol: 'https', hostname: 'images.unsplash.com' },
     ],
   },
+  output: 'standalone',
+  trailingSlash: true,
 }
 
 export default nextConfig

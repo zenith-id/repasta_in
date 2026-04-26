@@ -27,12 +27,13 @@ const steps = [
   },
 ]
 
+const WHATSAPP_LINK = (msg: string) => `https://wa.me/621919423939?text=${encodeURIComponent(msg)}`
+
 export function HowItWorks() {
   return (
     <section id="cara-pesan" className="py-24 px-4 sm:px-6 lg:px-8 bg-card overflow-hidden">
       <div className="max-w-5xl mx-auto">
 
-        {/* Header */}
         <motion.div
           className="mb-16 max-w-xl"
           initial={{ opacity: 0, y: 20 }}
@@ -49,7 +50,6 @@ export function HowItWorks() {
           </p>
         </motion.div>
 
-        {/* Steps — editorial stacked layout */}
         <div className="flex flex-col gap-0">
           {steps.map((step, i) => {
             const Icon = step.icon
@@ -63,28 +63,23 @@ export function HowItWorks() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.15 }}
               >
-                {/* Vertical connector */}
                 {!isLast && (
                   <div className="absolute left-[2.35rem] top-[5.5rem] bottom-0 w-px bg-border z-0" />
                 )}
 
                 <div className="relative z-10 flex gap-6 pb-10">
-                  {/* Left: number + icon stack */}
                   <div className="flex flex-col items-center gap-0 flex-shrink-0">
-                    {/* Giant step number */}
                     <span
                       className="block text-[3.5rem] leading-none font-black text-primary/15 font-poppins select-none tabular-nums"
                       aria-hidden="true"
                     >
                       {step.num}
                     </span>
-                    {/* Icon circle */}
                     <div className="w-12 h-12 rounded-full bg-primary/10 border-2 border-primary/25 flex items-center justify-center -mt-1">
                       <Icon size={20} className="text-primary" />
                     </div>
                   </div>
 
-                  {/* Right: content */}
                   <div className="pt-4 flex-1">
                     <div className="group p-6 rounded-2xl bg-background border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
                       <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
@@ -102,7 +97,6 @@ export function HowItWorks() {
           })}
         </div>
 
-        {/* CTA */}
         <motion.div
           className="flex flex-col sm:flex-row items-center gap-4 mt-4"
           initial={{ opacity: 0 }}
@@ -111,7 +105,7 @@ export function HowItWorks() {
           transition={{ delay: 0.55 }}
         >
           <a
-            href="https://wa.me/621919423939?text=Halo%20Repasta!%20Saya%20ingin%20pesan%20servis%20laptop."
+            href={WHATSAPP_LINK('Halo Repasta! Saya ingin pesan servis laptop.')}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-primary text-primary-foreground font-semibold rounded-xl hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 transition-all text-sm"
