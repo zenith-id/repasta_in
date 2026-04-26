@@ -2,6 +2,27 @@
 
 All notable changes documented here. Format: [SemVer](https://semver.org/).
 
+## [1.0.1] - 2026-04-26
+
+### Changed
+- README.md updated with complete constants list
+- Added SemVer section with version 1.0.1
+- Fixed duplicate Stack header in README
+- Added Problem Awareness section to page structure
+
+### Added
+- CHANGELOG.md file for tracking releases
+- New constants: `problem-awareness.ts`, `whatsapp-float.ts`
+- SemVer documentation in README
+
+### Refactor
+- Static data extraction to `constants/` folder
+- All components updated to import from `@/constants`
+- Separate constants per section (contact, navbar, hero, services, features, testimonials, pricing, cta, footer, gallery, faq, how-it-works, layanan)
+
+### Performance
+- Simplified OpenGraph image to reduce bundle size (< 1MB)
+
 ## [1.0.0] - 2026-04-26
 
 ### Added
