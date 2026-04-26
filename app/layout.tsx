@@ -20,36 +20,50 @@ const siteUrl = "https://repasta.in";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Repasta — Servis Laptop & PC Profesional di Padang",
+    default: "Repasta — Servis Laptop & PC Profesional di Bandung",
     template: "%s | Repasta",
   },
   description:
-    "Repasta menyediakan servis laptop dan PC profesional di Padang. Repaste thermal paste, deep clean, upgrade SSD/RAM. Diagnosa gratis, teknisi berpengalaman, harga transparan, garansi 6 bulan.",
+    "Repasta menyediakan servis laptop dan PC profesional di Bandung. Repaste thermal paste, deep clean, upgrade SSD/RAM. Diagnosa gratis, teknisi berpengalaman, harga transparan, garansi 6 bulan.",
   keywords: [
-    "servis laptop Padang",
-    "repaste laptop Padang",
-    "cleaning laptop Padang",
+    "servis laptop Bandung",
+    "repaste laptop Bandung",
+    "cleaning laptop Bandung",
     "ganti thermal paste laptop",
-    "teknisi laptop panggilan Padang",
-    "deepclean laptop Padang",
-    "upgrade SSD laptop Padang",
-    "servis PC Padang",
+    "teknisi laptop panggilan Bandung",
+    "deepclean laptop Bandung",
+    "upgrade SSD laptop Bandung",
+    "servis PC Bandung",
   ],
   authors: [{ name: "Repasta" }],
   openGraph: {
-    title: "Repasta — Servis Laptop & PC Profesional di Padang",
+    title: "Repasta — Servis Laptop & PC Profesional di Bandung",
     description:
       "Diagnosa gratis, repaste thermal paste, deep clean, upgrade SSD/RAM. Teknisi berpengalaman, harga transparan, garansi 6 bulan.",
     url: siteUrl,
     siteName: "Repasta",
     locale: "id_ID",
     type: "website",
+    images: [
+      {
+        url: "/icon.svg",
+        width: 1200,
+        height: 630,
+        alt: "Repasta — Servis Laptop & PC Bandung",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Repasta — Servis Laptop & PC Padang",
+    title: "Repasta — Servis Laptop & PC Bandung",
     description:
       "Diagnosa gratis, repaste thermal paste, deep clean, upgrade SSD/RAM. Teknisi berpengalaman, harga transparan, garansi 6 bulan.",
+    images: ["/icon.svg"],
+  },
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
   },
   robots: { index: true, follow: true },
   alternates: { canonical: siteUrl },
@@ -71,13 +85,13 @@ const jsonLd = {
   "@type": "LocalBusiness",
   name: "Repasta",
   description:
-    "Servis laptop & PC profesional di Padang — repaste thermal paste, deep clean, upgrade hardware.",
+    "Servis laptop & PC profesional di Bandung — repaste thermal paste, deep clean, upgrade hardware.",
   url: siteUrl,
   telephone: "+621919423939",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Padang",
-    addressRegion: "Sumatera Barat",
+    addressLocality: "Bandung",
+    addressRegion: "Jawa Barat",
     addressCountry: "ID",
   },
   geo: {
