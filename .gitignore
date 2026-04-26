@@ -20,6 +20,7 @@ node_modules
 *.md
 !CLAUDE.md
 !readme.md
+!CHANGELOG.md
 
 .claude/
 .agents/

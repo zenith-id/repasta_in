@@ -2,7 +2,37 @@
 
 Halaman marketing statis untuk jasa servis laptop & PC **Repasta** di Padang, Indonesia. Dibangun untuk mendorong konversi via WhatsApp.
 
+**Versi**: `1.0.0`
+
 ---
+
+## Semantic Versioning
+
+Formato: `MAJOR.MINOR.PATCH`
+
+| Tipe | Aturan |
+|------|--------|
+| `MAJOR` | API breaking changes |
+| `MINOR` | Fitur baru, backward compatible |
+| `PATCH` | Bug fix, backward compatible |
+
+Pre-release: `1.0.0-alpha`, `1.0.0-beta.1`
+Build metadata: `1.0.0+20240426`
+
+Contoh:
+```bash
+1.0.0         # Initial release
+1.0.1         # Bug fix
+1.1.0         # Fitur baru
+2.0.0         # Breaking changes
+2.0.0-alpha   # Pre-release
+```
+
+Changelog di `CHANGELOG.md`.
+
+---
+
+## Stack
 
 ## Stack
 
@@ -81,6 +111,7 @@ Semua konten statis dipisahkan ke folder `constants/`:
 | `constants/contact.ts` | WhatsApp number, link helper |
 | `constants/navbar.ts` | Navigation links |
 | `constants/hero.ts` | Hero section content |
+| `constants/problem-awareness.ts` | Problem cards data |
 | `constants/services.ts` | Laptop & PC services list |
 | `constants/features.ts` | Feature cards data |
 | `constants/testimonials.ts` | Customer testimonials |
@@ -91,6 +122,7 @@ Semua konten statis dipisahkan ke folder `constants/`:
 | `constants/faq.ts` | FAQ questions |
 | `constants/how-it-works.ts` | Steps content |
 | `constants/layanan.ts` | Layanan page services |
+| `constants/whatsapp-float.ts` | Floating WhatsApp button config |
 | `constants/index.ts` | Re-exports all |
 
 Import dari `@/constants` untuk komponen yang butuh static data.
@@ -168,4 +200,4 @@ Muncul di: `navbar.tsx`, `hero.tsx`, `how-it-works.tsx`, `services.tsx`, `cta.ts
 - Lenis instance di-expose via `LenisContext` dan hook `useLenis()`
 - Path alias `@/` → root project (`tsconfig.json`)
 - `lang="id"` di `app/layout.tsx` (Bahasa Indonesia)
-- OpenGraph image via `app/opengraph-image.tsx` — gunakan desain sederhana untuk size < 1MB
+- Versi project: `1.0.0` (SemVer)
