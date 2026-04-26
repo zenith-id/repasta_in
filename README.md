@@ -81,6 +81,7 @@ Semua konten statis dipisahkan ke folder `constants/`:
 | `constants/contact.ts` | WhatsApp number, link helper |
 | `constants/navbar.ts` | Navigation links |
 | `constants/hero.ts` | Hero section content |
+| `constants/problem-awareness.ts` | Problem cards data |
 | `constants/services.ts` | Laptop & PC services list |
 | `constants/features.ts` | Feature cards data |
 | `constants/testimonials.ts` | Customer testimonials |
@@ -91,6 +92,7 @@ Semua konten statis dipisahkan ke folder `constants/`:
 | `constants/faq.ts` | FAQ questions |
 | `constants/how-it-works.ts` | Steps content |
 | `constants/layanan.ts` | Layanan page services |
+| `constants/whatsapp-float.ts` | Floating WhatsApp button config |
 | `constants/index.ts` | Re-exports all |
 
 Import dari `@/constants` untuk komponen yang butuh static data.
