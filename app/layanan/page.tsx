@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const { laptopServices, pcServices, guarantees, notes } = LAYANAN_CONTENT
 
-function ServiceCard({ svc }: { svc: typeof laptopServices[0] }) {
+function ServiceCard({ svc }: { svc: (typeof laptopServices)[number] | (typeof pcServices)[number] }) {
   return (
     <div className="relative flex flex-col p-6 rounded-2xl border border-border bg-card hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
       {svc.badge && (

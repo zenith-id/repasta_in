@@ -7,22 +7,7 @@ import { useTheme } from 'next-themes'
 import Link from 'next/link'
 import { useLenis } from '@/components/lenis-provider'
 
-const primaryNav = [
-  { label: 'Layanan', href: '#layanan',  id: 'layanan'  },
-  { label: 'Harga',   href: '#harga',    id: 'harga'    },
-  { label: 'Galeri',  href: '#galeri',   id: 'galeri'   },
-]
-
-const mobileNav = [
-  { label: 'Layanan',    href: '#layanan',    id: 'layanan'    },
-  { label: 'Harga',      href: '#harga',      id: 'harga'      },
-  { label: 'Cara Pesan', href: '#cara-pesan', id: 'cara-pesan' },
-  { label: 'Galeri',     href: '#galeri',     id: 'galeri'     },
-  { label: 'Testimoni',  href: '#testimoni',  id: 'testimoni'  },
-  { label: 'FAQ',        href: '#faq',        id: 'faq'        },
-]
-
-const WHATSAPP_LINK = (msg: string) => `https://wa.me/621919423939?text=${encodeURIComponent(msg)}`
+import { primaryNav, mobileNav, WHATSAPP_LINK } from '@/constants/navbar'
 
 function ThemeToggle() {
   const { theme, setTheme } = useTheme()

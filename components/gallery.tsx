@@ -1,95 +1,20 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import Image from 'next/image'
-import { motion, AnimatePresence } from 'framer-motion'
-import { X, ZoomIn } from 'lucide-react'
+import { useState } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { X, ZoomIn } from "lucide-react";
 
-const galleryItems = [
-  {
-    id: 1,
-    src: 'https://images.unsplash.com/photo-1588702547923-7408822a4b85?auto=format&fit=crop&w=800&q=80',
-    thumb: 'https://images.unsplash.com/photo-1588702547923-7408822a4b85?auto=format&fit=crop&w=500&q=70',
-    label: 'Motherboard Repair',
-    tag: 'Hardware',
-    tall: true,
-  },
-  {
-    id: 2,
-    src: 'https://images.unsplash.com/photo-1603481588273-2f908a9a7a1b?auto=format&fit=crop&w=800&q=80',
-    thumb: 'https://images.unsplash.com/photo-1603481588273-2f908a9a7a1b?auto=format&fit=crop&w=500&q=70',
-    label: 'Thermal Paste Repaste',
-    tag: 'Repaste',
-    tall: false,
-  },
-  {
-    id: 3,
-    src: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80',
-    thumb: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=500&q=70',
-    label: 'Komponen Internal',
-    tag: 'Hardware',
-    tall: false,
-  },
-  {
-    id: 4,
-    src: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=800&q=80',
-    thumb: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=500&q=70',
-    label: 'Laptop Setelah Deepclean',
-    tag: 'Deepclean',
-    tall: true,
-  },
-  {
-    id: 5,
-    src: 'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=800&q=80',
-    thumb: 'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=500&q=70',
-    label: 'Keyboard Cleaning',
-    tag: 'Cleaning',
-    tall: false,
-  },
-  {
-    id: 6,
-    src: 'https://images.unsplash.com/photo-1562408590-e32931084e23?auto=format&fit=crop&w=800&q=80',
-    thumb: 'https://images.unsplash.com/photo-1562408590-e32931084e23?auto=format&fit=crop&w=500&q=70',
-    label: 'Upgrade SSD & RAM',
-    tag: 'Upgrade',
-    tall: false,
-  },
-  {
-    id: 7,
-    src: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80',
-    thumb: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=500&q=70',
-    label: 'Laptop Gaming Repaste',
-    tag: 'Repaste',
-    tall: false,
-  },
-  {
-    id: 8,
-    src: 'https://images.unsplash.com/photo-1537498425277-c283d32ef9db?auto=format&fit=crop&w=800&q=80',
-    thumb: 'https://images.unsplash.com/photo-1537498425277-c283d32ef9db?auto=format&fit=crop&w=500&q=70',
-    label: 'Workspace Repasta',
-    tag: 'Workspace',
-    tall: true,
-  },
-]
-
-const tagColors: Record<string, string> = {
-  Repaste:   'bg-primary/10 text-primary border-primary/20',
-  Deepclean: 'bg-foreground/8 text-foreground border-foreground/15',
-  Hardware:  'bg-primary/10 text-primary border-primary/20',
-  Cleaning:  'bg-foreground/8 text-foreground border-foreground/15',
-  Upgrade:   'bg-primary/10 text-primary border-primary/20',
-  Workspace: 'bg-foreground/8 text-foreground border-foreground/15',
-}
-
-const WHATSAPP_LINK = (msg: string) => `https://wa.me/621919423939?text=${encodeURIComponent(msg)}`
+import { galleryItems, tagColors, WHATSAPP_LINK } from "@/constants/gallery";
 
 export function Gallery() {
-  const [selected, setSelected] = useState<typeof galleryItems[0] | null>(null)
+  const [selected, setSelected] = useState<(typeof galleryItems)[0] | null>(
+    null,
+  );
 
   return (
     <section id="galeri" className="py-24 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-6xl mx-auto">
-
         <motion.div
           className="text-center mb-14"
           initial={{ opacity: 0, y: 20 }}
@@ -97,13 +22,15 @@ export function Gallery() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="section-tag mb-4 mx-auto w-fit">Galeri Portofolio</div>
+          <div className="section-tag mb-4 mx-auto w-fit">
+            Galeri Portofolio
+          </div>
           <h2 className="text-balance-title font-poppins mb-4">
-            Hasil Kerja{' '}
-            <span className="text-primary">Nyata</span>
+            Hasil Kerja <span className="text-primary">Nyata</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            Setiap pekerjaan dikerjakan dengan presisi. Ini sebagian dokumentasi layanan kami.
+            Setiap pekerjaan dikerjakan dengan presisi. Ini sebagian dokumentasi
+            layanan kami.
           </p>
         </motion.div>
 
@@ -118,11 +45,13 @@ export function Gallery() {
               transition={{ duration: 0.5, delay: i * 0.06 }}
             >
               <button
-                onClick={() => setSelected(item)}
+                onClick={() => setSelected(item as any)}
                 className="group relative w-full overflow-hidden rounded-2xl border border-border hover:border-primary/30 hover:shadow-xl hover:shadow-primary/8 transition-all duration-300 block"
                 aria-label={`Lihat ${item.label}`}
               >
-                <div className={`relative w-full ${item.tall ? 'aspect-[3/4]' : 'aspect-[4/3]'}`}>
+                <div
+                  className={`relative w-full ${item.tall ? "aspect-[3/4]" : "aspect-[4/3]"}`}
+                >
                   <Image
                     src={item.thumb}
                     alt={item.label}
@@ -134,8 +63,12 @@ export function Gallery() {
                 <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/50 transition-colors duration-300 flex items-end p-4">
                   <div className="translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end justify-between w-full">
                     <div className="text-left">
-                      <p className="text-background font-semibold text-sm font-poppins">{item.label}</p>
-                      <span className={`mt-1 inline-block text-[10px] font-bold px-2 py-0.5 rounded-full border ${tagColors[item.tag]}`}>
+                      <p className="text-background font-semibold text-sm font-poppins">
+                        {item.label}
+                      </p>
+                      <span
+                        className={`mt-1 inline-block text-[10px] font-bold px-2 py-0.5 rounded-full border ${tagColors[item.tag]}`}
+                      >
                         {item.tag}
                       </span>
                     </div>
@@ -156,9 +89,9 @@ export function Gallery() {
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
         >
-          Punya proyek servis laptop atau PC?{' '}
+          Punya proyek servis laptop atau PC?{" "}
           <a
-            href={WHATSAPP_LINK('Halo Repasta! Saya ingin konsultasi.')}
+            href={WHATSAPP_LINK("Halo Repasta! Saya ingin konsultasi.")}
             target="_blank"
             rel="noopener noreferrer"
             className="text-primary font-semibold hover:underline underline-offset-4"
@@ -182,7 +115,7 @@ export function Gallery() {
               initial={{ scale: 0.92, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.92, opacity: 0 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 28 }}
+              transition={{ type: "spring", stiffness: 300, damping: 28 }}
               onClick={(e) => e.stopPropagation()}
             >
               <Image
@@ -191,12 +124,16 @@ export function Gallery() {
                 width={1200}
                 height={900}
                 className="w-full rounded-2xl object-cover shadow-2xl max-h-[80vh]"
-                style={{ height: 'auto' }}
+                style={{ height: "auto" }}
                 priority
               />
               <div className="absolute bottom-4 left-4 right-12">
-                <p className="text-background font-bold font-poppins drop-shadow">{selected.label}</p>
-                <span className="text-background/70 text-xs">{selected.tag}</span>
+                <p className="text-background font-bold font-poppins drop-shadow">
+                  {selected.label}
+                </p>
+                <span className="text-background/70 text-xs">
+                  {selected.tag}
+                </span>
               </div>
               <button
                 onClick={() => setSelected(null)}
@@ -210,5 +147,5 @@ export function Gallery() {
         )}
       </AnimatePresence>
     </section>
-  )
+  );
 }

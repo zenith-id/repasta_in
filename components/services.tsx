@@ -4,84 +4,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Laptop, Monitor, Star, MessageCircle } from 'lucide-react'
 
-const WHATSAPP_LINK = (msg: string) => `https://wa.me/621919423939?text=${encodeURIComponent(msg)}`
-
-type Tab = 'laptop' | 'pc'
-
-const laptopServices = [
-  {
-    name: 'Repaste Regular',
-    desc: 'Pasta termal cair (CryoFuze 5 / Arctic MX-6) — solusi cepat & efisien',
-    price: 'Rp 150.000',
-    popular: false,
-  },
-  {
-    name: 'Repaste Phase Change',
-    desc: 'Bahan premium PTM 7950 / ID-Cooling PTM2 — tahan lama, konduktivitas tinggi',
-    price: 'Rp 180.000',
-    popular: false,
-  },
-  {
-    name: 'Repaste Liquid Metal',
-    desc: 'Konduktivitas 128 W/mK — pendinginan ekstrem untuk gaming & workstation',
-    price: 'Rp 200.000',
-    popular: false,
-  },
-  {
-    name: 'Repaste VRAM / VRM',
-    desc: 'Thermal putty untuk area VRAM & VRM — mencegah throttling GPU',
-    price: 'Rp 50.000',
-    popular: false,
-  },
-  {
-    name: 'Cleaning Keyboard Eksternal',
-    desc: 'Bersih kerak pada keycaps & plate keyboard — seperti baru lagi',
-    price: 'Rp 80.000',
-    popular: false,
-  },
-  {
-    name: 'Deepclean Phase Change',
-    desc: 'Cleaning komprehensif seluruh laptop + repaste PTM 7950 — paket terlengkap',
-    price: 'Rp 230.000',
-    popular: true,
-  },
-  {
-    name: 'Deepclean Liquid Metal',
-    desc: 'Cleaning keyboard, layar, palmrest + liquid metal — performa puncak',
-    price: 'Rp 250.000',
-    popular: false,
-  },
-  {
-    name: 'Special Request',
-    desc: 'Layanan kustom sesuai kebutuhan spesifik Anda — konsultasi dulu',
-    price: 'Hubungi Kami',
-    popular: false,
-  },
-]
-
-const pcServices = [
-  {
-    name: 'PC Repaste',
-    desc: 'Penggantian pasta termal untuk PC desktop — semua brand & socket',
-    price: 'Rp 220.000',
-    popular: false,
-  },
-  {
-    name: 'Instal Ulang OS',
-    desc: 'Instalasi sistem operasi bersih + driver — Windows 10/11 atau Linux',
-    price: 'Rp 75.000',
-    popular: false,
-  },
-  {
-    name: 'Jasa Rakit PC',
-    desc: 'Perakitan PC dari komponen yang Anda sediakan — oleh teknisi berpengalaman',
-    price: 'Rp 150.000',
-    popular: false,
-  },
-]
-
-const servicesHeader = { tag: 'Layanan & Harga', title: 'Harga Transparan, Tanpa Biaya Tersembunyi', subtitle: 'Semua harga dikonfirmasi sebelum pengerjaan. Anda tahu persis berapa yang dibayar.' }
-const note = { text: 'Tidak yakin butuh layanan apa? ', highlight: 'Diagnosa gratis', detail: '— kami bantu cari tahu.', cta: { text: 'Konsultasi Gratis', message: 'Halo Repasta! Saya ingin tanya layanan yang sesuai.' } }
+import { laptopServices, pcServices, servicesHeader, note, tabsData, WHATSAPP_LINK } from '@/constants/services'
 
 function ServiceRow({ name, desc, price, popular, index }: {
   name: string; desc: string; price: string; popular: boolean; index: number
@@ -115,7 +38,7 @@ function ServiceRow({ name, desc, price, popular, index }: {
 }
 
 export function Services() {
-  const [active, setActive] = useState<Tab>('laptop')
+  const [active, setActive] = useState<'laptop' | 'pc'>('laptop')
 
   return (
     <section id="layanan" className="py-24 px-4 sm:px-6 lg:px-8 bg-background">
@@ -144,10 +67,7 @@ export function Services() {
         {/* Tab Switcher */}
         <div className="flex justify-center mb-8">
           <div className="inline-flex p-1 rounded-2xl bg-card border border-border gap-1">
-            {([
-              { id: 'laptop' as Tab, label: 'Laptop', icon: Laptop },
-              { id: 'pc' as Tab,     label: 'PC Desktop', icon: Monitor },
-            ] as { id: Tab; label: string; icon: typeof Laptop }[]).map(({ id, label, icon: Icon }) => (
+            {tabsData.map(({ id, label, icon: Icon }) => (
               <button
                 key={id}
                 onClick={() => setActive(id)}

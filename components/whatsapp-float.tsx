@@ -2,6 +2,8 @@
 
 import { MessageCircle } from 'lucide-react'
 
+import { WHATSAPP_CONFIG } from '@/constants/whatsapp-float'
+
 export function WhatsAppFloat() {
   return (
     <div className="fixed bottom-6 right-6 z-50 group">
@@ -12,7 +14,7 @@ export function WhatsAppFloat() {
       />
 
       <a
-        href="https://wa.me/621919423939?text=Halo%20Repasta!%20Saya%20ingin%20konsultasi%20servis%20laptop."
+        href={WHATSAPP_CONFIG.link}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat via WhatsApp"
@@ -20,7 +22,7 @@ export function WhatsAppFloat() {
       >
         <MessageCircle size={22} className="flex-shrink-0" />
         <span className="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-[8rem] group-hover:ml-2.5 transition-all duration-300 text-sm font-semibold">
-          Chat Sekarang
+          {WHATSAPP_CONFIG.label}
         </span>
       </a>
     </div>
