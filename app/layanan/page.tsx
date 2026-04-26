@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, MessageCircle, Check, Star, Shield, Clock, Wrench } from 'lucide-react'
+import { LAYANAN_CONTENT } from '@/constants/layanan'
 
 export const metadata: Metadata = {
   title: 'Layanan Servis Laptop & PC',
@@ -8,106 +9,7 @@ export const metadata: Metadata = {
     'Daftar lengkap layanan Repasta: repaste thermal paste, deep clean laptop, upgrade SSD/RAM, instalasi OS, rakit PC. Harga transparan, garansi 6 bulan, di Padang.',
 }
 
-const laptopServices = [
-  {
-    name: 'Repaste Regular',
-    price: 'Rp 150.000',
-    badge: null,
-    material: 'CryoFuze 5 / Arctic MX-6',
-    desc: 'Penggantian thermal paste standar menggunakan pasta berkualitas tinggi. Solusi terbaik untuk laptop yang mulai overheat akibat pasta lama yang mengering.',
-    includes: ['Buka dan bersih heatsink', 'Aplikasi pasta baru', 'Test suhu setelah pemasangan', 'Garansi 3 bulan'],
-  },
-  {
-    name: 'Repaste Phase Change',
-    price: 'Rp 180.000',
-    badge: null,
-    material: 'PTM 7950 / ID-Cooling PTM2',
-    desc: 'Menggunakan material phase change yang lebih tahan lama dan konduksi panas lebih efisien. Tidak perlu diganti berkala seperti pasta biasa.',
-    includes: ['Buka dan bersih heatsink', 'Aplikasi phase change material', 'Test suhu & benchmark', 'Garansi 6 bulan'],
-  },
-  {
-    name: 'Repaste Liquid Metal',
-    price: 'Rp 200.000',
-    badge: null,
-    material: 'Conductonaut / Thermal Grizzly (128 W/mK)',
-    desc: 'Konduktivitas tertinggi untuk performa pendinginan ekstrem. Ideal untuk laptop gaming dan workstation yang butuh suhu paling optimal.',
-    includes: ['Persiapan & isolasi area sensitif', 'Aplikasi liquid metal presisi', 'Benchmark suhu sebelum-sesudah', 'Garansi 6 bulan'],
-  },
-  {
-    name: 'Repaste VRAM / VRM',
-    price: 'Rp 50.000',
-    badge: null,
-    material: 'Thermal Putty / Pad Berkualitas',
-    desc: 'Penggantian thermal putty pada area VRAM dan VRM untuk mencegah GPU throttling dan menjaga performa grafis tetap stabil.',
-    includes: ['Ganti thermal pad VRAM', 'Ganti thermal pad VRM', 'Test stabilitas GPU', 'Garansi 3 bulan'],
-  },
-  {
-    name: 'Cleaning Keyboard Eksternal',
-    price: 'Rp 80.000',
-    badge: null,
-    material: '—',
-    desc: 'Pembersihan menyeluruh keycaps dan plate keyboard dari debu, kerak, dan kotoran yang menumpuk. Keyboard kembali terasa seperti baru.',
-    includes: ['Bongkar keycaps', 'Cuci dan keringkan', 'Bersih plate & PCB', 'Pasang kembali rapi'],
-  },
-  {
-    name: 'Deepclean Phase Change',
-    price: 'Rp 230.000',
-    badge: 'Paling Populer',
-    material: 'PTM 7950 + Full Cleaning Kit',
-    desc: 'Paket terlengkap: cleaning komprehensif seluruh komponen laptop PLUS repaste dengan phase change material. Hasilnya seperti laptop baru.',
-    includes: ['Bersih fan, heatsink, body dalam', 'Repaste PTM 7950', 'Bersih layar & keyboard luar', 'Test menyeluruh semua komponen', 'Garansi 6 bulan'],
-  },
-  {
-    name: 'Deepclean Liquid Metal',
-    price: 'Rp 250.000',
-    badge: null,
-    material: 'Liquid Metal + Full Cleaning Kit',
-    desc: 'Paket premium: deep clean lengkap keyboard, layar, palmrest, dan semua komponen internal PLUS repaste liquid metal untuk performa puncak.',
-    includes: ['Deep clean seluruh body & internal', 'Repaste liquid metal presisi', 'Bersih keyboard, layar, palmrest', 'Benchmark & test komprehensif', 'Garansi 6 bulan'],
-  },
-  {
-    name: 'Special Request',
-    price: 'Hubungi Kami',
-    badge: null,
-    material: 'Disesuaikan',
-    desc: 'Kebutuhan khusus yang tidak ada di daftar? Kami terbuka untuk layanan kustom sesuai kondisi spesifik laptop atau PC Anda.',
-    includes: ['Konsultasi kebutuhan', 'Estimasi biaya transparan', 'Penanganan kasus khusus', 'Garansi disesuaikan'],
-  },
-]
-
-const pcServices = [
-  {
-    name: 'PC Repaste',
-    price: 'Rp 220.000',
-    badge: null,
-    material: 'Arctic MX-6 / Phase Change',
-    desc: 'Penggantian thermal paste untuk PC desktop. Mengatasi overheat prosesor dan menjaga stabilitas sistem di semua brand dan socket.',
-    includes: ['Buka dan bersih heatsink CPU', 'Aplikasi pasta baru', 'Test suhu idle & load', 'Garansi 3 bulan'],
-  },
-  {
-    name: 'Instal Ulang OS',
-    price: 'Rp 75.000',
-    badge: null,
-    material: '—',
-    desc: 'Instalasi sistem operasi bersih (fresh install) untuk Windows 10/11 atau Linux. Termasuk driver dasar agar langsung bisa digunakan.',
-    includes: ['Format & instalasi OS bersih', 'Instal driver dasar', 'Aktivasi (jika Anda punya lisensi)', 'Test fungsionalitas sistem'],
-  },
-  {
-    name: 'Jasa Rakit PC',
-    price: 'Rp 150.000',
-    badge: null,
-    material: '—',
-    desc: 'Perakitan PC dari komponen yang Anda sediakan sendiri. Dikerjakan rapi dan benar oleh teknisi berpengalaman dengan cable management standar.',
-    includes: ['Pasang semua komponen', 'Cable management rapi', 'BIOS setup & POST test', 'Instal OS (opsional, +75K)'],
-  },
-]
-
-const guarantees = [
-  { icon: Shield,   text: 'Garansi 3–6 bulan untuk setiap layanan'          },
-  { icon: Wrench,   text: 'Dikerjakan di depan Anda — penuh transparansi'    },
-  { icon: Clock,    text: 'Selesai dalam 1–2 jam untuk kebanyakan kasus'      },
-  { icon: Check,    text: 'Diagnosa gratis sebelum memutuskan layanan'        },
-]
+const { laptopServices, pcServices, guarantees, notes } = LAYANAN_CONTENT
 
 function ServiceCard({ svc }: { svc: typeof laptopServices[0] }) {
   return (
@@ -234,10 +136,9 @@ export default function LayananPage() {
         <div className="p-6 rounded-2xl bg-primary/6 border border-primary/15 mb-14">
           <h3 className="font-bold text-foreground font-poppins mb-3">Catatan Penting</h3>
           <ul className="space-y-2 text-sm text-foreground/75">
-            <li className="flex gap-2"><Check size={14} className="text-primary mt-0.5 flex-shrink-0" />Harga di atas belum termasuk spare part jika diperlukan. Estimasi part diberikan sebelum pengerjaan.</li>
-            <li className="flex gap-2"><Check size={14} className="text-primary mt-0.5 flex-shrink-0" />Diagnosa gratis untuk semua jenis kerusakan — tidak ada kewajiban melanjutkan ke servis.</li>
-            <li className="flex gap-2"><Check size={14} className="text-primary mt-0.5 flex-shrink-0" />Home visit tersedia untuk area Padang — jadwalkan via WhatsApp.</li>
-            <li className="flex gap-2"><Check size={14} className="text-primary mt-0.5 flex-shrink-0" />Pembayaran dilakukan setelah pekerjaan selesai dan Anda puas.</li>
+            {notes.map((item, i) => (
+              <li key={i} className="flex gap-2"><Check size={14} className="text-primary mt-0.5 flex-shrink-0" />{item}</li>
+            ))}
           </ul>
         </div>
 
