@@ -10,6 +10,8 @@ import {
   Facebook,
 } from "lucide-react";
 import { cols, brand, contact } from "@/constants/footer";
+import Image from "next/image";
+import Link from "next/link";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -27,14 +29,8 @@ export function Footer() {
             transition={{ duration: 0.5 }}
           >
             <div className="flex items-center gap-2.5 mb-5">
-              <div
-                className="w-9 h-9 rounded-xl flex items-center justify-center"
-                style={{
-                  background:
-                    "linear-gradient(135deg, hsl(213 47% 60%), hsl(213 47% 44%))",
-                }}
-              >
-                <Wrench size={16} className="text-white" />
+              <div className="w-9 h-9 rounded-xl flex items-center justify-center">
+                <Image src="/logo.png" alt="Logo" width={24} height={24} />
               </div>
               <span className="font-poppins font-bold text-xl text-background">
                 Repasta
@@ -125,20 +121,13 @@ export function Footer() {
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <a
-                href="#"
+              <Link
+                href={contact.ig}
                 aria-label="Instagram Repasta"
                 className="w-9 h-9 rounded-lg border border-background/20 flex items-center justify-center text-background/50 hover:text-primary hover:border-primary/40 transition-colors"
               >
                 <Instagram size={16} />
-              </a>
-              <a
-                href="#"
-                aria-label="Facebook Repasta"
-                className="w-9 h-9 rounded-lg border border-background/20 flex items-center justify-center text-background/50 hover:text-primary hover:border-primary/40 transition-colors"
-              >
-                <Facebook size={16} />
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>
@@ -152,7 +141,7 @@ export function Footer() {
             © {year} Repasta. Semua hak dilindungi. · hello@repasta.in
           </p>
           <p className="text-background/25 text-xs">
-            Servis Laptop & PC Profesional — Padang, Indonesia
+            Servis Laptop & PC Profesional — Bandung, Indonesia
           </p>
         </div>
       </div>
