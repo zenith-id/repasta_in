@@ -74,7 +74,12 @@ interface WaveConfig {
   opacity: number;
 }
 
-import { highlightPills, containerVariants, itemVariants, statsData } from "@/constants/hero";
+import {
+  highlightPills,
+  containerVariants,
+  itemVariants,
+  statsData,
+} from "@/constants/hero";
 
 export function Hero() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -117,123 +122,85 @@ export function Hero() {
         document.body.removeChild(tempEl);
         return color;
       };
+
+      const isDark = document.documentElement.classList.contains("dark");
+
       return {
         backgroundTop: resolveColor(["--background"], 1),
-        backgroundBottom: resolveColor(["--muted", "--background"], 0.97),
+        backgroundBottom: isDark 
+          ? resolveColor(["--navy-light", "--background"], 1)
+          : resolveColor(["--muted", "--background"], 0.95),
         wavePalette: [
           {
             offset: 0,
-            amplitude: 65,
-            frequency: 0.003,
-            color: resolveColor(["--primary"], 0.65),
-            opacity: 0.42,
+            amplitude: 80,
+            frequency: 0.0035,
+            color: resolveColor(["--primary"], 1), 
+            opacity: isDark ? 0.25 : 0.7, 
           },
           {
             offset: Math.PI / 2,
-            amplitude: 85,
-            frequency: 0.0026,
-            color: resolveColor(["--primary"], 0.5),
-            opacity: 0.28,
+            amplitude: 100,
+            frequency: 0.0028,
+            color: resolveColor(["--primary"], 0.8),
+            opacity: isDark ? 0.15 : 0.4,
           },
           {
             offset: Math.PI,
-            amplitude: 55,
-            frequency: 0.0034,
-            color: resolveColor(["--foreground"], 0.15),
-            opacity: 0.2,
+            amplitude: 70,
+            frequency: 0.0042,
+            color: resolveColor(["--primary"], 0.6),
+            opacity: isDark ? 0.1 : 0.25,
           },
-          {
-            offset: Math.PI * 1.5,
-            amplitude: 75,
-            frequency: 0.0022,
-            color: resolveColor(["--primary"], 0.38),
-            opacity: 0.22,
-          },
-          {
-            offset: Math.PI * 2,
-            amplitude: 50,
-            frequency: 0.004,
-            color: resolveColor(["--foreground"], 0.1),
-            opacity: 0.16,
-          },
-        ] satisfies WaveConfig[],
+        ],
       };
     };
 
     let themeColors = computeThemeColors();
-    const observer = new MutationObserver(() => {
-      themeColors = computeThemeColors();
-    });
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["class"],
-    });
-
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    const mouseInfluence = prefersReducedMotion ? 10 : 60;
-    const influenceRadius = prefersReducedMotion ? 160 : 300;
-    const smoothing = prefersReducedMotion ? 0.04 : 0.1;
-
-    const resizeCanvas = () => {
+    const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+      themeColors = computeThemeColors();
     };
-    const recenterMouse = () => {
-      const c = { x: canvas.width / 2, y: canvas.height / 2 };
-      mouseRef.current = c;
-      targetMouseRef.current = c;
-    };
-    const handleResize = () => {
-      resizeCanvas();
-      recenterMouse();
-    };
-    const handleMouseMove = (e: MouseEvent) => {
+    window.addEventListener("resize", resize);
+    resize();
+
+    const onMouseMove = (e: MouseEvent) => {
       targetMouseRef.current = { x: e.clientX, y: e.clientY };
     };
-    const handleMouseLeave = () => recenterMouse();
+    window.addEventListener("mousemove", onMouseMove);
 
-    resizeCanvas();
-    recenterMouse();
-    window.addEventListener("resize", handleResize);
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("mouseleave", handleMouseLeave);
-
-    const drawWave = (wave: WaveConfig) => {
-      ctx.save();
+    const drawWave = (cfg: WaveConfig) => {
       ctx.beginPath();
-      for (let x = 0; x <= canvas.width; x += 4) {
-        const dx = x - mouseRef.current.x;
-        const dy = canvas.height / 2 - mouseRef.current.y;
-        const influence = Math.max(
-          0,
-          1 - Math.sqrt(dx * dx + dy * dy) / influenceRadius,
-        );
-        const mouseEffect =
-          influence *
-          mouseInfluence *
-          Math.sin(time * 0.001 + x * 0.01 + wave.offset);
+      const mouseInfluence =
+        (mouseRef.current.x / canvas.width - 0.5) * 60 * cfg.frequency * 100;
+      for (let x = 0; x <= canvas.width; x += 10) {
         const y =
-          canvas.height / 2 +
-          Math.sin(x * wave.frequency + time * 0.002 + wave.offset) *
-            wave.amplitude +
-          Math.sin(x * wave.frequency * 0.4 + time * 0.003) *
-            (wave.amplitude * 0.45) +
-          mouseEffect;
-        x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+          canvas.height * 0.75 +
+          Math.sin(x * cfg.frequency + time + cfg.offset + mouseInfluence) *
+            cfg.amplitude *
+            (1 + (mouseRef.current.y / canvas.height - 0.5) * 0.4);
+        if (x === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
       }
-      ctx.lineWidth = 2.5;
-      ctx.strokeStyle = wave.color;
-      ctx.globalAlpha = wave.opacity;
-      ctx.shadowBlur = 28;
-      ctx.shadowColor = wave.color;
-      ctx.stroke();
-      ctx.restore();
+      ctx.lineTo(canvas.width, canvas.height);
+      ctx.lineTo(0, canvas.height);
+      ctx.closePath();
+      
+      const isDark = document.documentElement.classList.contains("dark");
+      
+      // Fill
+      ctx.fillStyle = cfg.color;
+      ctx.globalAlpha = cfg.opacity;
+      ctx.fill();
+
+      // No stroke for cleaner aesthetic, relying on increased fill opacity
     };
 
     const animate_ = () => {
-      time++;
+      time += 0.008;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const smoothing = 0.08;
       mouseRef.current.x +=
         (targetMouseRef.current.x - mouseRef.current.x) * smoothing;
       mouseRef.current.y +=
@@ -259,10 +226,17 @@ export function Hero() {
     };
     document.addEventListener("visibilitychange", handleVisibilityChange);
 
+    const observer = new MutationObserver(() => {
+      themeColors = computeThemeColors();
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
     return () => {
-      window.removeEventListener("resize", handleResize);
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mouseleave", handleMouseLeave);
+      window.removeEventListener("resize", resize);
+      window.removeEventListener("mousemove", onMouseMove);
       document.removeEventListener("visibilitychange", handleVisibilityChange);
       cancelAnimationFrame(animationId);
       observer.disconnect();
@@ -270,71 +244,93 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative isolate flex min-h-screen w-full items-center justify-center overflow-hidden bg-background">
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 h-full w-full"
-        aria-hidden="true"
+    <section className="relative min-h-[95vh] w-full overflow-hidden flex items-center justify-center">
+      {/* Canvas Layer */}
+      <canvas ref={canvasRef} className="absolute inset-0 z-0 h-full w-full" />
+
+      {/* Noise Texture Overlay */}
+      <div
+        className="absolute inset-0 z-1 opacity-[0.03] pointer-events-none mix-blend-overlay"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Ffilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+        }}
       />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center px-6 py-28 text-center md:px-8 lg:px-12">
+      {/* Atmospheric Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-primary/20 blur-[140px] rounded-full opacity-30 animate-pulse-glow z-0 pointer-events-none" />
+
+      <div className="container-section relative z-10 py-20">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="w-full"
+          className="mx-auto max-w-4xl text-center"
         >
           {/* Badge */}
           <motion.div
             variants={itemVariants}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-foreground/65 backdrop-blur-sm"
+            className="mb-8 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/25 backdrop-blur-md shadow-inner"
           >
-            <Wrench className="h-3.5 w-3.5 text-primary" />
-            Servis Terpercaya · Padang
+            <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+            <span className="text-[10px] font-bold uppercase tracking-widest text-primary leading-none">
+              Servis Terpercaya · Bandung
+            </span>
           </motion.div>
 
           {/* Headline */}
           <motion.h1
             variants={itemVariants}
-            className="mb-5 font-bold tracking-tight text-foreground font-poppins"
+            className="mb-6 font-extrabold tracking-tight text-foreground font-poppins text-balance"
             style={{
-              fontSize: "clamp(2rem, 5.5vw, 3.75rem)",
-              lineHeight: 1.15,
+              fontSize: "clamp(2.25rem, 6vw, 4.5rem)",
+              lineHeight: 1.05,
             }}
           >
             Laptop Panas & Lemot?{" "}
-            <span className="bg-gradient-to-r from-primary via-primary/70 to-foreground/60 bg-clip-text text-transparent">
-              Kami Solusinya
+            <span className="relative inline-block">
+              <span className="bg-gradient-to-br from-primary via-primary to-foreground bg-clip-text text-transparent drop-shadow-sm">
+                Kami Solusinya
+              </span>
+              <motion.div
+                className="absolute -bottom-2 left-0 h-1.5 w-full bg-primary/20 rounded-full blur-sm"
+                initial={{ width: 0 }}
+                animate={{ width: "100%" }}
+                transition={{ delay: 0.8, duration: 1 }}
+              />
             </span>
           </motion.h1>
 
           {/* Subtext */}
           <motion.p
             variants={itemVariants}
-            className="mx-auto mb-9 max-w-2xl text-base sm:text-lg text-foreground/60 leading-relaxed"
+            className="mx-auto mb-10 max-w-2xl text-base sm:text-lg text-foreground/65 leading-relaxed font-medium px-4"
           >
             Layanan repaste, deep clean, dan perawatan laptop/PC profesional
-            langsung di depan Anda — cepat, transparan, bergaransi.
+            langsung di depan Anda —{" "}
+            <span className="text-foreground">
+              cepat, transparan, bergaransi.
+            </span>
           </motion.p>
 
           {/* CTA Buttons */}
           <motion.div
             variants={itemVariants}
-            className="mb-9 flex flex-col items-center justify-center gap-3 sm:flex-row"
+            className="mb-12 flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
             <a
               href="https://wa.me/621919423939?text=Halo%20Repasta!%20Saya%20ingin%20konsultasi%20servis%20laptop."
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2.5 rounded-xl bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/25 transition-all"
+              className="group relative inline-flex items-center gap-2.5 rounded-2xl bg-primary px-8 py-4 text-sm font-bold text-primary-foreground hover:bg-primary/95 transition-all shadow-xl shadow-primary/20 hover:shadow-primary/35 hover:-translate-y-1 active:translate-y-0 overflow-hidden"
             >
-              <MessageCircle className="h-4 w-4" />
-              Chat via WhatsApp
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+              <MessageCircle className="h-5 w-5 relative z-10" />
+              <span className="relative z-10">Chat via WhatsApp</span>
+              <ArrowRight className="h-5 w-5 relative z-10 transition-transform group-hover:translate-x-1" />
             </a>
             <a
               href="#layanan"
-              className="inline-flex items-center gap-2 rounded-xl border border-border/70 bg-background/60 px-7 py-3.5 text-sm font-semibold text-foreground/70 backdrop-blur hover:border-primary/50 hover:text-primary hover:bg-background/80 transition-all"
+              className="inline-flex items-center gap-2 rounded-2xl border border-foreground/10 bg-background/40 px-8 py-4 text-sm font-bold text-foreground/80 backdrop-blur-md hover:bg-background/80 hover:border-primary/40 hover:text-primary transition-all active:scale-95"
             >
               Lihat Layanan Kami
             </a>
@@ -343,25 +339,28 @@ export function Hero() {
           {/* Highlight Pills */}
           <motion.ul
             variants={itemVariants}
-            className="mb-11 flex flex-wrap items-center justify-center gap-2.5 text-[11px] uppercase tracking-[0.18em] text-foreground/55"
+            className="mb-14 flex flex-wrap items-center justify-center gap-3"
           >
             {highlightPills.map((pill) => (
               <li
                 key={pill}
-                className="rounded-full border border-border/50 bg-background/60 px-4 py-1.5 backdrop-blur"
+                className="rounded-full border border-foreground/5 bg-foreground/[0.03] px-5 py-2 backdrop-blur-sm text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.15em] text-foreground/60 shadow-sm transition-colors hover:border-primary/20 hover:text-primary"
               >
                 {pill}
               </li>
             ))}
           </motion.ul>
 
-          {/* Stats with counter animation */}
+          {/* Stats Grid */}
           <motion.div
             variants={itemVariants}
-            className="grid grid-cols-1 md:grid-cols-3 gap-px rounded-2xl overflow-hidden border border-border/40 bg-border/30 backdrop-blur-sm"
+            className="grid grid-cols-1 md:grid-cols-3 gap-px rounded-3xl overflow-hidden border border-foreground/10 bg-foreground/10 backdrop-blur-md"
           >
             {statsData.map((s, i) => (
-              <div key={i} className="bg-background/80 p-5">
+              <div
+                key={i}
+                className="bg-background/70 p-6 sm:p-8 hover:bg-background/50 transition-colors group border-b md:border-b-0 last:border-0 border-foreground/5"
+              >
                 <StatItem {...s} />
               </div>
             ))}
