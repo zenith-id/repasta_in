@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "@/components/theme-provider";
+import { faqs } from "@/constants/faq";
 import "./globals.css";
 
 import { Bricolage_Grotesque, Geist } from "next/font/google";
@@ -12,10 +13,10 @@ const geist = Geist({
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
   variable: "--bricolage",
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "600", "700"],
   display: "swap",
 });
-const siteUrl = "https://repasta.in";
+const siteUrl = "https://repasta-in.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -60,6 +61,9 @@ export const metadata: Metadata = {
       "Diagnosa gratis, repaste thermal paste, deep clean, upgrade SSD/RAM. Teknisi berpengalaman, harga transparan, garansi 6 bulan.",
     images: ["/icon.svg"],
   },
+  verification: {
+    google: "google-site-verification-code-placeholder",
+  },
   icons: {
     icon: "/icon.svg",
     shortcut: "/icon.svg",
@@ -80,40 +84,97 @@ export const viewport: Viewport = {
   ],
 };
 
-const jsonLd = {
+const jsonLdOrganization = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Repasta",
+  "url": siteUrl,
+  "logo": `${siteUrl}/icon.svg`,
+  "description": "Servis laptop & PC profesional di Bandung — repaste thermal paste, deep clean, upgrade hardware.",
+  "sameAs": [
+    "https://www.instagram.com/repasta.in",
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+6281919423939",
+    "contactType": "customer service",
+    "availableLanguage": "Indonesian",
+  },
+};
+
+const jsonLdLocalBusiness = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "Repasta",
-  description:
+  "name": "Repasta",
+  "description":
     "Servis laptop & PC profesional di Bandung — repaste thermal paste, deep clean, upgrade hardware.",
-  url: siteUrl,
-  telephone: "+621919423939",
-  address: {
+  "url": siteUrl,
+  "telephone": "+6281919423939",
+  "image": `${siteUrl}/icon.svg`,
+  "address": {
     "@type": "PostalAddress",
-    addressLocality: "Bandung",
+    "addressLocality": "Bandung",
     addressRegion: "Jawa Barat",
     addressCountry: "ID",
   },
-  geo: {
+  "geo": {
     "@type": "GeoCoordinates",
-    latitude: "-0.9471",
-    longitude: "100.4172",
+    latitude: "-6.9175",
+    longitude: "107.6191",
   },
-  openingHoursSpecification: [
+  "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "09:00",
-      closes: "18:00",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "18:00",
     },
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Saturday"],
-      opens: "10:00",
-      closes: "15:00",
+      "dayOfWeek": ["Saturday"],
+      "opens": "10:00",
+      "closes": "15:00",
     },
   ],
-  priceRange: "Rp 50.000 – Rp 250.000",
+  "priceRange": "Rp 50.000 – Rp 250.000",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "500",
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servis Laptop",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Repaste Thermal Paste" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Deep Clean" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Upgrade SSD/RAM" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Servis PC" } },
+    ],
+  },
+};
+
+const jsonLdBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Beranda",
+      "item": siteUrl,
+    },
+  ],
+};
+
+const jsonLdFAQ = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
 };
 
 export default function RootLayout({
@@ -126,9 +187,24 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://images.unsplash.com" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrganization) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdLocalBusiness) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFAQ) }}
         />
       </head>
       <body className="bg-background text-foreground font-sans antialiased">
