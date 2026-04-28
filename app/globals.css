@@ -188,6 +188,13 @@
   }
 }
 
+@layer utilities {
+  .content-visibility-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 200px;
+  }
+}
+
 @layer components {
   .container-section {
     @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
