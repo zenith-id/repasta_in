@@ -28,7 +28,6 @@ export default function Home() {
         <Gallery />
         <Testimonials />
         <FAQ />
-        <Pricing />
         <CTA />
       </main>
       <Footer />

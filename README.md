@@ -72,7 +72,6 @@ How It Works          ← 3 langkah vertical timeline editorial
 Gallery               ← Masonry grid + lightbox portofolio
 Testimonials          ← 3-kolom infinite scroll
 FAQ                   ← Accordion 7 pertanyaan
-Pricing               ← 3 paket harga
 CTA                   ← Dark section dengan WhatsApp CTA
 Footer                ← 4-kolom dark footer dengan social links
 WhatsApp Float        ← Tombol mengambang sudut kanan bawah
@@ -87,7 +86,6 @@ How It Works ← 3 langkah vertical timeline editorial
 Gallery ← Masonry grid + lightbox portofolio
 Testimonials ← 3-kolom infinite scroll
 FAQ ← Accordion 7 pertanyaan
-Pricing ← 3 paket harga
 CTA ← Dark section dengan WhatsApp CTA
 Footer ← 4-kolom dark footer dengan social links
 WhatsApp Float ← Tombol mengambang sudut kanan bawah
