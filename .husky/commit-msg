@@ -1,0 +1,13 @@
+# Validate commit body line count (max 3 non-empty lines)
+COMMIT_MSG_FILE=$1
+# Get body starting from line 3, filter out empty lines, count them
+BODY_LINE_COUNT=$(sed '1,2d' "$COMMIT_MSG_FILE" | grep -v '^[[:space:]]*$' | wc -l)
+
+if [ "$BODY_LINE_COUNT" -gt 3 ]; then
+  echo "Error: Commit body is too long ($BODY_LINE_COUNT non-empty lines)."
+  echo "Maximum 3 bullet points are allowed in body."
+  echo "If change is too complex, split into multiple atomic commits."
+  exit 1
+fi
+
+npx --no -- commitlint --edit "$1"
