@@ -41,7 +41,7 @@ export function Services() {
   const [active, setActive] = useState<'laptop' | 'pc'>('laptop')
 
   return (
-    <section id="layanan" className="py-24 px-4 sm:px-6 lg:px-8 bg-background">
+    <section id="layanan" className="py-24 px-4 sm:px-6 lg:px-8 bg-background content-visibility-auto">
       <div className="max-w-4xl mx-auto">
 
         {/* Header */}

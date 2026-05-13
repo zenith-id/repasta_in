@@ -12,6 +12,7 @@ import {
 import { cols, brand, contact } from "@/constants/footer";
 import Image from "next/image";
 import Link from "next/link";
+import packageJson from "@/package.json";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -138,7 +139,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-background/35 text-xs">
-            © {year} Repasta. Semua hak dilindungi. · hello@repasta.in
+            © {year} Repasta. Semua hak dilindungi. · v{packageJson.version} · hello@repasta.in
           </p>
           <p className="text-background/25 text-xs">
             Servis Laptop & PC Profesional — Bandung, Indonesia

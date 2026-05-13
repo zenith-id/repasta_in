@@ -7,7 +7,7 @@ import { pricingPlans, WHATSAPP_LINK } from '@/constants/pricing'
 
 export function Pricing() {
   return (
-    <section id="harga" className="py-24 px-4 sm:px-6 lg:px-8">
+    <section id="harga" className="py-24 px-4 sm:px-6 lg:px-8 content-visibility-auto">
       <div className="max-w-7xl mx-auto">
 
         <motion.div
