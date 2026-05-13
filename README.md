@@ -55,6 +55,7 @@ pnpm dev      # Development server → localhost:3000
 pnpm build    # Production build
 pnpm start    # Production server
 pnpm lint     # ESLint check
+pnpm release  # Bump version + update changelog + create tag
 ```
 
 ---
@@ -71,7 +72,6 @@ How It Works          ← 3 langkah vertical timeline editorial
 Gallery               ← Masonry grid + lightbox portofolio
 Testimonials          ← 3-kolom infinite scroll
 FAQ                   ← Accordion 7 pertanyaan
-Pricing               ← 3 paket harga
 CTA                   ← Dark section dengan WhatsApp CTA
 Footer                ← 4-kolom dark footer dengan social links
 WhatsApp Float        ← Tombol mengambang sudut kanan bawah
@@ -86,7 +86,6 @@ How It Works ← 3 langkah vertical timeline editorial
 Gallery ← Masonry grid + lightbox portofolio
 Testimonials ← 3-kolom infinite scroll
 FAQ ← Accordion 7 pertanyaan
-Pricing ← 3 paket harga
 CTA ← Dark section dengan WhatsApp CTA
 Footer ← 4-kolom dark footer dengan social links
 WhatsApp Float ← Tombol mengambang sudut kanan bawah
@@ -219,3 +218,21 @@ Muncul di: `navbar.tsx`, `hero.tsx`, `how-it-works.tsx`, `services.tsx`, `cta.ts
 - `lang="id"` di `app/layout.tsx` (Bahasa Indonesia)
 - Versi project: `1.1.0` (SemVer)
 - Changelog: `CHANGELOG.md`
+
+---
+
+## Commit Rules & Release CI
+
+- Husky aktif via script `prepare` di `package.json`.
+- Hook `.husky/commit-msg`:
+  - Wajib lulus `commitlint` (`@commitlint/config-conventional`).
+  - `type` hanya: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `chore`.
+  - Subject wajib lower-case.
+  - Body max 3 baris non-empty.
+  - `body-max-line-length` 60 karakter per baris.
+- Hook `.husky/pre-commit`:
+  - Maksimal 3 file staged per commit.
+  - Jika lebih, commit ditolak agar tetap atomic.
+- Workflow release: `.github/workflows/release.yml`.
+  - Trigger saat push ke `main`.
+  - Jalankan `pnpm run release` (standard-version), push commit/tag, lalu buat GitHub Release dari `CHANGELOG.md`.

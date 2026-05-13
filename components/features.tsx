@@ -280,6 +280,8 @@ export function Features() {
                           width={32}
                           height={32}
                           className="w-8 h-8 rounded-full ring-2 ring-background object-cover"
+                          loading="lazy"
+                          decoding="async"
                         />
                       ))}
                       <div className="w-8 h-8 rounded-full ring-2 ring-background bg-primary flex items-center justify-center text-[10px] font-bold text-primary-foreground">

@@ -1,13 +1,15 @@
 {
   "name": "repasta_in",
   "description": "Platform untuk berbagi tips dan trik seputar pasta",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev --webpack",
     "build": "next build --webpack",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "prepare": "husky",
+    "release": "standard-version"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -65,11 +67,15 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^21.0.1",
+    "@commitlint/config-conventional": "^21.0.1",
     "@tailwindcss/postcss": "^4.2.0",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "husky": "^9.1.7",
     "postcss": "^8.5",
+    "standard-version": "^9.5.0",
     "tailwindcss": "^4.2.0",
     "tw-animate-css": "1.3.3",
     "typescript": "5.7.3"

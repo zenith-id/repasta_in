@@ -1,0 +1,70 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 10.33.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Create Release
+        id: standard_version
+        run: pnpm run release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push changes
+        run: git push --follow-tags origin main
+
+      - name: Extract Latest Version Changelog
+        id: extract_changelog
+        run: |
+          awk '
+            /^### \[[0-9]+\.[0-9]+\.[0-9]+\]/ || /^### [0-9]+\.[0-9]+\.[0-9]+/ {
+              if (found) exit
+              found = 1
+            }
+            found { print }
+          ' CHANGELOG.md > RELEASE_NOTES.md
+
+          test -s RELEASE_NOTES.md
+
+      - name: Get latest tag
+        id: get_tag
+        run: echo "tag=$(git describe --tags --abbrev=0)" >> "$GITHUB_OUTPUT"
+
+      - name: Create GitHub Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "${{ steps.get_tag.outputs.tag }}" \
+            --title "Release ${{ steps.get_tag.outputs.tag }}" \
+            --notes-file RELEASE_NOTES.md

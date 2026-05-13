@@ -47,6 +47,8 @@ function TestimonialsColumn({
                       src={t.image}
                       alt={`Avatar ${t.name}`}
                       className="h-10 w-10 rounded-full object-cover ring-2 ring-border group-hover:ring-primary/40 transition-all duration-300"
+                      loading="lazy"
+                      decoding="async"
                     />
                     <div className="flex flex-col">
                       <cite className="font-semibold not-italic tracking-tight leading-5 text-foreground text-sm font-poppins">

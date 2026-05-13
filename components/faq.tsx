@@ -52,21 +52,6 @@ function FAQItem({ q, a, idx }: { q: string; a: string; idx: number }) {
 
 export function FAQ() {
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: faqs.map((f) => ({
-              '@type': 'Question',
-              name: f.q,
-              acceptedAnswer: { '@type': 'Answer', text: f.a },
-            })),
-          }),
-        }}
-      />
     <section id="faq" className="py-20 px-4 sm:px-6 lg:px-8 bg-card">
       <div className="max-w-3xl mx-auto">
 
@@ -98,6 +83,5 @@ export function FAQ() {
 
       </div>
     </section>
-    </>
   )
 }

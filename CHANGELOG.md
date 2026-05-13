@@ -1,6 +1,20 @@
 # Changelog
 
-All notable changes documented here. Format: [SemVer](https://semver.org/).
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## 1.1.0 (2026-05-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* **constants:** Static data now in constants/. Components updated to use imports.
+
+### Features
+
+* add new skills to lockfile and update Next.js types path ([22068b3](https://github.com/fukaziroh-id/repasta_in/commit/22068b3e3623331679eec87d09f99d4982bd271d))
+* **constants:** add problem-awareness and whatsapp-float constants ([a666fec](https://github.com/fukaziroh-id/repasta_in/commit/a666fec98bef5f9fa17c254717e72d7c338a97de))
+* **constants:** extract static data to constants folder ([4725d3a](https://github.com/fukaziroh-id/repasta_in/commit/4725d3ab9fd0165f803e41626a0376d77472f10e))
+* **seo:** add sitemap.xml and robots.txt ([888bb46](https://github.com/fukaziroh-id/repasta_in/commit/888bb46fecbf3c5e7875d3fbac2f6f17a5c2b825))
 
 ## [1.1.0] - 2026-04-26
 
