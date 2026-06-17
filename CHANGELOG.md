@@ -104,7 +104,23 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [Unreleased]
 
-No unreleased changes.
+### Features
+
+- **ui:** add Grainient OGL shader component (`50ae7d3`)
+
+### Bug Fixes
+
+- **navbar:** replace broken `#harga` routing with `#cara-pesan` on desktop and mobile nav (`8a4a83e`)
+
+### Documentation
+
+- add references to `docs/COMMIT_TEMPLATE.md` and `docs/CHANGES_TEMPLATE.md` in CLAUDE.md (`a71c70b`)
+
+### Chores
+
+- **commitlint:** expand allowed types (build, ci, revert), increase header limit to 120, enforce scope-required (`7d0aef7`)
+- add `ogl` dependency and update shadcn config with `@react-bits` registry (`63855de`)
+- update Next.js types import path (`4c44931`)
 
 ---
 
