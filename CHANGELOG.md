@@ -2,6 +2,59 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [Unreleased]
+
+### Features
+
+#### Add Grainient Shader Component
+
+- **Date:** 2026-06-17
+- **Commits:** `50ae7d3`
+- Add OGL-based grain shader component for visual effects
+
+### Bug Fixes
+
+#### Fix Navbar Routing
+
+- **Date:** 2026-06-17
+- **Commits:** `8a4a83e`
+- Replace broken `#harga` routing with `#cara-pesan` on desktop and mobile nav
+- `#harga` section not rendered on page, causing dead link
+
+### Documentation
+
+#### Update CLAUDE.md
+
+- **Date:** 2026-06-17
+- **Commits:** `a71c70b`
+- Add references to `docs/COMMIT_TEMPLATE.md` and `docs/CHANGELOG_TEMPLATE.md`
+- Update architecture docs to match current codebase state
+
+### Chores
+
+#### Expand Commitlint Configuration
+
+- **Date:** 2026-06-17
+- **Commits:** `7d0aef7`
+- Add `build`, `ci`, `revert` to allowed commit types
+- Increase header max length to 120
+- Enforce scope-required rule
+
+#### Add OGL Dependency and Update Shadcn Config
+
+- **Date:** 2026-06-17
+- **Commits:** `63855de`
+- Add `ogl` package for shader components
+- Add `iconLibrary` and `@react-bits` registry to `components.json`
+
+#### Update Next-env Types Path
+
+- **Date:** 2026-06-17
+- **Commits:** `4c44931`
+- Update import path to `.next/dev/types/routes.d.ts`
+
+---
+
 ### [1.3.1](https://github.com/zenith-id/repasta_in/compare/v1.3.0...v1.3.1) (2026-05-13)
 
 ## [1.3.0](https://github.com/zenith-id/repasta_in/compare/v2.0.1...v1.3.0) (2026-05-13)
@@ -101,38 +154,3 @@ All notable changes to this project will be documented in this file. See [standa
 - Framer Motion 12.x
 - Shadcn/ui (New York style)
 - Lenis 1.3.x (smooth scrolling)
-
-## [Unreleased]
-
-### Features
-
-- **ui:** add Grainient OGL shader component (`50ae7d3`)
-
-### Bug Fixes
-
-- **navbar:** replace broken `#harga` routing with `#cara-pesan` on desktop and mobile nav (`8a4a83e`)
-
-### Documentation
-
-- add references to `docs/COMMIT_TEMPLATE.md` and `docs/CHANGES_TEMPLATE.md` in CLAUDE.md (`a71c70b`)
-
-### Chores
-
-- **commitlint:** expand allowed types (build, ci, revert), increase header limit to 120, enforce scope-required (`7d0aef7`)
-- add `ogl` dependency and update shadcn config with `@react-bits` registry (`63855de`)
-- update Next.js types import path (`4c44931`)
-
----
-
-Template:
-
-```
-## [MAJOR.MINOR.PATCH] - YYYY-MM-DD
-
-### Added
-### Changed
-### Deprecated
-### Removed
-### Fixed
-### Security
-```
