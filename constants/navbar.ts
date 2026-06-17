@@ -1,12 +1,11 @@
 export const primaryNav = [
-  { label: 'Layanan', href: '#layanan',  id: 'layanan'  },
-  { label: 'Harga',   href: '#harga',    id: 'harga'    },
-  { label: 'Galeri',  href: '#galeri',   id: 'galeri'   },
+  { label: 'Layanan',    href: '#layanan',    id: 'layanan'    },
+  { label: 'Cara Pesan', href: '#cara-pesan', id: 'cara-pesan' },
+  { label: 'Galeri',     href: '#galeri',     id: 'galeri'     },
 ] as const
 
 export const mobileNav = [
   { label: 'Layanan',    href: '#layanan',    id: 'layanan'    },
-  { label: 'Harga',      href: '#harga',      id: 'harga'      },
   { label: 'Cara Pesan', href: '#cara-pesan', id: 'cara-pesan' },
   { label: 'Galeri',     href: '#galeri',     id: 'galeri'     },
   { label: 'Testimoni',  href: '#testimoni',  id: 'testimoni'  },
