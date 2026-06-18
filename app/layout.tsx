@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "@/components/theme-provider";
-import { faqs } from "@/constants/faq";
+import { faqs } from "@/constants/sections/faq";
 import "./globals.css";
 
 import { Bricolage_Grotesque, Geist } from "next/font/google";
