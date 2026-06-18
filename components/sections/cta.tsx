@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { MessageCircle, ArrowRight, Clock } from 'lucide-react'
 
-import { WHATSAPP_LINK, ctaContent } from '@/constants/cta'
+import { WHATSAPP_LINK, ctaContent } from '@/constants/sections/cta'
 
 export function CTA() {
   const { badge, headline, subtext, cta: ctaItem, hours } = ctaContent
