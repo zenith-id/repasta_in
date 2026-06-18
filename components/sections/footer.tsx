@@ -9,7 +9,7 @@ import {
   Instagram,
   Facebook,
 } from "lucide-react";
-import { cols, brand, contact } from "@/constants/footer";
+import { cols, brand, contact } from "@/constants/sections/footer";
 import Image from "next/image";
 import Link from "next/link";
 import packageJson from "@/package.json";
