@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ZoomIn } from "lucide-react";
 
-import { galleryItems, tagColors, WHATSAPP_LINK } from "@/constants/gallery";
+import { galleryItems, tagColors, WHATSAPP_LINK } from "@/constants/sections/gallery";
 
 export function Gallery() {
   const [selected, setSelected] = useState<(typeof galleryItems)[0] | null>(
