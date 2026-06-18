@@ -9,7 +9,7 @@ import {
   Clock,
   Wrench,
 } from "lucide-react";
-import { LAYANAN_CONTENT } from "@/constants/layanan";
+import { LAYANAN_CONTENT } from "@/constants/sections/layanan";
 
 export const metadata: Metadata = {
   title: "Layanan Servis Laptop & PC",
