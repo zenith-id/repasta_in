@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { MessageCircle, CalendarDays, CheckCircle2 } from 'lucide-react'
 
-import { steps, WHATSAPP_LINK } from '@/constants/how-it-works'
+import { steps, WHATSAPP_LINK } from '@/constants/sections/how-it-works'
 
 export function HowItWorks() {
   return (
