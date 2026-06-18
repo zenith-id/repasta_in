@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Shield, Users, Clock, Wrench, CheckCircle, Zap } from "lucide-react";
 
-import { fadeUp, avatars, chartData, servicesData } from "@/constants/features";
+import { fadeUp, avatars, chartData, servicesData } from "@/constants/sections/features";
 
 export function Features() {
   return (
