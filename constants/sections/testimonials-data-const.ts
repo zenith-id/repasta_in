@@ -1,0 +1,191 @@
+interface ReviewItem {
+  text: string;
+  image: string;
+  name: string;
+  role?: string;
+}
+
+const unsplashAvatars = [
+  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150&h=150",
+  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150",
+  "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150&h=150",
+  "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150&h=150",
+  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150&h=150",
+  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150&h=150",
+  "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=150&h=150",
+  "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=150&h=150",
+  "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150&h=150",
+]
+
+export const TestimonialData: ReviewItem[] = [
+  {
+    text: "Mantap Bagus Sekali, Mas nya Informatif",
+    image: unsplashAvatars[0],
+    name: "Ariel Fachrial",
+  },
+  {
+    text: "Pelayanan ramah, penjelasan lengkap dan juga mau berbagi ilmu. Sangat recommended.",
+    image: unsplashAvatars[1],
+    name: "Sambas Abdul Barry",
+  },
+  {
+    text: "Mantep cleaning n repasta terbaik yang terutama amanah jadi seperti terlahir kembali untuk laptop n pc, hasil memuaskan terbaik👍",
+    image: unsplashAvatars[2],
+    name: "Faqih Dhiyaul",
+  },
+  {
+    text: "Recommended buat yg mau cleaning + repasta, apalagi sebelum pembongkaran ada pengecekan kesehatan performa device nya. Suka ngasih masukan dan informatif. Cleaning nya bener2 bersih coyyy",
+    image: unsplashAvatars[3],
+    name: "M. Yazid Hermanto",
+  },
+  {
+    text: "Pengerjaan cleaning laptopnya sangat memuaskan, bersih bening seperti tanpa kaca...alias seperti baru. Abangnya ramah dan sangat informatif. Thanks banget.",
+    image: unsplashAvatars[4],
+    name: "Annarancia",
+  },
+  {
+    text: "Terpercaya, bahan-bahan untuk repasta high quality, hasil kinclong\nRekomendasi bagi yang ingin repasta laptop",
+    image: unsplashAvatars[5],
+    name: "Muhammad Fadgham Hafizh",
+  },
+  {
+    text: "Pengerjaan cepet, abangnya informatif dan bertanggung jawab, thank u",
+    image: unsplashAvatars[6],
+    name: "Deandra",
+  },
+  {
+    text: "Serasa nemuin hidden gem, hasil bersih dan transparan\nPengerjaan langsung didepan kita sampai selesai\nKakanya juga ngejelasin do and don't untuk laptop dan komputerr. Home servicenya rekomen banget buat yg males keluar rumah🔥",
+    image: unsplashAvatars[7],
+    name: "Ryan Rch",
+  },
+  {
+    text: "Pelayanan nya bagus banget king !!Bersihin Kipas bener2 kayak baru lagi dan untuk pengerjaan repaste teliti + rapih, Abang nya sngt informatif banget ngasih saran dan info sekiranya ada yang perlu diperbaiki. Mantap king",
+    image: unsplashAvatars[8],
+    name: "Bayu Anggara",
+  },
+  {
+    text: "Parah bgt bisa benerin pc ku yang gajelas ini, bersih jugaa pc ku dibersihin disini reall no fake fake",
+    image: unsplashAvatars[0],
+    name: "Athaya Nld",
+  },
+  {
+    text: "Pertama kali coba Repastain dan langsung puas sama hasilnya. Pelayanannya ramah, hasilnya juga rapi, sesuai dan prosesnya cepat. Recommended banget, bakal pake jasanya lagi.",
+    image: unsplashAvatars[1],
+    name: "Faris Siddiq Ramdan Putra",
+  },
+  {
+    text: "pengerjaan rapih, service cepat, baik fungsional aman semua. mekanik gacorrr\nrekomendasi bangett buat yang mau service laptop atau sekadar nanya2",
+    image: unsplashAvatars[2],
+    name: "ABDUR R",
+  },
+  {
+    text: "goks kerjaanya rapih🔥",
+    image: unsplashAvatars[3],
+    name: "Cep Furqon Maulana",
+  },
+  {
+    text: "Pengerjaan cepat,miminnya asik ngasih banyak tips and trick buat merawat gawai, termasuk murah juga untuk teknisi yang nyamperin ke lokasi",
+    image: unsplashAvatars[4],
+    name: "Maulana Najwan Arrafi",
+  },
+  {
+    text: "Kinclong like new",
+    image: unsplashAvatars[5],
+    name: "It's Zyro!",
+  },
+  {
+    text: "Pelayanan nya bagus banget!! Bersihin keyboard bener2 kayak baru lagi tampilannya dan untuk pengerjaan repaste teliti + rapih, kakanya juga informatif banget ngasih saran dan info sekiranya ada yang perlu diperbaiki. Top banget pokoknya!!✨",
+    image: unsplashAvatars[6],
+    name: "amanda natasya",
+  },
+  {
+    text: "Bagusss dan rapi pengerjaannya\nPelayanannya bgus dan informatif, jujur selama pengerjaannya👌🏻👌🏻",
+    image: unsplashAvatars[7],
+    name: "Dheliin Delluna",
+  },
+  {
+    text: "Rekomen banget buat yang mau repasta di sini. Selain itu juga ada pengecekan komponen2 dan lainnya secara free. Jadi bisa tau keadaan laptop dalam keadaan baik atau tidaknya. Pengerjaannya cepat dan sangat teliti. Yang mau repasta tidak usah bingung langsung saja ke sini~",
+    image: unsplashAvatars[8],
+    name: "Laila A",
+  },
+  {
+    text: "Kinerja detail, cepat, dan tepat waktu. Selain itu, teknisi juga ramah dan menjelaskan hal-hal kecil terkait laptop supaya lebih paham dengan permasalahan yang ada. Jadi bukan hanya laptop kembali normal, tapi juga dapat edukasi cara perawatan laptop. Recommended banget!!!",
+    image: unsplashAvatars[0],
+    name: "Debora Natalia Ginting",
+  },
+  {
+    text: "Pelayanan oke",
+    image: unsplashAvatars[1],
+    name: "Raka Yudhistira",
+  },
+  {
+    text: "Gk nyesel saya cleaning & repasta disini, worth it banget pokoknya mah 👍",
+    image: unsplashAvatars[2],
+    name: "Muhamad Duta Bagus Anwar",
+  },
+  {
+    text: "Pelayanan Ramah dan Informatif\nHarga dan Hasil yang didapatkan Sesuai\nRekomendasi untuk area Bandung",
+    image: unsplashAvatars[3],
+    name: "Taufik Hidayat",
+  },
+  {
+    text: "pc bersih, kinclong, sampe bisa ngaca disini. proses cepat, cukup di rumah aja.",
+    image: unsplashAvatars[4],
+    name: "willy ocean",
+  },
+  {
+    text: "Pelayanan ramah dan banyak memberi edukasi. Terimakasih",
+    image: unsplashAvatars[5],
+    name: "Sinta Puspita Cahyani",
+  },
+  {
+    text: "cleaning laptop mantap dan bersahabat.",
+    image: unsplashAvatars[6],
+    name: "M Islam Al Ghozi",
+  },
+  {
+    text: "Sangat rekomen buat nyari solusi dari permasalahan laptop atau pc. Pengerjaan deep cleaning dan repasta bagus, teliti dan jujur. Bisa ganti lcd laptop juga.",
+    image: unsplashAvatars[7],
+    name: "vieri",
+  },
+  {
+    text: "Pelayanan ramah dan tidak pelit, recommended untuk penggunaan jasa berulang.",
+    image: unsplashAvatars[8],
+    name: "Ariq Zahran",
+  },
+  {
+    text: "10/10 laptop saya awalnya overheat karna kotor berjalan lancar setelah pembersihan, dan tidak menunggu lama.",
+    image: unsplashAvatars[0],
+    name: "zZz Lazy",
+  },
+  {
+    text: "first time nyoba dan hasilnya memuaskan, recommended",
+    image: unsplashAvatars[1],
+    name: "Dzaky Ramadhan",
+  },
+  {
+    text: "servicenya mantep, harga masuk murah tp berkualitas",
+    image: unsplashAvatars[2],
+    name: "Rasyid Wajidi",
+  },
+  {
+    text: "Recommended, pengerjaan detail",
+    image: unsplashAvatars[3],
+    name: "Heru Iksan",
+  },
+  {
+    text: "Pelayanan sangat baik",
+    image: unsplashAvatars[4],
+    name: "Farhan Mulya Argyanto",
+  },
+  {
+    text: "pekerjaan detail, teknisi sangat ramah dan memberikan edukasi yang baik terhadap konsumen, rekomended bangett",
+    image: unsplashAvatars[5],
+    name: "rahmat dwicahyo",
+  },
+  {
+    text: "sini ngab repasta",
+    image: unsplashAvatars[6],
+    name: "Risky Farhan",
+  },
+]
