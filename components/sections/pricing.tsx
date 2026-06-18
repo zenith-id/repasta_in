@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { Check, Zap, Star } from 'lucide-react'
 
-import { pricingPlans, WHATSAPP_LINK } from '@/constants/pricing'
+import { pricingPlans, WHATSAPP_LINK } from '@/constants/sections/pricing'
 
 export function Pricing() {
   return (
