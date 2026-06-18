@@ -2,7 +2,7 @@
 
 import { MessageCircle } from 'lucide-react'
 
-import { WHATSAPP_CONFIG } from '@/constants/whatsapp-float'
+import { WHATSAPP_CONFIG } from '@/constants/sections/whatsapp-float'
 
 export function WhatsAppFloat() {
   return (
