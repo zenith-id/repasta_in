@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 
-import { problems } from '@/constants/problem-awareness'
+import { problems } from '@/constants/sections/problem-awareness'
 
 export function ProblemAwareness() {
   return (
