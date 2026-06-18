@@ -79,7 +79,7 @@ import {
   containerVariants,
   itemVariants,
   statsData,
-} from "@/constants/hero";
+} from "@/constants/layout/hero";
 
 export function Hero() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);

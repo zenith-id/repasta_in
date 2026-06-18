@@ -7,7 +7,7 @@ import { useTheme } from "next-themes";
 import Link from "next/link";
 import { useLenis } from "@/components/lenis-provider";
 
-import { primaryNav, mobileNav, WHATSAPP_LINK } from "@/constants/navbar";
+import { primaryNav, mobileNav, WHATSAPP_LINK } from "@/constants/layout/navbar";
 import Image from "next/image";
 
 function ThemeToggle() {
