@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Laptop, Monitor, Star, MessageCircle } from 'lucide-react'
 
-import { laptopServices, pcServices, servicesHeader, note, tabsData, WHATSAPP_LINK } from '@/constants/services'
+import { laptopServices, pcServices, servicesHeader, note, tabsData, WHATSAPP_LINK } from '@/constants/sections/services'
 
 function ServiceRow({ name, desc, price, popular, index }: {
   name: string; desc: string; price: string; popular: boolean; index: number
