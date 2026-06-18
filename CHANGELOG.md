@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [Unreleased]
+
+### Refactoring
+
+#### Restructure components and constants into layout/sections directories
+
+- **Date:** 2026-06-18
+- **Commits:** `65b96ac` `6481383` `03a7aa4` `edfe748`
+
+- Move Navbar and Hero to `components/layout/` and `constants/layout/`
+- Move all section components (CTA, FAQ, Features, Footer, Gallery, HowItWorks, Pricing, ProblemAwareness, Services, Testimonials, WhatsAppFloat) to `components/sections/`
+- Move all section constants to `constants/sections/`
+- Update imports in `app/page.tsx`, `app/layout.tsx`, `app/layanan/page.tsx`
+- Update `constants/index.ts` re-exports for new paths
+
+### Documentation
+
+#### Add project templates and design specs
+
+- **Date:** 2026-06-18
+- **Commits:** `ed8973b` `d1c2172` `4610ace`
+
+- Add `CHANGELOG_TEMPLATE.md` and `COMMIT_TEMPLATE.md`
+- Add design specs for gallery, brainstorming, and existing site
+- Add spec template for future documentation
+
 ## [1.4.0](https://github.com/zenith-id/repasta_in/compare/v1.3.1...v1.4.0) (2026-06-17)
 
 
