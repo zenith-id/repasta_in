@@ -188,4 +188,52 @@ export const TestimonialData: ReviewItem[] = [
     image: unsplashAvatars[6],
     name: "Risky Farhan",
   },
+  {
+    text: "the best, dikasih liat semua partnya, dijelasin spek pasta dll, amanah, ramah kantong mahasiswa",
+    image: unsplashAvatars[7],
+    name: "Rizqi Firdaus",
+    role: "remote worker",
+  },
+  {
+    text: "Kerjanya cepet, bertanggung jawab, mancing mania mantap bang",
+    image: unsplashAvatars[8],
+    name: "Ajell",
+    role: "Mahasiswi",
+  },
+  {
+    text: "Ganti pasta di sini pengerjaannya cepat, selain itu dijelasin juga pake bahasa sederhana jadi customer ngerti apa-apa yang diganti dan dibersihkan.",
+    image: unsplashAvatars[0],
+    name: "Anna",
+    role: "Pegawai swasta",
+  },
+  {
+    text: "Gacor. tempat paling mantab bintang 5 untuk repasta",
+    image: unsplashAvatars[1],
+    name: "Rozan",
+    role: "Programmer",
+  },
+  {
+    text: "Utk servicenya cepat,tidak lelet,pasta yg digunakan berkualitas dan sesuai dgn yg dibutuhkan,teknisinya profesional.",
+    image: unsplashAvatars[2],
+    name: "Muhammad Dzaky Al-Furqoni",
+    role: "Guru robotik",
+  },
+  {
+    text: "Pengerjaan mantap, tepat waktu, sesuai ekspektasi",
+    image: unsplashAvatars[3],
+    name: "Ryan Nugraha Rachman",
+    role: "Mahasiswa",
+  },
+  {
+    text: "Cepat bersih",
+    image: unsplashAvatars[4],
+    name: "David",
+    role: "Fullstack Developer",
+  },
+  {
+    text: "Pengerjaan super presisi dan rapi, pasta yang digunakan kualitas oke punya",
+    image: unsplashAvatars[5],
+    name: "Fajri Ekasapta J",
+    role: "Legal intern",
+  },
 ]

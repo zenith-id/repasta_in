@@ -8,9 +8,9 @@ export interface Testimonial {
 
 export const testimonials = TestimonialData;
 
-export const col1 = testimonials.slice(0, 12);
-export const col2 = testimonials.slice(12, 23);
-export const col3 = testimonials.slice(23, 34);
+export const col1 = testimonials.slice(0, 14);
+export const col2 = testimonials.slice(14, 28);
+export const col3 = testimonials.slice(28, 42);
 
 export const header = {
   title: "Kata Pelanggan Kami",
