@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [Unreleased]
 
+### Features
+
+#### Add 8 new customer testimonials
+
+- **Date:** 2026-06-18
+- **Commits:** `b530a2d`
+
+- Add 8 new testimonials from real customer reviews
+- Rebalance testimonial column slices for even distribution
+
+### Style
+
+#### Restyle footer with slate color palette
+
+- **Date:** 2026-06-18
+- **Commits:** `73aa7cf`
+
+- Replace theme-aware `bg-foreground`/`text-background` with hardcoded slate palette
+- Add Google Maps link to location text and social icons
+- Add `gmaps` field to contact constants
+
 ### Refactoring
 
 #### Restructure components and constants into layout/sections directories
