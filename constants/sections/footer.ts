@@ -33,6 +33,7 @@ export const contact = {
   waConsultLink:
     "https://wa.me/621919423939?text=Halo%20Repasta!%20Saya%20ingin%20konsultasi.",
   location: "Bandung, Jawa Barat",
+  gmaps: "https://maps.app.goo.gl/6wkYfFzpS8EjyJ4p8",
   hours: {
     weekday: "Senin-Jumat: 09.00-18.00",
     saturday: "Sabtu: 10.00-15.00",
