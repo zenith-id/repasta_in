@@ -12,7 +12,7 @@ import { Testimonials } from "@/components/sections/testimonials";
 import { FAQ } from "@/components/sections/faq";
 import { Pricing } from "@/components/sections/pricing";
 import { CTA } from "@/components/sections/cta";
-import { Footer } from "@/components/sections/footer";
+import { Footer } from "@/components/layout/footer";
 import { WhatsAppFloat } from "@/components/sections/whatsapp-float";
 
 export default function Home() {
