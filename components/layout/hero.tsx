@@ -127,7 +127,7 @@ export function Hero() {
 
       return {
         backgroundTop: resolveColor(["--background"], 1),
-        backgroundBottom: isDark 
+        backgroundBottom: isDark
           ? resolveColor(["--navy-light", "--background"], 1)
           : resolveColor(["--muted", "--background"], 0.95),
         wavePalette: [
@@ -135,8 +135,8 @@ export function Hero() {
             offset: 0,
             amplitude: 80,
             frequency: 0.0035,
-            color: resolveColor(["--primary"], 1), 
-            opacity: isDark ? 0.25 : 0.7, 
+            color: resolveColor(["--primary"], 1),
+            opacity: isDark ? 0.25 : 0.7,
           },
           {
             offset: Math.PI / 2,
@@ -186,9 +186,9 @@ export function Hero() {
       ctx.lineTo(canvas.width, canvas.height);
       ctx.lineTo(0, canvas.height);
       ctx.closePath();
-      
+
       const isDark = document.documentElement.classList.contains("dark");
-      
+
       // Fill
       ctx.fillStyle = cfg.color;
       ctx.globalAlpha = cfg.opacity;
@@ -266,17 +266,6 @@ export function Hero() {
           animate="visible"
           className="mx-auto max-w-4xl text-center"
         >
-          {/* Badge */}
-          <motion.div
-            variants={itemVariants}
-            className="mb-8 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/25 backdrop-blur-md shadow-inner"
-          >
-            <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            <span className="text-[10px] font-bold uppercase tracking-widest text-primary leading-none">
-              Servis Terpercaya · Bandung
-            </span>
-          </motion.div>
-
           {/* Headline */}
           <motion.h1
             variants={itemVariants}
