@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-
+import { SectionHeader } from "@/components/common/layout";
 import { problems } from "@/constants/sections/problem-awareness";
 
 export function ProblemAwareness() {
@@ -18,30 +18,16 @@ export function ProblemAwareness() {
       />
 
       <div className="max-w-5xl mx-auto relative z-10">
-        {/* Header — left-aligned for editorial feel */}
-        <div className="grid lg:grid-cols-[1fr_auto] gap-8 items-end mb-14">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="section-tag mb-5 w-fit">Masalah Umum</div>
-            <h2 className="text-balance-title font-poppins">
-              Apakah Anda <span className="text-primary">Mengalami Ini?</span>
-            </h2>
-          </motion.div>
-          <motion.p
-            className="text-muted-foreground max-w-xs lg:text-right text-sm leading-relaxed"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            Masalah yang dibiarkan justru memperparah kerusakan dan biaya
-            servis.
-          </motion.p>
-        </div>
+        {/* Header */}
+        <SectionHeader
+          badge="Masalah Umum"
+          titlePrefix="Apakah Anda "
+          titleHighlight="Mengalami Ini?"
+          desc="Masalah yang dibiarkan justru memperparah kerusakan dan biaya servis."
+          variant={1}
+          align="center"
+          mb="mb-14"
+        />
 
         {/* 2×2 Grid — numbered cards */}
         <div className="grid sm:grid-cols-2 gap-4 mb-10">

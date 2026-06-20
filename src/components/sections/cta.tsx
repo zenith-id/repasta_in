@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageCircle, ArrowRight, Clock } from "lucide-react";
+import { MessageCircle, ArrowRight, Clock, MapPin } from "lucide-react";
 
 import { WHATSAPP_LINK, ctaContent } from "@/constants/sections/cta";
 
@@ -9,7 +9,7 @@ export function CTA() {
   const { badge, headline, subtext, cta: ctaItem, hours } = ctaContent;
 
   return (
-    <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-foreground">
+    <section id="kontak" className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-foreground">
       <div
         className="absolute inset-0 opacity-[0.07]"
         style={{
@@ -79,18 +79,32 @@ export function CTA() {
           </motion.div>
 
           <motion.div
-            className="inline-flex flex-col sm:flex-row items-center gap-4 px-8 py-4 rounded-xl border bg-primary/8 border-primary/20"
+            className="inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-0 px-6 py-3.5 rounded-2xl border bg-primary/5 border-primary/10 text-sm"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.35 }}
           >
-            <Clock size={17} className="text-primary" />
-            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-sm text-card/70">
-              <span className="font-semibold text-card">{hours.label}</span>
-              <span>{hours.weekday}</span>
-              <span className="hidden sm:inline text-card/20">|</span>
-              <span>{hours.saturday}</span>
+            <div className="flex items-center gap-2 sm:pr-6 text-card/85">
+              <Clock size={16} className="text-primary shrink-0" />
+              <span>
+                <strong className="font-semibold text-card">Jam:</strong> Sen–Jum 09–18 · Sab 10–15
+              </span>
+            </div>
+            <div className="hidden sm:block h-4 w-px bg-primary/20" />
+            <div className="flex items-center gap-2 sm:pl-6 text-card/85">
+              <MapPin size={16} className="text-primary shrink-0" />
+              <span>
+                <strong className="font-semibold text-card">Bojongsoang, Bandung</strong>
+              </span>
+              <a
+                href="https://maps.app.goo.gl/6wkYfFzpS8EjyJ4p8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline ml-2 inline-flex items-center gap-0.5 whitespace-nowrap"
+              >
+                Lihat di Maps ↗
+              </a>
             </div>
           </motion.div>
         </motion.div>

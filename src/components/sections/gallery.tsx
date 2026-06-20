@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ZoomIn } from "lucide-react";
+import { SectionHeader } from "@/components/common/layout";
 
 import {
   galleryItems,
@@ -19,24 +20,13 @@ export function Gallery() {
   return (
     <section id="galeri" className="py-24 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-6xl mx-auto">
-        <motion.div
-          className="text-center mb-14"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="section-tag mb-4 mx-auto w-fit">
-            Galeri Portofolio
-          </div>
-          <h2 className="text-balance-title font-poppins mb-4">
-            Hasil Kerja <span className="text-primary">Nyata</span>
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            Setiap pekerjaan dikerjakan dengan presisi. Ini sebagian dokumentasi
-            layanan kami.
-          </p>
-        </motion.div>
+        <SectionHeader
+          badge="Galeri Portofolio"
+          titlePrefix="Hasil Kerja "
+          titleHighlight="Nyata"
+          desc="Setiap pekerjaan dikerjakan dengan presisi. Ini sebagian dokumentasi layanan kami."
+          variant={2}
+        />
 
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
           {galleryItems.map((item, i) => (

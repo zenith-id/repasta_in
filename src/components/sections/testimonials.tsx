@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { SectionHeader } from "@/components/common/layout";
 
 import {
   col1,
@@ -97,18 +98,16 @@ export function Testimonials() {
         className="container px-4 z-10 mx-auto"
       >
         {/* Header */}
-        <div className="flex flex-col items-center justify-center max-w-lg mx-auto mb-16">
-          <div className="section-tag mb-5">{header.title}</div>
-          <h2
-            id="testimoni-heading"
-            className="text-4xl md:text-5xl font-bold tracking-tight mt-2 text-center text-foreground font-poppins"
-          >
-            {header.title}
-          </h2>
-          <p className="text-center mt-4 text-muted-foreground text-lg leading-relaxed max-w-sm">
-            {header.subtitle}
-          </p>
-        </div>
+        <SectionHeader
+          badge="Testimoni"
+          titlePrefix="Kata Pelanggan "
+          titleHighlight="Kami"
+          desc={header.subtitle}
+          variant={2}
+          animate={false}
+          id="testimoni-heading"
+          mb="mb-16"
+        />
 
         {/* Scrolling columns */}
         <div

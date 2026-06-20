@@ -3,9 +3,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Laptop, Monitor, Star, MessageCircle } from "lucide-react";
+import { SectionHeader } from "@/components/common/layout";
 
 import {
   laptopServices,
+  paketLaptopServices,
   pcServices,
   servicesHeader,
   note,
@@ -31,26 +33,25 @@ function ServiceRow({
       initial={{ opacity: 0, x: -12 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.35, delay: index * 0.05 }}
-      className="group flex items-center justify-between gap-4 py-4 px-5 border-b border-border/60 last:border-0 hover:bg-primary/4 transition-colors rounded-xl"
+      className="group flex items-center justify-between gap-4 py-5 px-6 hover:bg-primary/2 transition-colors"
     >
-      <div className="flex items-start gap-3 min-w-0">
-        {popular && (
-          <span className="flex-shrink-0 mt-0.5 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary text-primary-foreground text-[10px] font-bold tracking-wider">
-            <Star size={8} className="fill-white" />
-            POPULER
-          </span>
-        )}
-        <div className="min-w-0">
-          <p className="font-semibold text-foreground text-sm font-poppins truncate">
+      <div className="flex flex-col min-w-0 text-left">
+        <div className="flex items-center gap-2 flex-wrap">
+          <p className="font-bold text-foreground text-sm sm:text-base font-poppins">
             {name}
           </p>
-          <p className="text-xs text-muted-foreground leading-relaxed mt-0.5 line-clamp-2">
-            {desc}
-          </p>
+          {popular && (
+            <span className="shrink-0 inline-flex items-center px-2 py-0.5 rounded bg-primary text-primary-foreground text-[9px] font-extrabold tracking-wider uppercase">
+              POPULER
+            </span>
+          )}
         </div>
+        <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mt-1">
+          {desc}
+        </p>
       </div>
       <span
-        className={`flex-shrink-0 font-bold text-sm font-poppins whitespace-nowrap ${
+        className={`shrink-0 font-bold text-sm sm:text-base font-poppins whitespace-nowrap ${
           price === "Hubungi Kami" ? "text-foreground/60" : "text-primary"
         }`}
       >
@@ -61,7 +62,9 @@ function ServiceRow({
 }
 
 export function Services() {
-  const [active, setActive] = useState<"laptop" | "pc">("laptop");
+  const [active, setActive] = useState<"laptop" | "paket_laptop" | "pc">(
+    "laptop",
+  );
 
   return (
     <section
@@ -70,25 +73,13 @@ export function Services() {
     >
       <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <motion.div
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="section-tag mb-4 mx-auto w-fit">
-            {servicesHeader.tag}
-          </div>
-          <h2 className="text-balance-title mb-4 font-poppins">
-            {servicesHeader.title.split(",")[0]},
-            <br className="hidden sm:block" />
-            {servicesHeader.title.split(",")[1]}
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            {servicesHeader.subtitle}
-          </p>
-        </motion.div>
+        <SectionHeader
+          badge={servicesHeader.tag}
+          titlePrefix="Harga Transparan, "
+          titleHighlight="Tanpa Biaya Tersembunyi"
+          desc={servicesHeader.subtitle}
+          variant={1}
+        />
 
         {/* Tab Switcher */}
         <div className="flex justify-center mb-8">
@@ -118,24 +109,47 @@ export function Services() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.22 }}
-            className="rounded-2xl border border-border bg-card overflow-hidden"
+            className="rounded-2xl border border-border bg-white dark:bg-card overflow-hidden shadow-sm"
           >
             {/* List header */}
-            <div className="flex items-center justify-between px-5 py-3 border-b border-border bg-foreground/3">
-              <span className="text-xs font-bold text-foreground/50 uppercase tracking-widest">
+            <div className="flex items-center justify-between px-6 py-3.5 border-b border-border bg-card dark:bg-muted/40">
+              <span className="text-xs font-bold text-foreground/50 uppercase tracking-widest font-poppins">
                 Layanan
               </span>
-              <span className="text-xs font-bold text-foreground/50 uppercase tracking-widest">
+              <span className="text-xs font-bold text-foreground/50 uppercase tracking-widest font-poppins">
                 Harga
               </span>
             </div>
 
-            <div className="p-2">
-              {(active === "laptop" ? laptopServices : pcServices).map(
-                (svc, i) => (
-                  <ServiceRow key={svc.name} {...svc} index={i} />
-                ),
-              )}
+            <div className="divide-y divide-border/60">
+              {(active === "laptop"
+                ? laptopServices
+                : active === "paket_laptop"
+                  ? paketLaptopServices
+                  : pcServices
+              ).map((svc, i) => (
+                <ServiceRow key={svc.name} {...svc} index={i} />
+              ))}
+            </div>
+
+            {/* Footnote */}
+            <div className="flex flex-col gap-2.5 px-6 py-5 bg-card/45 dark:bg-muted/20 border-t border-border/60 text-left">
+              <div className="flex items-start gap-2.5 text-xs sm:text-sm text-foreground/75 leading-relaxed">
+                <span className="text-primary font-bold shrink-0">✓</span>
+                <p>
+                  <span className="font-semibold">*</span> Setiap layanan{" "}
+                  <span className="font-bold text-foreground">repaste</span> sudah termasuk{" "}
+                  <span className="font-bold text-foreground">cleaning bagian kipas</span>.
+                </p>
+              </div>
+              <div className="flex items-start gap-2.5 text-xs sm:text-sm text-foreground/75 leading-relaxed">
+                <span className="text-primary font-bold shrink-0">✓</span>
+                <p>
+                  Setiap layanan{" "}
+                  <span className="font-bold text-foreground">repaste & deep clean</span> sudah termasuk{" "}
+                  <span className="font-bold text-foreground">checkup device</span> menyeluruh.
+                </p>
+              </div>
             </div>
           </motion.div>
         </AnimatePresence>

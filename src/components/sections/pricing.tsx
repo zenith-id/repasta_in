@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Check, Zap, Star } from "lucide-react";
-
+import { SectionHeader } from "@/components/common/layout";
 import { pricingPlans, WHATSAPP_LINK } from "@/constants/sections/pricing";
 
 export function Pricing() {
@@ -12,25 +12,14 @@ export function Pricing() {
       className="py-24 px-4 sm:px-6 lg:px-8 content-visibility-auto"
     >
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="section-tag mb-4">
-            <Zap size={14} />
-            Biaya Servis
-          </div>
-          <h2 className="text-balance-title mb-4">
-            Harga Jelas, <span className="text-primary">Tanpa Kejutan</span>
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Kami percaya transparansi adalah fondasi kepercayaan. Semua harga
-            dikonfirmasi sebelum pekerjaan dimulai.
-          </p>
-        </motion.div>
+        <SectionHeader
+          icon={Zap}
+          badge="Biaya Servis"
+          titlePrefix="Harga Jelas, "
+          titleHighlight="Tanpa Kejutan"
+          desc="Kami percaya transparansi adalah fondasi kepercayaan. Semua harga dikonfirmasi sebelum pekerjaan dimulai."
+          variant={1}
+        />
 
         <div className="grid md:grid-cols-3 gap-8 items-stretch">
           {pricingPlans.map((plan, index) => (

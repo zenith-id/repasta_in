@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, HelpCircle } from "lucide-react";
-
+import { SectionHeader } from "@/components/common/layout";
 import { faqs } from "@/constants/sections/faq";
 
 function FAQItem({ q, a, idx }: { q: string; a: string; idx: number }) {
@@ -59,25 +59,14 @@ export function FAQ() {
   return (
     <section id="faq" className="py-20 px-4 sm:px-6 lg:px-8 bg-card">
       <div className="max-w-3xl mx-auto">
-        <motion.div
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="section-tag mb-4 mx-auto w-fit">
-            <HelpCircle size={14} />
-            FAQ
-          </div>
-          <h2 className="text-balance-title mb-4 font-poppins">
-            Pertanyaan yang{" "}
-            <span className="text-primary">Sering Ditanyakan</span>
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Tidak menemukan jawaban? Tanya langsung via WhatsApp.
-          </p>
-        </motion.div>
+        <SectionHeader
+          icon={HelpCircle}
+          badge="FAQ"
+          titlePrefix="Pertanyaan yang"
+          titleHighlight="Sering Ditanyakan"
+          desc="Tidak menemukan jawaban? Tanya langsung via WhatsApp."
+          variant={3}
+        />
 
         <div className="flex flex-col gap-3">
           {faqs.map((item, i) => (
