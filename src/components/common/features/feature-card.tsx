@@ -3,7 +3,8 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { fadeUp } from "@/constants/sections/features";
-import type { LucideIcon, ReactNode } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { ReactNode } from "react";
 
 /* ── FeatureCard ──────────────────────────────────────────── */
 
