@@ -16,6 +16,14 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Style
 
+#### Remove hero badge and trailing whitespace
+
+- **Date:** 2026-06-20
+- **Commits:** `3aa7a29`
+
+- Remove redundant badge above headline
+- Clean up trailing whitespace in canvas code
+
 #### Restyle footer with slate color palette
 
 - **Date:** 2026-06-18
@@ -26,6 +34,14 @@ All notable changes to this project will be documented in this file. See [standa
 - Add `gmaps` field to contact constants
 
 ### Refactoring
+
+#### Move footer from sections to layout
+
+- **Date:** 2026-06-20
+- **Commits:** `968b2e4`
+
+- Relocate `footer.tsx` from `components/sections/` to `components/layout/`
+- Update import path in `app/page.tsx`
 
 #### Restructure components and constants into layout/sections directories
 
