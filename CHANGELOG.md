@@ -2,87 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [Unreleased]
+### [1.4.1](https://github.com/fukaziroh-id/repasta_in/compare/v1.4.0...v1.4.1) (2026-06-20)
+
 
 ### Features
 
-#### Add GPU repaste and OS license services
-
-- **Date:** 2026-06-20
-- **Commits:** `b1a9729`
-
-- Add GPU Repaste service (from Rp 150.000)
-- Add Instal Ulang OS + License Key (Rp 120.000)
-
-#### Add 8 new customer testimonials
-
-- **Date:** 2026-06-18
-- **Commits:** `b530a2d`
-
-- Add 8 new testimonials from real customer reviews
-- Rebalance testimonial column slices for even distribution
+* **constants:** add 8 new testimonials and rebalance columns ([b530a2d](https://github.com/fukaziroh-id/repasta_in/commit/b530a2d9b4d10a67e271e6b32182404b16fd5697))
+* **services:** add gpu repaste and os license options ([b1a9729](https://github.com/fukaziroh-id/repasta_in/commit/b1a97293f08d2af52c0ee5576754eca4c35d7a4d))
 
 ### Style
 
-#### Remove hero badge and trailing whitespace
-
-- **Date:** 2026-06-20
-- **Commits:** `3aa7a29`
-
-- Remove redundant badge above headline
-- Clean up trailing whitespace in canvas code
-
-#### Restyle footer with slate color palette
-
-- **Date:** 2026-06-18
-- **Commits:** `73aa7cf`
-
-- Replace theme-aware `bg-foreground`/`text-background` with hardcoded slate palette
-- Add Google Maps link to location text and social icons
-- Add `gmaps` field to contact constants
+* **hero:** remove badge and trailing whitespace ([3aa7a29](https://github.com/fukaziroh-id/repasta_in/commit/3aa7a29))
+* **footer:** restyle with slate color palette ([73aa7cf](https://github.com/fukaziroh-id/repasta_in/commit/73aa7cf))
 
 ### Refactoring
 
-#### Move all source into src/ directory
+* **layout:** move footer from sections to layout ([968b2e4](https://github.com/fukaziroh-id/repasta_in/commit/968b2e4))
+* move all source into src/ directory ([aa69824](https://github.com/fukaziroh-id/repasta_in/commit/aa69824))
 
-- **Date:** 2026-06-20
-- **Commits:** `853ebb9` `aa69824`
+### Chores
 
-- Migrate app, components, constants, hooks, lib to `src/`
-- Update `@/` alias in tsconfig to resolve to `src/`
-- Update tailwind content paths and shadcn CSS path
-- Fix `@/src/` imports to `@/` across 67 files
-- Delete unused `src/styles/globals.css`
-
-#### Move footer from sections to layout
-
-- **Date:** 2026-06-20
-- **Commits:** `968b2e4`
-
-- Relocate `footer.tsx` from `components/sections/` to `components/layout/`
-- Update import path in `app/page.tsx`
-
-#### Restructure components and constants into layout/sections directories
-
-- **Date:** 2026-06-18
-- **Commits:** `65b96ac` `6481383` `03a7aa4` `edfe748`
-
-- Move Navbar and Hero to `components/layout/` and `constants/layout/`
-- Move all section components (CTA, FAQ, Features, Footer, Gallery, HowItWorks, Pricing, ProblemAwareness, Services, Testimonials, WhatsAppFloat) to `components/sections/`
-- Move all section constants to `constants/sections/`
-- Update imports in `app/page.tsx`, `app/layout.tsx`, `app/layanan/page.tsx`
-- Update `constants/index.ts` re-exports for new paths
-
-### Documentation
-
-#### Add project templates and design specs
-
-- **Date:** 2026-06-18
-- **Commits:** `ed8973b` `d1c2172` `4610ace`
-
-- Add `CHANGELOG_TEMPLATE.md` and `COMMIT_TEMPLATE.md`
-- Add design specs for gallery, brainstorming, and existing site
-- Add spec template for future documentation
+* **config:** update paths for src/ directory structure ([853ebb9](https://github.com/fukaziroh-id/repasta_in/commit/853ebb9))
+* **types:** update next-env declarations ([4d264ea](https://github.com/fukaziroh-id/repasta_in/commit/4d264ea))
 
 ## [1.4.0](https://github.com/zenith-id/repasta_in/compare/v1.3.1...v1.4.0) (2026-06-17)
 
