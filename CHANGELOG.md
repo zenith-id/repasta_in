@@ -43,6 +43,17 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Refactoring
 
+#### Move all source into src/ directory
+
+- **Date:** 2026-06-20
+- **Commits:** `853ebb9` `aa69824`
+
+- Migrate app, components, constants, hooks, lib to `src/`
+- Update `@/` alias in tsconfig to resolve to `src/`
+- Update tailwind content paths and shadcn CSS path
+- Fix `@/src/` imports to `@/` across 67 files
+- Delete unused `src/styles/globals.css`
+
 #### Move footer from sections to layout
 
 - **Date:** 2026-06-20
