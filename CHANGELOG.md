@@ -9,8 +9,14 @@ All notable changes to this project will be documented in this file. See [standa
 * **common:** add SectionHeader, StatItem, ThemeToggle ([bc33a93](https://github.com/fukaziroh-id/repasta_in/commit/bc33a93))
 * **hooks:** add useCountUp, useMounted, useWaveCanvas ([b4d14ab](https://github.com/fukaziroh-id/repasta_in/commit/b4d14ab))
 
+### Bug Fixes
+
+* **features:** correct reactnode import source ([e1019f4](https://github.com/fukaziroh-id/repasta_in/commit/e1019f4))
+
 ### Refactoring
 
+* **features:** extract reusable card sub-components ([b1fc96a](https://github.com/fukaziroh-id/repasta_in/commit/b1fc96a))
+* **features:** single FeatureCard with small/large variant ([8bbbc6a](https://github.com/fukaziroh-id/repasta_in/commit/8bbbc6a))
 * **features:** rename cards to english, data in const ([05c3eb3](https://github.com/fukaziroh-id/repasta_in/commit/05c3eb3))
 * **hero:** extract hooks, move data to const ([cefbbd3](https://github.com/fukaziroh-id/repasta_in/commit/cefbbd3))
 * **navbar:** fixed top, extract theme toggle, fix active ([5e41aae](https://github.com/fukaziroh-id/repasta_in/commit/5e41aae))
