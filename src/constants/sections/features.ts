@@ -1,5 +1,5 @@
 import type { Variants } from "framer-motion";
-import { Shield, Wrench, CheckCircle, Zap } from "lucide-react";
+import { Eye, Zap, Shield, Users } from "lucide-react";
 
 /* ── Animation ────────────────────────────────────────────── */
 
@@ -15,22 +15,61 @@ export const fadeUp: Variants = {
 /* ── Avatars ──────────────────────────────────────────────── */
 
 export const avatars = [
-  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=64&h=64",
-  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=64&h=64",
-  "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=64&h=64",
-  "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=64&h=64",
+  "/assets/avatars/person_1.avif",
+  "/assets/avatars/person_2.avif",
+  "/assets/avatars/person_3.avif",
+  "/assets/avatars/person_5.avif",
 ];
 
-/* ── Chart ────────────────────────────────────────────────── */
+/* ── Honesty Card ─────────────────────────────────────────── */
 
-export const chartData = [30, 50, 40, 70, 55, 90, 75, 100, 85];
-export const chartHighlightIndex = 7;
+export const honestyCard = {
+  icon: Eye,
+  tag: "Kejujuran",
+  title: "Dikerjakan di Depan Anda",
+  desc: "Setiap proses transparan — tidak ada part ditukar diam-diam. Anda lihat sendiri dari awal sampai selesai.",
+  points: [
+    "Estimasi biaya di awal",
+    "Tanpa biaya tersembunyi",
+    "Part lama dikembalikan",
+  ],
+};
 
-/* ── Services ─────────────────────────────────────────────── */
+/* ── Speed Card ───────────────────────────────────────────── */
 
-export const servicesData = [
-  { icon: Wrench, label: "Bersih & Pasta Thermal" },
-  { icon: Zap, label: "Upgrade RAM & SSD" },
-  { icon: Shield, label: "Perbaikan Hardware" },
-  { icon: CheckCircle, label: "Instal & Optimasi OS" },
-];
+export const speedCard = {
+  icon: Zap,
+  tag: "Kecepatan",
+  title: "Selesai 1–2 Jam",
+  desc: "Diagnosa cepat & home visit area Bandung. Perangkat Anda balik di hari yang sama.",
+  bars: [40, 55, 48, 70, 62, 100],
+  chartLabels: ["Masuk", "Diagnosa", "Selesai"],
+};
+
+/* ── Quality Card ─────────────────────────────────────────── */
+
+export const qualityCard = {
+  icon: Shield,
+  tag: "Kualitas",
+  title: "Material Premium",
+  desc: "Hanya pakai thermal compound kelas atas, bukan pasta abal-abal.",
+  materials: [
+    { name: "CryoFuze 5", type: "Regular" },
+    { name: "PTM7950", type: "Phase Change" },
+    { name: "Liquid Metal", type: "128 W/mK" },
+  ],
+  warranty: "Bergaransi hingga 7 hari",
+};
+
+/* ── Social Proof Card ────────────────────────────────────── */
+
+export const socialProofCard = {
+  icon: Users,
+  tag: "Dipercaya",
+  title: "500+ Pelanggan Puas di Bandung",
+  quote:
+    "Laptop gaming saya overheat parah, sehari langsung beres dan adem lagi. Prosesnya ditunjukin di depan saya.",
+  successRate: 98,
+  successLabel: "Sukses",
+  ctaLabel: "& ratusan pelanggan lainnya",
+};

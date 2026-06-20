@@ -1,45 +1,54 @@
-import { Laptop, Monitor } from "lucide-react";
+import { Laptop, Monitor, Sparkles } from "lucide-react";
 
 export const laptopServices = [
   {
-    name: "Repaste Regular",
-    desc: "Pasta termal cair (CryoFuze 5 / Arctic MX-6) — solusi cepat & efisien",
-    price: "Rp 150.000",
+    name: "Repaste Premium",
+    desc: "Repasta menggunakan bahan cair terbaik dengan CryoFuze 5 / Arctic MX-6, bahan terbaik untuk suhu lebih adem.",
+    price: "Rp 120.000",
     popular: false,
   },
   {
-    name: "Repaste Phase Change",
-    desc: "Bahan premium PTM 7950 / ID-Cooling PTM2 — tahan lama, konduktivitas tinggi",
-    price: "Rp 180.000",
+    name: "Repaste Phase change",
+    desc: "Repasta menggunakan bahan phase change terbaik di kelasnya! Opsi pasta: PTM 7950 by Honeywell & ID-Cooling PTM2 - solusi suhu adem maksimal dengan umur yang lebih panjang.",
+    price: "Rp 170.000",
     popular: false,
   },
   {
     name: "Repaste Liquid Metal",
-    desc: "Konduktivitas 128 W/mK — pendinginan ekstrem untuk gaming & workstation",
+    desc: "Repaste dengan Liquid Metal terbaik di kelasnya! Konduktivitas tinggi (128 W/mK) untuk pendinginan ekstrem.",
     price: "Rp 200.000",
     popular: false,
   },
   {
-    name: "Repaste VRAM / VRM",
-    desc: "Thermal putty untuk area VRAM & VRM — mencegah throttling GPU",
+    name: "Repaste VRAM/VRM",
+    desc: "Repasta bagian VRAM/VRM menggunakan thermal putty performa terbaik.",
     price: "Rp 50.000",
     popular: false,
   },
   {
-    name: "Cleaning Keyboard Eksternal",
-    desc: "Bersih kerak pada keycaps & plate keyboard — seperti baru lagi",
-    price: "Rp 80.000",
+    name: "Cleaning Keyboard ext",
+    desc: "Cleaning keyboard mechanical, membersihkan kerak yang menempel pada keycaps (cuci) dan plate keyboard.",
+    price: "Rp 100.000*",
     popular: false,
   },
   {
+    name: "Special req",
+    desc: "Sesuaikan dengan kebutuhanmu!",
+    price: "Hubungi Kami",
+    popular: false,
+  },
+] as const;
+
+export const paketLaptopServices = [
+  {
     name: "Deepclean Phase Change",
-    desc: "Cleaning komprehensif seluruh laptop + repaste PTM 7950 — paket terlengkap",
-    price: "Rp 230.000",
+    desc: "Repasta menggunakan bahan phase change terbaik di kelasnya! berserta cleaning bagian body laptop yang mencakup keyboard, layar dan palmrest.",
+    price: "Rp 220.000",
     popular: true,
   },
   {
     name: "Deepclean Liquid Metal",
-    desc: "Cleaning keyboard, layar, palmrest + liquid metal — performa puncak",
+    desc: "Repasta menggunakan bahan Liquid metal berserta cleaning bagian body laptop yang mencakup keyboard, layar dan palmrest.",
     price: "Rp 250.000",
     popular: false,
   },
@@ -104,6 +113,7 @@ export const note = {
 
 export const tabsData = [
   { id: "laptop" as const, label: "Laptop", icon: Laptop },
+  { id: "paket_laptop" as const, label: "Paket Laptop", icon: Sparkles },
   { id: "pc" as const, label: "PC Desktop", icon: Monitor },
 ] as const;
 

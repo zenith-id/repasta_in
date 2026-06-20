@@ -19,8 +19,8 @@ export const steps = [
     num: "03",
     icon: CheckCircle2,
     title: "Selesai & Bergaransi",
-    desc: "Perangkat kembali optimal dalam 1–2 jam, dikerjakan transparan di depan Anda. Garansi 6 bulan untuk setiap layanan.",
-    badge: "Garansi 6 bulan",
+    desc: "Perangkat kembali optimal dalam 1–2 jam, dikerjakan transparan di depan Anda. Garansi 7 hari untuk setiap layanan.",
+    badge: "Garansi 7 hari",
   },
 ] as const;
 

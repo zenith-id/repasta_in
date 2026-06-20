@@ -17,7 +17,7 @@ export const faqs = [
   },
   {
     q: "Apakah ada garansi jika laptop bermasalah setelah servis?",
-    a: "Ya. Setiap layanan dilindungi garansi 6 bulan. Jika ada masalah terkait pekerjaan kami dalam periode tersebut, kami tangani tanpa biaya tambahan.",
+    a: "Ya. Setiap layanan dilindungi garansi 7 hari. Jika ada masalah terkait pekerjaan kami dalam periode tersebut, kami tangani tanpa biaya tambahan.",
   },
   {
     q: "Bagaimana cara pembayaran?",
