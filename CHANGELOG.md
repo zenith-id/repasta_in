@@ -6,6 +6,14 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
+#### Add GPU repaste and OS license services
+
+- **Date:** 2026-06-20
+- **Commits:** `b1a9729`
+
+- Add GPU Repaste service (from Rp 150.000)
+- Add Instal Ulang OS + License Key (Rp 120.000)
+
 #### Add 8 new customer testimonials
 
 - **Date:** 2026-06-18
