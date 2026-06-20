@@ -31,7 +31,12 @@ export function Footer() {
           >
             <div className="flex items-center gap-2.5 mb-5">
               <div className="w-9 h-9 rounded-xl flex items-center justify-center">
-                <Image src="/logo.png" alt="Logo" width={24} height={24} />
+                <Image
+                  src="/assets/logo/logo-512.webp"
+                  alt="Logo"
+                  width={24}
+                  height={24}
+                />
               </div>
               <span className="font-poppins font-bold text-xl text-white">
                 Repasta

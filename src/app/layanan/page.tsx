@@ -14,15 +14,18 @@ import { LAYANAN_CONTENT } from "@/constants/sections/layanan";
 export const metadata: Metadata = {
   title: "Layanan Servis Laptop & PC",
   description:
-    "Daftar lengkap layanan Repasta: repaste thermal paste, deep clean laptop, upgrade SSD/RAM, instalasi OS, rakit PC. Harga transparan, garansi 6 bulan, di Bandung.",
+    "Daftar lengkap layanan Repasta: repaste thermal paste, deep clean laptop, upgrade SSD/RAM, instalasi OS, rakit PC. Harga transparan, garansi 7 hari, di Bandung.",
 };
 
-const { laptopServices, pcServices, guarantees, notes } = LAYANAN_CONTENT;
+const { laptopServices, paketLaptopServices, pcServices, guarantees, notes } = LAYANAN_CONTENT;
 
 function ServiceCard({
   svc,
 }: {
-  svc: (typeof laptopServices)[number] | (typeof pcServices)[number];
+  svc:
+    | (typeof laptopServices)[number]
+    | (typeof paketLaptopServices)[number]
+    | (typeof pcServices)[number];
 }) {
   return (
     <div className="relative flex flex-col p-6 rounded-2xl border border-border bg-card hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
@@ -139,6 +142,28 @@ export default function LayananPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {laptopServices.map((svc) => (
+              <ServiceCard key={svc.name} svc={svc} />
+            ))}
+          </div>
+        </div>
+
+        {/* Paket Laptop section */}
+        <div className="mb-16">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
+              <Wrench size={18} className="text-primary" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold font-poppins text-foreground">
+                Paket Laptop
+              </h2>
+              <p className="text-sm text-muted-foreground">
+                Paket pembersihan mendalam (deep clean) beserta penggantian thermal paste
+              </p>
+            </div>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {paketLaptopServices.map((svc) => (
               <ServiceCard key={svc.name} svc={svc} />
             ))}
           </div>

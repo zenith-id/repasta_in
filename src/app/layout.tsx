@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | Repasta",
   },
   description:
-    "Repasta menyediakan servis laptop dan PC profesional di Bandung. Repaste thermal paste, deep clean, upgrade SSD/RAM. Diagnosa gratis, teknisi berpengalaman, harga transparan, garansi 6 bulan.",
+    "Repasta menyediakan servis laptop dan PC profesional di Bandung. Repaste thermal paste, deep clean, upgrade SSD/RAM. Diagnosa gratis, teknisi berpengalaman, harga transparan, garansi 7 hari.",
   keywords: [
     "servis laptop Bandung",
     "repaste laptop Bandung",
@@ -40,14 +40,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Repasta — Servis Laptop & PC Profesional di Bandung",
     description:
-      "Diagnosa gratis, repaste thermal paste, deep clean, upgrade SSD/RAM. Teknisi berpengalaman, harga transparan, garansi 6 bulan.",
+      "Diagnosa gratis, repaste thermal paste, deep clean, upgrade SSD/RAM. Teknisi berpengalaman, harga transparan, garansi 7 hari.",
     url: siteUrl,
     siteName: "Repasta",
     locale: "id_ID",
     type: "website",
     images: [
       {
-        url: "/icon.svg",
+        url: "/icon.webp",
         width: 1200,
         height: 630,
         alt: "Repasta — Servis Laptop & PC Bandung",
@@ -58,16 +58,16 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Repasta — Servis Laptop & PC Bandung",
     description:
-      "Diagnosa gratis, repaste thermal paste, deep clean, upgrade SSD/RAM. Teknisi berpengalaman, harga transparan, garansi 6 bulan.",
-    images: ["/icon.svg"],
+      "Diagnosa gratis, repaste thermal paste, deep clean, upgrade SSD/RAM. Teknisi berpengalaman, harga transparan, garansi 7 hari.",
+    images: ["/assets/logo/logo.webp"],
   },
   verification: {
     google: "google-site-verification-code-placeholder",
   },
   icons: {
-    icon: "/icon.svg",
-    shortcut: "/icon.svg",
-    apple: "/icon.svg",
+    icon: "/assets/logo/logo.webp",
+    shortcut: "/assets/logo/logo.webp",
+    apple: "/assets/logo/logo.webp",
   },
   robots: { index: true, follow: true },
   alternates: { canonical: siteUrl },
@@ -89,7 +89,7 @@ const jsonLdOrganization = {
   "@type": "Organization",
   name: "Repasta",
   url: siteUrl,
-  logo: `${siteUrl}/icon.svg`,
+  logo: `${siteUrl}/assets/logo/logo.webp`,
   description:
     "Servis laptop & PC profesional di Bandung — repaste thermal paste, deep clean, upgrade hardware.",
   sameAs: ["https://www.instagram.com/repasta.in"],
@@ -109,7 +109,7 @@ const jsonLdLocalBusiness = {
     "Servis laptop & PC profesional di Bandung — repaste thermal paste, deep clean, upgrade hardware.",
   url: siteUrl,
   telephone: "+6281919423939",
-  image: `${siteUrl}/icon.svg`,
+  image: `${siteUrl}/assets/logo/logo.webp`,
   address: {
     "@type": "PostalAddress",
     addressLocality: "Bandung",
