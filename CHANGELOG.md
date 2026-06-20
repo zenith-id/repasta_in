@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [Unreleased]
+
+### Features
+
+* **common:** add SectionHeader, StatItem, ThemeToggle ([bc33a93](https://github.com/fukaziroh-id/repasta_in/commit/bc33a93))
+* **hooks:** add useCountUp, useMounted, useWaveCanvas ([b4d14ab](https://github.com/fukaziroh-id/repasta_in/commit/b4d14ab))
+
+### Refactoring
+
+* **features:** rename cards to english, data in const ([05c3eb3](https://github.com/fukaziroh-id/repasta_in/commit/05c3eb3))
+* **hero:** extract hooks, move data to const ([cefbbd3](https://github.com/fukaziroh-id/repasta_in/commit/cefbbd3))
+* **navbar:** fixed top, extract theme toggle, fix active ([5e41aae](https://github.com/fukaziroh-id/repasta_in/commit/5e41aae))
+* **sections:** use SectionHeader across all sections ([e380d34](https://github.com/fukaziroh-id/repasta_in/commit/e380d34))
+* **constants:** expand feature data, clean exports ([803de67](https://github.com/fukaziroh-id/repasta_in/commit/803de67))
+
 ### [1.4.1](https://github.com/fukaziroh-id/repasta_in/compare/v1.4.0...v1.4.1) (2026-06-20)
 
 
