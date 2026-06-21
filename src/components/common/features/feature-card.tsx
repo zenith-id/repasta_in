@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { fadeUp } from "@/constants/sections/features";
+import { featureFadeUp } from "@/lib/motion/animations";
 import type { ReactNode } from "react";
 
 interface FeatureCardProps {
@@ -27,7 +27,7 @@ export function FeatureCard({
   return (
     <motion.div
       custom={index}
-      variants={fadeUp}
+      variants={featureFadeUp}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}

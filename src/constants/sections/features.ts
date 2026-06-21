@@ -1,16 +1,4 @@
-import type { Variants } from "framer-motion";
 import { Eye, Zap, Shield, Users } from "lucide-react";
-
-/* ── Animation ────────────────────────────────────────────── */
-
-export const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.55, delay: i * 0.08, ease: "easeOut" },
-  }),
-};
 
 /* ── Avatars ──────────────────────────────────────────────── */
 

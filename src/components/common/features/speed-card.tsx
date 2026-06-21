@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { speedCard } from "@/constants/sections/features";
+import { barGrowVariants } from "@/lib/motion/animations";
 import { FeatureCard } from "./feature-card";
 
 export function SpeedCard() {
@@ -32,16 +33,17 @@ export function SpeedCard() {
               return (
                 <motion.div
                   key={i}
+                  custom={i}
+                  variants={barGrowVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
                   className={`flex-1 rounded-t-md ${
                     isLast
                       ? "bg-primary shadow-md shadow-primary/20"
                       : "bg-primary/20 hover:bg-primary/30 transition-colors"
                   }`}
                   style={{ height: `${h}%` }}
-                  initial={{ scaleY: 0, originY: 1 }}
-                  whileInView={{ scaleY: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 + i * 0.08, duration: 0.45, ease: "easeOut" }}
                 />
               );
             })}
