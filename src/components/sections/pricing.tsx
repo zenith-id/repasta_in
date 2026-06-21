@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Check, Zap, Star } from "lucide-react";
-import { SectionHeader } from "@/components/common/layout";
+import { SectionHeader } from "@/components/shared";
 import { pricingPlans, WHATSAPP_LINK } from "@/constants/sections/pricing";
 
 export function Pricing() {

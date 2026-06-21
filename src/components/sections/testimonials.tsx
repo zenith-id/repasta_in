@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { SectionHeader } from "@/components/common/layout";
+import { SectionHeader } from "@/components/shared";
 
 import {
   col1,

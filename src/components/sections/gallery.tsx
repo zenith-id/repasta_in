@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ZoomIn } from "lucide-react";
-import { SectionHeader } from "@/components/common/layout";
+import { SectionHeader } from "@/components/shared";
 
 import {
   galleryItems,
