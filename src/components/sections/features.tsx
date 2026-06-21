@@ -1,7 +1,7 @@
 "use client";
 
 import { CheckCircle } from "lucide-react";
-import { SectionHeader } from "@/components/common/layout";
+import { SectionHeader } from "@/components/shared";
 import {
   HonestyCard,
   SpeedCard,

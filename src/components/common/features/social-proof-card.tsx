@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { avatars, socialProofCard } from "@/constants/sections/features";
+import { progressRingVariants } from "@/lib/motion/animations";
 import { FeatureCard } from "./feature-card";
 
 export function SocialProofCard() {
@@ -24,10 +25,11 @@ export function SocialProofCard() {
               cx="50" cy="50" r="40"
               fill="none" stroke="hsl(var(--primary))" strokeWidth="10"
               strokeLinecap="round" strokeDasharray="251.2"
-              initial={{ strokeDashoffset: 251.2 }}
-              whileInView={{ strokeDashoffset: 251.2 * (1 - successRate / 100) }}
+              custom={successRate}
+              variants={progressRingVariants}
+              initial="hidden"
+              whileInView="visible"
               viewport={{ once: true }}
-              transition={{ duration: 1.4, delay: 0.3, ease: "easeOut" }}
             />
           </svg>
           <div className="absolute inset-0 flex flex-col items-center justify-center">
