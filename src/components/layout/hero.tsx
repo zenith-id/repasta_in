@@ -3,13 +3,12 @@
 import { motion } from "framer-motion";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { useWaveCanvas } from "@/hooks/use-wave-canvas";
-import { StatItem } from "@/components/common/layout";
+import { StatItem } from "@/components/shared";
+import { heroContent, statsData } from "@/constants/layout/hero";
 import {
-  heroContent,
-  containerVariants,
-  itemVariants,
-  statsData,
-} from "@/constants/layout/hero";
+  heroContainerVariants,
+  heroItemVariants,
+} from "@/lib/motion/animations";
 import { HeroStatusBadge } from "@/components/common/hero/hero-status-badge";
 
 export function Hero() {
@@ -17,7 +16,10 @@ export function Hero() {
   const { headline, subtext, cta, highlightPills } = heroContent;
 
   return (
-    <section id="hero" className="relative min-h-[95vh] w-full overflow-hidden flex items-center justify-center">
+    <section
+      id="hero"
+      className="relative min-h-[95vh] w-full overflow-hidden flex items-center justify-center"
+    >
       {/* Canvas */}
       <canvas ref={canvasRef} className="absolute inset-0 z-0 h-full w-full" />
 
@@ -35,19 +37,22 @@ export function Hero() {
       {/* Content */}
       <div className="container-section relative z-10 py-20">
         <motion.div
-          variants={containerVariants}
+          variants={heroContainerVariants}
           initial="hidden"
           animate="visible"
           className="mx-auto max-w-4xl text-center"
         >
           {/* Status Badge */}
-          <motion.div variants={itemVariants} className="flex justify-center">
+          <motion.div
+            variants={heroItemVariants}
+            className="flex justify-center"
+          >
             <HeroStatusBadge kicker={highlightPills.join(" • ")} />
           </motion.div>
 
           {/* Headline */}
           <motion.h1
-            variants={itemVariants}
+            variants={heroItemVariants}
             className="mb-6 font-extrabold tracking-tight text-foreground font-poppins"
             style={{
               fontSize: "clamp(2.25rem, 6vw, 4.5rem)",
@@ -70,7 +75,7 @@ export function Hero() {
 
           {/* Subtext */}
           <motion.p
-            variants={itemVariants}
+            variants={heroItemVariants}
             className="mx-auto mb-10 max-w-2xl text-base sm:text-lg text-foreground/65 leading-relaxed font-medium px-4"
           >
             {subtext.prefix}
@@ -79,7 +84,7 @@ export function Hero() {
 
           {/* CTA */}
           <motion.div
-            variants={itemVariants}
+            variants={heroItemVariants}
             className="mb-12 flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
             <a
@@ -101,10 +106,9 @@ export function Hero() {
             </a>
           </motion.div>
 
-
           {/* Stats */}
           <motion.div
-            variants={itemVariants}
+            variants={heroItemVariants}
             className="grid grid-cols-1 md:grid-cols-3 gap-px rounded-3xl overflow-hidden border border-foreground/10 bg-foreground/10 backdrop-blur-md"
           >
             {statsData.map((s, i) => (
