@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import { SectionHeader } from "@/components/common/layout";
+import { SectionHeader } from "@/components/shared";
+import { ProblemCard } from "@/components/common/problems/problem-card";
+import { ResolutionTagline } from "@/components/common/problems/resolution-tagline";
 import { problems } from "@/constants/sections/problem-awareness";
 
 export function ProblemAwareness() {
@@ -32,63 +32,19 @@ export function ProblemAwareness() {
         {/* 2×2 Grid — numbered cards */}
         <div className="grid sm:grid-cols-2 gap-4 mb-10">
           {problems.map((p, i) => (
-            <motion.div
+            <ProblemCard
               key={i}
-              className="group relative p-6 rounded-2xl bg-background border border-border hover:border-primary/35 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-0.5 transition-all duration-300 overflow-hidden"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.09 }}
-            >
-              {/* Giant background number */}
-              <span
-                className="absolute top-3 right-4 text-6xl font-black text-foreground/4 font-poppins select-none leading-none"
-                aria-hidden="true"
-              >
-                {p.num}
-              </span>
-
-              {/* Hover glow */}
-              <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/2 transition-colors duration-300 rounded-2xl pointer-events-none" />
-
-              {/* Content */}
-              <div className="relative z-10">
-                <span className="text-2xl mb-3 block">{p.emoji}</span>
-                <h3 className="font-bold text-foreground mb-2 font-poppins leading-snug">
-                  {p.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {p.desc}
-                </p>
-              </div>
-            </motion.div>
+              num={p.num}
+              emoji={p.emoji}
+              title={p.title}
+              desc={p.desc}
+              index={i}
+            />
           ))}
         </div>
 
         {/* Resolution tagline */}
-        <motion.div
-          className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 p-6 rounded-2xl bg-foreground text-background"
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-        >
-          <p className="text-sm leading-relaxed max-w-lg opacity-90">
-            <span className="font-bold text-base block mb-0.5">
-              Kami punya solusinya.
-            </span>
-            Pasta termal mengering & debu menumpuk adalah penyebab utama — dan
-            kami selesaikan dalam{" "}
-            <strong>1–2 jam, di depan Anda, bergaransi.</strong>
-          </p>
-          <a
-            href="#cara-pesan"
-            className="flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 border border-background/30 text-background font-semibold rounded-xl text-sm hover:bg-background/10 transition-all whitespace-nowrap"
-          >
-            Cara Pesan
-            <ArrowRight size={14} />
-          </a>
-        </motion.div>
+        <ResolutionTagline />
       </div>
     </section>
   );
