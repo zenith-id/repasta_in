@@ -2,27 +2,10 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [1.4.2](https://github.com/fukaziroh-id/repasta_in/compare/v1.4.1...v1.4.2) (2026-06-21)
-
-
-### Features
-
-* **common:** add SectionHeader, StatItem, ThemeToggle ([bc33a93](https://github.com/fukaziroh-id/repasta_in/commit/bc33a93))
-* **hooks:** add useCountUp, useMounted, useWaveCanvas ([b4d14ab](https://github.com/fukaziroh-id/repasta_in/commit/b4d14ab))
-
-### Bug Fixes
-
-* **features:** correct reactnode import source ([e1019f4](https://github.com/fukaziroh-id/repasta_in/commit/e1019f4))
+## [Unreleased]
 
 ### Refactoring
 
-* **features:** extract reusable card sub-components ([b1fc96a](https://github.com/fukaziroh-id/repasta_in/commit/b1fc96a))
-* **features:** single FeatureCard with small/large variant ([8bbbc6a](https://github.com/fukaziroh-id/repasta_in/commit/8bbbc6a))
-* **features:** rename cards to english, data in const ([05c3eb3](https://github.com/fukaziroh-id/repasta_in/commit/05c3eb3))
-* **hero:** extract hooks, move data to const ([cefbbd3](https://github.com/fukaziroh-id/repasta_in/commit/cefbbd3))
-* **navbar:** fixed top, extract theme toggle, fix active ([5e41aae](https://github.com/fukaziroh-id/repasta_in/commit/5e41aae))
-* **sections:** use SectionHeader across all sections ([e380d34](https://github.com/fukaziroh-id/repasta_in/commit/e380d34))
-* **constants:** expand feature data, clean exports ([803de67](https://github.com/fukaziroh-id/repasta_in/commit/803de67))
 * **motion:** centralize all section animation variants ([7663bc9](https://github.com/fukaziroh-id/repasta_in/commit/7663bc9))
 * **problem:** add resolution data and problem card ([19a8015](https://github.com/fukaziroh-id/repasta_in/commit/19a8015))
 * **problem:** extract resolution tagline component ([351f5f5](https://github.com/fukaziroh-id/repasta_in/commit/351f5f5))
@@ -44,6 +27,27 @@ All notable changes to this project will be documented in this file. See [standa
 * **layout:** add shared barrel export ([aa4ab41](https://github.com/fukaziroh-id/repasta_in/commit/aa4ab41))
 * **sections:** update imports to shared ([2db1e7c](https://github.com/fukaziroh-id/repasta_in/commit/2db1e7c))
 
+## [1.4.2](https://github.com/fukaziroh-id/repasta_in/compare/v1.4.1...v1.4.2) (2026-06-21)
+
+
+### Features
+
+* **common:** add SectionHeader, StatItem, ThemeToggle ([bc33a93](https://github.com/fukaziroh-id/repasta_in/commit/bc33a93))
+* **hooks:** add useCountUp, useMounted, useWaveCanvas ([b4d14ab](https://github.com/fukaziroh-id/repasta_in/commit/b4d14ab))
+
+### Bug Fixes
+
+* **features:** correct reactnode import source ([e1019f4](https://github.com/fukaziroh-id/repasta_in/commit/e1019f4))
+
+### Refactoring
+
+* **features:** extract reusable card sub-components ([b1fc96a](https://github.com/fukaziroh-id/repasta_in/commit/b1fc96a))
+* **features:** single FeatureCard with small/large variant ([8bbbc6a](https://github.com/fukaziroh-id/repasta_in/commit/8bbbc6a))
+* **features:** rename cards to english, data in const ([05c3eb3](https://github.com/fukaziroh-id/repasta_in/commit/05c3eb3))
+* **hero:** extract hooks, move data to const ([cefbbd3](https://github.com/fukaziroh-id/repasta_in/commit/cefbbd3))
+* **navbar:** fixed top, extract theme toggle, fix active ([5e41aae](https://github.com/fukaziroh-id/repasta_in/commit/5e41aae))
+* **sections:** use SectionHeader across all sections ([e380d34](https://github.com/fukaziroh-id/repasta_in/commit/e380d34))
+* **constants:** expand feature data, clean exports ([803de67](https://github.com/fukaziroh-id/repasta_in/commit/803de67))
 
 ### [1.4.1](https://github.com/fukaziroh-id/repasta_in/compare/v1.4.0...v1.4.1) (2026-06-20)
 
