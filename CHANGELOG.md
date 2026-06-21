@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [Unreleased]
 
+### Chores
+
+* **build:** update build artifacts ([5500544](https://github.com/fukaziroh-id/repasta_in/commit/5500544))
+
 ### Refactoring
 
 * **motion:** centralize all section animation variants ([7663bc9](https://github.com/fukaziroh-id/repasta_in/commit/7663bc9))
