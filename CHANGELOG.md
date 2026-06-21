@@ -2,7 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [Unreleased]
+## [1.4.2](https://github.com/fukaziroh-id/repasta_in/compare/v1.4.1...v1.4.2) (2026-06-21)
+
 
 ### Features
 
@@ -22,6 +23,8 @@ All notable changes to this project will be documented in this file. See [standa
 * **navbar:** fixed top, extract theme toggle, fix active ([5e41aae](https://github.com/fukaziroh-id/repasta_in/commit/5e41aae))
 * **sections:** use SectionHeader across all sections ([e380d34](https://github.com/fukaziroh-id/repasta_in/commit/e380d34))
 * **constants:** expand feature data, clean exports ([803de67](https://github.com/fukaziroh-id/repasta_in/commit/803de67))
+* **sections:** extract reusable components and shared animations for all sections
+
 
 ### [1.4.1](https://github.com/fukaziroh-id/repasta_in/compare/v1.4.0...v1.4.1) (2026-06-20)
 

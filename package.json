@@ -1,7 +1,7 @@
 {
   "name": "repasta_in",
   "description": "Platform untuk berbagi tips dan trik seputar pasta",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "private": true,
   "scripts": {
     "dev": "next dev --webpack",
