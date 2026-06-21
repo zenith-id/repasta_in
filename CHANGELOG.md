@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [Unreleased]
 
+## [1.5.0](https://github.com/fukaziroh-id/repasta_in/compare/v1.4.2...v1.5.0) (2026-06-21)
+
+
 ### Chores
 
 * **build:** update build artifacts ([5500544](https://github.com/fukaziroh-id/repasta_in/commit/5500544))
