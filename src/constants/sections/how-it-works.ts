@@ -26,3 +26,34 @@ export const steps = [
 
 export const WHATSAPP_LINK = (msg: string) =>
   `https://wa.me/621919423939?text=${encodeURIComponent(msg)}`;
+
+export const accommodationData = {
+  freeZone: {
+    area: "Bojongsoang",
+    label: "GRATIS",
+  },
+  pricing: [
+    {
+      label: "15 KM PERTAMA (LUAR AREA)",
+      value: "Rp 50.000",
+      suffix: null,
+    },
+    {
+      label: "SELANJUTNYA",
+      value: "+Rp 10.000",
+      suffix: "/km",
+    },
+  ],
+  notes: [
+    {
+      type: "info" as const,
+      text: "Di luar area Bojongsoang hanya tersedia paket Deep Clean.",
+      highlight: "hanya tersedia paket Deep Clean",
+    },
+    {
+      type: "check" as const,
+      text: "Total akomodasi dikonfirmasi sebelum kunjungan — transparan, tanpa biaya kejutan.",
+      highlight: null,
+    },
+  ],
+} as const;
