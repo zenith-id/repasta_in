@@ -17,3 +17,18 @@ export const header = {
   subtitle:
     "Lebih dari 500 pelanggan di Bandung telah mempercayakan servis laptop mereka kepada kami.",
 } as const;
+
+export const googleReviewCard = {
+  badge: "Ulasan Terverifikasi Google",
+  rating: "5,0",
+  ratingText: "Berdasarkan 35+ ulasan di Google Maps",
+  copywriting: {
+    prefix: "Lebih dari ",
+    highlight1: "35 pelanggan",
+    middle:
+      " telah membagikan pengalaman nyata mereka bersama kami. Baca ulasan selengkapnya atau bagikan cerita Anda langsung di ",
+    highlight2: "Google Maps",
+  },
+  writeReviewUrl: "https://maps.app.goo.gl/6wkYfFzpS8EjyJ4p8",
+  viewReviewsUrl: "https://maps.app.goo.gl/6wkYfFzpS8EjyJ4p8",
+} as const;
