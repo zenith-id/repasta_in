@@ -28,6 +28,8 @@ export const brand = {
 
 export const contact = {
   phone: "+62 191 942 3939",
+  email: "repastain@gmail.com",
+  emailLink: "mailto:repastain@gmail.com?subject=Tanya%20Servis%20Laptop%20-%20Repasta&body=Halo%20Repasta!%20Saya%20ingin%20tanya%20mengenai%20servis%20laptop%20saya.",
   ig: "https://www.instagram.com/repasta.in/",
   waLink: "https://wa.me/621919423939",
   waConsultLink:

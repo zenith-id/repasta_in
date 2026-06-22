@@ -1,13 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageCircle, MapPin, Clock, Instagram } from "lucide-react";
+import { MessageCircle, MapPin, Clock, Instagram, Mail } from "lucide-react";
 import Link from "next/link";
 import { footerContactVariants } from "@/lib/motion/animations";
 
 interface FooterContactProps {
   contact: {
     phone: string;
+    email: string;
+    emailLink: string;
     waLink: string;
     location: string;
     gmaps: string;
@@ -44,6 +46,18 @@ export function FooterContact({ contact }: FooterContactProps) {
           </a>
         </div>
         <div className="flex items-start gap-2.5">
+          <Mail
+            size={14}
+            className="text-primary mt-0.5 flex-shrink-0"
+          />
+          <a
+            href={contact.emailLink}
+            className="text-slate-400 hover:text-primary transition-colors text-sm"
+          >
+            {contact.email}
+          </a>
+        </div>
+        <div className="flex items-start gap-2.5">
           <MapPin
             size={14}
             className="text-primary mt-0.5 flex-shrink-0"
@@ -76,6 +90,13 @@ export function FooterContact({ contact }: FooterContactProps) {
         >
           <Instagram size={16} />
         </Link>
+        <a
+          href={contact.emailLink}
+          aria-label="Email Repasta"
+          className="w-9 h-9 rounded-lg border border-slate-800 flex items-center justify-center text-slate-500 hover:text-primary hover:border-primary/40 transition-colors"
+        >
+          <Mail size={16} />
+        </a>
         <a
           href={contact.gmaps}
           target="_blank"
