@@ -47,7 +47,7 @@ export function CTA() {
             {subtext}
           </p>
 
-          <CTAButtons primary={cta.primary} secondary={cta.secondary} />
+          <CTAButtons text={cta.text} href={cta.href} />
 
           <CTAInfo hours={hours} location={location} />
         </motion.div>
