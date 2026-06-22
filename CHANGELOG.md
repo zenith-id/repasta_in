@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [Unreleased]
 
+### Features
+
+- **navbar:** add kenapa kami, testimoni, faq nav items
+- **footer:** add email contact
+- **testimonials:** extract column and card components
+- **testimonials:** add google review card
+
+### Refactoring
+
+- **cta:** simplify to single whatsapp button
+- **cta:** flatten button data structure
+- **testimonials:** use extracted components and variants
+- **testimonials:** use local avatars and add google review data
+
+### Chores
+
+- **testi:** add local avatar images (9 files)
+
 ## [1.5.0](https://github.com/fukaziroh-id/repasta_in/compare/v1.4.2...v1.5.0) (2026-06-21)
 
 
