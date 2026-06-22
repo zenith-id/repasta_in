@@ -272,3 +272,35 @@ export const floatingAnimation = {
   },
 };
 
+export const googleCardVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
+
+/* ── Testimonials ─────────────────────────────────────────── */
+
+export const testimonialsSectionVariants: Variants = {
+  hidden: { opacity: 0, y: 40, rotate: -1 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    rotate: 0,
+    transition: { duration: 1.1, ease: [0.16, 1, 0.3, 1] },
+  },
+};
+
+export const testimonialCardHover = {
+  whileHover: {
+    scale: 1.03,
+    y: -6,
+    transition: { type: "spring" as const, stiffness: 380, damping: 18 },
+  },
+};
+
