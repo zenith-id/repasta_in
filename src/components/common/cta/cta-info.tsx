@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Clock, MapPin } from "lucide-react";
-import { ctaInfoVariants } from "@/lib/motion/animations";
+import { fadeIn } from "@/lib/motion/animations";
 
 interface CTAInfoProps {
   hours: {
@@ -19,7 +19,7 @@ export function CTAInfo({ hours, location }: CTAInfoProps) {
   return (
     <motion.div
       className="inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-0 px-6 py-3.5 rounded-2xl border bg-primary/5 border-primary/10 text-sm"
-      variants={ctaInfoVariants}
+      variants={fadeIn(0.35)}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}

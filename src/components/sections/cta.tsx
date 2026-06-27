@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ctaContentVariants } from "@/lib/motion/animations";
+import { fadeInUp } from "@/lib/motion/animations";
 import { CTABadge, CTAButtons, CTAInfo } from "@/components/common/cta";
 import { ctaContent } from "@/constants/sections/cta";
 
@@ -30,7 +30,7 @@ export function CTA() {
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <motion.div
-          variants={ctaContentVariants}
+          variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { MessageCircle, ArrowRight } from "lucide-react";
-import { ctaButtonsVariants } from "@/lib/motion/animations";
+import { fadeInUp } from "@/lib/motion/animations";
 
 interface CTAButtonsProps {
   text: string;
@@ -13,7 +13,7 @@ export function CTAButtons({ text, href }: CTAButtonsProps) {
   return (
     <motion.div
       className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
-      variants={ctaButtonsVariants}
+      variants={fadeInUp}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
