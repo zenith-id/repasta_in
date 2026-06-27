@@ -20,13 +20,19 @@ All notable changes to this project will be documented in this file. See [standa
 - **gallery:** add header and CTA config data, unify image paths
 - **animations:** consolidate variants into base fadeInUp, staggeredFadeUp, fadeIn
 - **animations:** remove 17 unused/section-specific variants
+- **sections:** update animation imports to use base variants (hero, features, how-it-works, services, faq)
+- **cta:** update animation imports to use base variants
+- **footer:** update animation imports to use base variants
 
 ### Documentation
 
 - **plans:** add gallery refactor and animations consolidation plans
-- **cta:** flatten button data structure
-- **testimonials:** use extracted components and variants
-- **testimonials:** use local avatars and add google review data
+
+### Chores
+
+- **images:** add gallery, cleaning, gpu, and pc photos (31 files)
+- **deps:** add uuid and @types/uuid
+- **build:** update tsbuildinfo
 
 ### Chores
 
