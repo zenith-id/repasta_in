@@ -6,6 +6,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
+- **gallery:** add image-trail, masonry grid, and comparison slider UI
+- **gallery:** add gallery trail hook and sub-components
+
 - **navbar:** add kenapa kami, testimoni, faq nav items
 - **footer:** add email contact
 - **testimonials:** extract column and card components
@@ -13,7 +16,14 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Refactoring
 
-- **cta:** simplify to single whatsapp button
+- **gallery:** use SectionHeader and base animations directly
+- **gallery:** add header and CTA config data, unify image paths
+- **animations:** consolidate variants into base fadeInUp, staggeredFadeUp, fadeIn
+- **animations:** remove 17 unused/section-specific variants
+
+### Documentation
+
+- **plans:** add gallery refactor and animations consolidation plans
 - **cta:** flatten button data structure
 - **testimonials:** use extracted components and variants
 - **testimonials:** use local avatars and add google review data
