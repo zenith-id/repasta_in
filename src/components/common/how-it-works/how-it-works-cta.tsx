@@ -2,14 +2,14 @@
 
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
-import { howItWorksCTAVariants } from "@/lib/motion/animations";
+import { fadeIn } from "@/lib/motion/animations";
 import { WHATSAPP_LINK } from "@/constants/sections/how-it-works";
 
 export function HowItWorksCTA() {
   return (
     <motion.div
       className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12 w-full"
-      variants={howItWorksCTAVariants}
+      variants={fadeIn(0.55)}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}

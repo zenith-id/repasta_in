@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import type { LucideIcon } from "lucide-react";
-import { stepVariants } from "@/lib/motion/animations";
+import { staggeredFadeUp } from "@/lib/motion/animations";
 
 interface StepCardProps {
   num: string;
@@ -23,7 +23,7 @@ export function StepCard({
     <motion.div
       className="relative"
       custom={index}
-      variants={stepVariants}
+      variants={staggeredFadeUp({ y: 32, duration: 0.6, stagger: 0.15 })}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}

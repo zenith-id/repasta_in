@@ -2,14 +2,14 @@
 
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
-import { serviceNoteVariants } from "@/lib/motion/animations";
+import { fadeIn } from "@/lib/motion/animations";
 import { note, WHATSAPP_LINK } from "@/constants/sections/services";
 
 export function ServiceCTA() {
   return (
     <motion.div
       className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 px-6 py-5 rounded-2xl bg-primary/6 border border-primary/15"
-      variants={serviceNoteVariants}
+      variants={fadeIn(0.3)}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
