@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { featureFadeUp } from "@/lib/motion/animations";
+import { staggeredFadeUp } from "@/lib/motion/animations";
 import type { ReactNode } from "react";
 
 interface FeatureCardProps {
@@ -27,7 +27,7 @@ export function FeatureCard({
   return (
     <motion.div
       custom={index}
-      variants={featureFadeUp}
+      variants={staggeredFadeUp({ y: 24, duration: 0.55, stagger: 0.08 })}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}

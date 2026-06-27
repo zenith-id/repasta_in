@@ -1,93 +1,41 @@
-import { Variants } from "framer-motion";
+import { type Variants } from "framer-motion";
+
+/* ── Base ────────────────────────────────────────────────── */
 
 export const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
+    transition: { duration: 0.6, ease: "easeOut" },
   },
 };
 
-export const fadeInDown: Variants = {
-  hidden: { opacity: 0, y: -20 },
-  visible: {
+/** Indexed fade-up: pass `custom={index}` to each motion element. */
+export const staggeredFadeUp = ({
+  y = 20,
+  duration = 0.5,
+  delay = 0,
+  stagger = 0.1,
+}: {
+  y?: number;
+  duration?: number;
+  delay?: number;
+  stagger?: number;
+} = {}): Variants => ({
+  hidden: { opacity: 0, y },
+  visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  },
-};
+    transition: { duration, delay: delay + i * stagger, ease: "easeOut" },
+  }),
+});
 
-export const fadeInLeft: Variants = {
-  hidden: { opacity: 0, x: -30 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  },
-};
-
-export const fadeInRight: Variants = {
-  hidden: { opacity: 0, x: 30 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  },
-};
-
-export const scaleIn: Variants = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-};
-
-export const containerVariants: Variants = {
+/** Simple opacity fade with a delay. */
+export const fadeIn = (delay = 0): Variants => ({
   hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-export const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-};
-
-export const hoverScale = {
-  whileHover: { scale: 1.05 },
-  whileTap: { scale: 0.95 },
-  transition: { duration: 0.2 },
-};
+  visible: { opacity: 1, transition: { delay } },
+});
 
 /* ── Hero ───────────────────────────────────────────────── */
 
@@ -100,16 +48,7 @@ export const heroContainerVariants: Variants = {
   },
 };
 
-export const heroItemVariants: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
-
-/* ── Services ─────────────────────────────────────────────── */
+/* ── Services ───────────────────────────────────────────── */
 
 export const serviceRowVariants: Variants = {
   hidden: { opacity: 0, x: -12 },
@@ -127,24 +66,7 @@ export const tabContentVariants = {
   transition: { duration: 0.22 },
 };
 
-export const serviceNoteVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { delay: 0.3 },
-  },
-};
-
-/* ── Features ─────────────────────────────────────────────── */
-
-export const featureFadeUp: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: (index: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.55, delay: index * 0.08, ease: "easeOut" },
-  }),
-};
+/* ── Features ───────────────────────────────────────────── */
 
 export const barGrowVariants: Variants = {
   hidden: { scaleY: 0, originY: 1 },
@@ -162,40 +84,12 @@ export const progressRingVariants: Variants = {
   }),
 };
 
-/* ── How It Works ─────────────────────────────────────────── */
-
-export const stepVariants: Variants = {
-  hidden: { opacity: 0, y: 32 },
-  visible: (index: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, delay: index * 0.15 },
-  }),
-};
-
-export const howItWorksCTAVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { delay: 0.55 },
-  },
-};
-
-/* ── FAQ ──────────────────────────────────────────────────── */
-
-export const faqItemVariants: Variants = {
-  hidden: { opacity: 0, y: 14 },
-  visible: (index: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.45, delay: index * 0.06 },
-  }),
-};
+/* ── FAQ ────────────────────────────────────────────────── */
 
 export const faqExpandVariants = {
   collapsed: { height: 0, opacity: 0 },
   expanded: { height: "auto", opacity: 1 },
-  transition: { duration: 0.25, ease: "easeInOut" },
+  transition: { duration: 0.25, ease: "easeInOut" as const },
 };
 
 export const faqChevronVariants = {
@@ -204,87 +98,7 @@ export const faqChevronVariants = {
   transition: { duration: 0.25 },
 };
 
-/* ── CTA ──────────────────────────────────────────────────── */
-
-export const ctaContentVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6 },
-  },
-};
-
-export const ctaButtonsVariants: Variants = {
-  hidden: { opacity: 0, y: 12 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { delay: 0.2 },
-  },
-};
-
-export const ctaInfoVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { delay: 0.35 },
-  },
-};
-
-/* ── Footer ───────────────────────────────────────────────── */
-
-export const footerBrandVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5 },
-  },
-};
-
-export const footerColumnVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (index: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, delay: 0.08 + index * 0.06 },
-  }),
-};
-
-export const footerContactVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, delay: 0.2 },
-  },
-};
-
-export const floatingAnimation = {
-  animate: {
-    y: [0, -10, 0],
-    transition: {
-      duration: 3,
-      repeat: Infinity,
-      ease: "easeInOut" as const,
-    },
-  },
-};
-
-export const googleCardVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: [0.16, 1, 0.3, 1],
-    },
-  },
-};
-
-/* ── Testimonials ─────────────────────────────────────────── */
+/* ── Testimonials ───────────────────────────────────────── */
 
 export const testimonialsSectionVariants: Variants = {
   hidden: { opacity: 0, y: 40, rotate: -1 },
@@ -304,3 +118,11 @@ export const testimonialCardHover = {
   },
 };
 
+export const googleCardVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+  },
+};

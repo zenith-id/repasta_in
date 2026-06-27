@@ -7,7 +7,7 @@ import { StatItem } from "@/components/shared";
 import { heroContent, statsData } from "@/constants/layout/hero";
 import {
   heroContainerVariants,
-  heroItemVariants,
+  fadeInUp,
 } from "@/lib/motion/animations";
 import { HeroStatusBadge } from "@/components/common/hero/hero-status-badge";
 
@@ -44,7 +44,7 @@ export function Hero() {
         >
           {/* Status Badge */}
           <motion.div
-            variants={heroItemVariants}
+            variants={fadeInUp}
             className="flex justify-center"
           >
             <HeroStatusBadge kicker={highlightPills.join(" • ")} />
@@ -52,7 +52,7 @@ export function Hero() {
 
           {/* Headline */}
           <motion.h1
-            variants={heroItemVariants}
+            variants={fadeInUp}
             className="mb-6 font-extrabold tracking-tight text-foreground font-poppins"
             style={{
               fontSize: "clamp(2.25rem, 6vw, 4.5rem)",
@@ -75,7 +75,7 @@ export function Hero() {
 
           {/* Subtext */}
           <motion.p
-            variants={heroItemVariants}
+            variants={fadeInUp}
             className="mx-auto mb-10 max-w-2xl text-base sm:text-lg text-foreground/65 leading-relaxed font-medium px-4"
           >
             {subtext.prefix}
@@ -84,7 +84,7 @@ export function Hero() {
 
           {/* CTA */}
           <motion.div
-            variants={heroItemVariants}
+            variants={fadeInUp}
             className="mb-12 flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
             <a
@@ -108,7 +108,7 @@ export function Hero() {
 
           {/* Stats */}
           <motion.div
-            variants={heroItemVariants}
+            variants={fadeInUp}
             className="grid grid-cols-1 md:grid-cols-3 gap-px rounded-3xl overflow-hidden border border-foreground/10 bg-foreground/10 backdrop-blur-md"
           >
             {statsData.map((s, i) => (
