@@ -8,3 +8,4 @@ export * from "./sections/layanan";
 export * from "./sections/problem-awareness";
 export * from "./sections/whatsapp-float";
 export * from "./sections/testimonials-data-const";
+export * from "./sections/gallery";
