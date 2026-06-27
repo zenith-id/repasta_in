@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { footerColumnVariants } from "@/lib/motion/animations";
+import { staggeredFadeUp } from "@/lib/motion/animations";
 
 interface FooterLink {
   label: string;
@@ -22,7 +22,7 @@ export function FooterLinks({ columns }: FooterLinksProps) {
         <motion.div
           key={ci}
           custom={ci}
-          variants={footerColumnVariants}
+          variants={staggeredFadeUp({ duration: 0.5, delay: 0.08, stagger: 0.06 })}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { MessageCircle, MapPin, Clock, Instagram, Mail } from "lucide-react";
 import Link from "next/link";
-import { footerContactVariants } from "@/lib/motion/animations";
+import { fadeIn } from "@/lib/motion/animations";
 
 interface FooterContactProps {
   contact: {
@@ -24,7 +24,7 @@ interface FooterContactProps {
 export function FooterContact({ contact }: FooterContactProps) {
   return (
     <motion.div
-      variants={footerContactVariants}
+      variants={fadeIn(0.2)}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}

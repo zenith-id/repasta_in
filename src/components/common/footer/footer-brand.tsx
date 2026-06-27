@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 import Image from "next/image";
-import { footerBrandVariants } from "@/lib/motion/animations";
+import { fadeInUp } from "@/lib/motion/animations";
 
 interface FooterBrandProps {
   name: string;
@@ -18,7 +18,7 @@ export function FooterBrand({
 }: FooterBrandProps) {
   return (
     <motion.div
-      variants={footerBrandVariants}
+      variants={fadeInUp}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
