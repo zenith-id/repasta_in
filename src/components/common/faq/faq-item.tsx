@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import {
-  faqItemVariants,
+  staggeredFadeUp,
   faqExpandVariants,
   faqChevronVariants,
 } from "@/lib/motion/animations";
@@ -21,7 +21,7 @@ export function FAQItem({ q, a, index }: FAQItemProps) {
   return (
     <motion.div
       custom={index}
-      variants={faqItemVariants}
+      variants={staggeredFadeUp({ y: 14, duration: 0.45, stagger: 0.06 })}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
