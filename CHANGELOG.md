@@ -2,41 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [Unreleased]
+## [1.6.0](https://github.com/fukaziroh-id/repasta_in/compare/v1.5.0...v1.6.0) (2026-06-28)
+
 
 ### Features
 
-- **gallery:** add image-trail, masonry grid, and comparison slider UI
-- **gallery:** add gallery trail hook and sub-components
+* **footer:** add email contact ([00a11d7](https://github.com/fukaziroh-id/repasta_in/commit/00a11d73d0ccfea516eb8e714843762833111635))
+* **gallery:** add gallery trail hook and sub-components ([573c21c](https://github.com/fukaziroh-id/repasta_in/commit/573c21c1b4a240f22aa3ff6ddd9079239f29b3a3))
+* **gallery:** add image-trail, masonry grid, and comparison slider ([7eea72c](https://github.com/fukaziroh-id/repasta_in/commit/7eea72c2105b7edb830928e776a1258564b30dcb))
+* **navbar:** add kenapa kami, testimoni, faq nav items ([b275d15](https://github.com/fukaziroh-id/repasta_in/commit/b275d155fb3268dbcd916ebae6b135e204bff9ef))
+* **testimonials:** add google review card ([8d893f8](https://github.com/fukaziroh-id/repasta_in/commit/8d893f814d63594b003c5e13b2fa353157462959))
+* **testimonials:** extract column and card components ([6a5c501](https://github.com/fukaziroh-id/repasta_in/commit/6a5c5013d7aec9ca90d1687fc9cf07d359ac6eb0))
 
-- **navbar:** add kenapa kami, testimoni, faq nav items
-- **footer:** add email contact
-- **testimonials:** extract column and card components
-- **testimonials:** add google review card
 
-### Refactoring
+### Bug Fixes
 
-- **gallery:** use SectionHeader and base animations directly
-- **gallery:** add header and CTA config data, unify image paths
-- **animations:** consolidate variants into base fadeInUp, staggeredFadeUp, fadeIn
-- **animations:** remove 17 unused/section-specific variants
-- **sections:** update animation imports to use base variants (hero, features, how-it-works, services, faq)
-- **cta:** update animation imports to use base variants
-- **footer:** update animation imports to use base variants
-
-### Documentation
-
-- **plans:** add gallery refactor and animations consolidation plans
-
-### Chores
-
-- **images:** add gallery, cleaning, gpu, and pc photos (31 files)
-- **deps:** add uuid and @types/uuid
-- **build:** update tsbuildinfo
-
-### Chores
-
-- **testi:** add local avatar images (9 files)
+* **gallery:** use neutral gray for skeleton loader ([ca8c08f](https://github.com/fukaziroh-id/repasta_in/commit/ca8c08f08556a9b53db5882a6ad98f0a6de1428f))
+* **sections:** remove content-visibility-auto ([c587956](https://github.com/fukaziroh-id/repasta_in/commit/c5879561373d8d7fd86f4b06bb7f3a91f4844c54))
+* **seo:** add main tag and loading state ([fbe731e](https://github.com/fukaziroh-id/repasta_in/commit/fbe731e5298216ffc518640aac7543a1b411a786))
+* **seo:** delete static sitemap override ([6b445fe](https://github.com/fukaziroh-id/repasta_in/commit/6b445fe13a73641899333ecc69b3ba7dd437a6e9))
+* **seo:** descriptive alt text for logo images ([4c35a9c](https://github.com/fukaziroh-id/repasta_in/commit/4c35a9c646c30d863479ded318625a0bf0fd3df1))
+* **seo:** per-page canonical and consistent og image ([dd84136](https://github.com/fukaziroh-id/repasta_in/commit/dd841365e5681a312d87dcdb495c8d6a3a5cb18c))
 
 ## [1.5.0](https://github.com/fukaziroh-id/repasta_in/compare/v1.4.2...v1.5.0) (2026-06-21)
 
