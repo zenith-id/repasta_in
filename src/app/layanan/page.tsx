@@ -10,6 +10,7 @@ import {
   Wrench,
 } from "lucide-react";
 import { LAYANAN_CONTENT } from "@/constants/sections/layanan";
+import { WHATSAPP_LINK } from "@/constants/contact";
 
 const siteUrl = "https://repasta-in.vercel.app";
 
@@ -85,7 +86,7 @@ export default function LayananPage() {
             Kembali ke Beranda
           </Link>
           <a
-            href="https://wa.me/621919423939?text=Halo%20Repasta!%20Saya%20ingin%20konsultasi%20layanan."
+            href={WHATSAPP_LINK("Halo Repasta! Saya ingin konsultasi layanan.")}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground text-sm font-semibold rounded-xl hover:bg-primary/90 transition-colors"
@@ -224,7 +225,7 @@ export default function LayananPage() {
             terbaik. Gratis.
           </p>
           <a
-            href="https://wa.me/621919423939?text=Halo%20Repasta!%20Saya%20ingin%20konsultasi%20masalah%20laptop%20saya."
+            href={WHATSAPP_LINK("Halo Repasta! Saya ingin konsultasi masalah laptop saya.")}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 bg-background dark:bg-primary text-foreground dark:text-primary-foreground font-semibold rounded-xl hover:opacity-90 hover:-translate-y-0.5 transition-all shadow-lg"

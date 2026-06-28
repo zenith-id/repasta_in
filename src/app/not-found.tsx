@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Wrench, ArrowLeft, MessageCircle } from "lucide-react";
 import Image from "next/image";
+import { WHATSAPP_LINK } from "@/constants/contact";
 
 export default function NotFound() {
   return (
@@ -42,7 +43,7 @@ export default function NotFound() {
             Kembali ke Beranda
           </Link>
           <a
-            href="https://wa.me/621919423939?text=Halo%20Repasta!%20Saya%20ingin%20konsultasi."
+            href={WHATSAPP_LINK("Halo Repasta! Saya ingin konsultasi.")}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 border border-border text-foreground/70 font-semibold rounded-xl hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-all text-sm"
