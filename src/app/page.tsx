@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import { Navbar } from "@/components/layout/navbar";
 import { Hero } from "@/components/layout/hero";
+import { SkeletonWrapper } from "@/components/skeleton-wrapper";
 
 // Client boundary for Lenis smooth scroll
 const LenisProvider = dynamic(
@@ -51,15 +52,33 @@ export default function Home() {
     <LenisProvider>
       <Navbar />
       <main>
-        <Hero />
-        <ProblemAwareness />
-        <Services />
-        <Features />
-        <HowItWorks />
-        <Gallery />
-        <Testimonials />
-        <FAQ />
-        <CTA />
+        <SkeletonWrapper name="hero">
+          <Hero />
+        </SkeletonWrapper>
+        <SkeletonWrapper name="problem-awareness">
+          <ProblemAwareness />
+        </SkeletonWrapper>
+        <SkeletonWrapper name="services">
+          <Services />
+        </SkeletonWrapper>
+        <SkeletonWrapper name="features">
+          <Features />
+        </SkeletonWrapper>
+        <SkeletonWrapper name="how-it-works">
+          <HowItWorks />
+        </SkeletonWrapper>
+        <SkeletonWrapper name="gallery">
+          <Gallery />
+        </SkeletonWrapper>
+        <SkeletonWrapper name="testimonials">
+          <Testimonials />
+        </SkeletonWrapper>
+        <SkeletonWrapper name="faq">
+          <FAQ />
+        </SkeletonWrapper>
+        <SkeletonWrapper name="cta">
+          <CTA />
+        </SkeletonWrapper>
       </main>
       <Footer />
       <WhatsAppFloat />
