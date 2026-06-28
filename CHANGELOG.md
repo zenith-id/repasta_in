@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 
+## [Unreleased]
+
+### Bug Fixes
+
+* **responsive:** tab switcher overflow on narrow viewport ([#](TODO))
+* **responsive:** testimonials column height clipping on mobile ([#](TODO))
+* **responsive:** whatsapp float label hidden on touch devices ([#](TODO))
+* **responsive:** infinite testimonials scroll ignores prefers-reduced-motion ([#](TODO))
+
+### Performance
+
+* **responsive:** add content-visibility-auto to below-fold sections ([#](TODO))
+
+
 ## [1.8.0](https://github.com/fukaziroh-id/repasta_in/compare/v1.7.0...v1.8.0) (2026-06-28)
 
 
