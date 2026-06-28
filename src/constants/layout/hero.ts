@@ -1,3 +1,5 @@
+import { WHATSAPP_LINK } from "@/constants/contact";
+
 /* ── Content ──────────────────────────────────────────────── */
 
 export const heroContent = {
@@ -13,7 +15,7 @@ export const heroContent = {
   cta: {
     primary: {
       text: "Chat via WhatsApp",
-      href: "https://wa.me/621919423939?text=Halo%20Repasta!%20Saya%20ingin%20konsultasi%20servis%20laptop.",
+      href: WHATSAPP_LINK("Halo Repasta! Saya ingin konsultasi servis laptop."),
     },
     secondary: {
       text: "Lihat Layanan Kami",

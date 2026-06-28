@@ -1,5 +1,5 @@
-export const WHATSAPP_LINK = (msg: string) =>
-  `https://wa.me/621919423939?text=${encodeURIComponent(msg)}`;
+import { WHATSAPP_LINK } from "@/constants/contact";
+export { WHATSAPP_LINK };
 
 export const ctaContent = {
   badge: { text: "Siap Membantu Anda Sekarang" },

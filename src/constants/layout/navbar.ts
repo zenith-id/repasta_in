@@ -1,3 +1,5 @@
+export { WHATSAPP_LINK } from '@/constants/contact'
+
 export const primaryNav = [
   { label: 'Layanan',     href: '#layanan',     id: 'layanan'     },
   { label: 'Kenapa Kami', href: '#keunggulan',  id: 'keunggulan'  },
@@ -15,5 +17,3 @@ export const mobileNav = [
   { label: 'Testimoni',   href: '#testimoni',   id: 'testimoni'   },
   { label: 'FAQ',         href: '#faq',         id: 'faq'         },
 ] as const
-
-export const WHATSAPP_LINK = (msg: string) => `https://wa.me/621919423939?text=${encodeURIComponent(msg)}`
