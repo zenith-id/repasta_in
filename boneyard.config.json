@@ -1,0 +1,11 @@
+{
+  "breakpoints": [375, 640, 768, 1024, 1280],
+  "out": "./src/bones",
+  "wait": 1000,
+  "color": "#e5e5e5",
+  "darkColor": "#1a1a2e",
+  "animate": "shimmer",
+  "shimmerColor": "#ebebeb",
+  "darkShimmerColor": "#2a2a3e",
+  "speed": "1.5s"
+}
