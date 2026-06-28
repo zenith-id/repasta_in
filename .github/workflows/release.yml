@@ -21,19 +21,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Extract Latest Version Changelog
-        id: extract_changelog
-        run: |
-          awk '
-            /^## \[[0-9]+\.[0-9]+\.[0-9]+\]/ || /^## [0-9]+\.[0-9]+\.[0-9]+/ {
-              if (found) exit
-              found = 1
-            }
-            found { print }
-          ' CHANGELOG.md > RELEASE_NOTES.md
-
-          test -s RELEASE_NOTES.md
-
       - name: Get latest tag
         id: get_tag
         run: |
@@ -42,6 +29,25 @@ jobs:
           else
             echo "tag=${GITHUB_REF#refs/tags/}" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Extract Version Changelog
+        id: extract_changelog
+        run: |
+          TAG="${{ steps.get_tag.outputs.tag }}"
+          VERSION="${TAG#v}"
+          awk -v ver="$VERSION" '
+            $0 ~ "^## \\[" ver "\\]" || $0 ~ "^## " ver " " || $0 ~ "^## " ver "$" {
+              found = 1
+              print
+              next
+            }
+            /^## \[[0-9]+\.[0-9]+\.[0-9]+\]/ || /^## [0-9]+\.[0-9]+\.[0-9]+/ {
+              if (found) exit
+            }
+            found { print }
+          ' CHANGELOG.md > RELEASE_NOTES.md
+
+          test -s RELEASE_NOTES.md
 
       - name: Create GitHub Release
         env:
