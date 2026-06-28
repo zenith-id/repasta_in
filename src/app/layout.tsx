@@ -66,9 +66,20 @@ export const metadata: Metadata = {
     google: "google-site-verification-code-placeholder",
   },
   icons: {
-    icon: "/assets/logo/logo.webp",
+    icon: [
+      { url: "/assets/logo/repasta-ico-16.png", sizes: "16x16", type: "image/png" },
+      { url: "/assets/logo/repasta-ico-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/assets/logo/repasta-ico-48.png", sizes: "48x48", type: "image/png" },
+      { url: "/assets/logo/repasta-ico-64.png", sizes: "64x64", type: "image/png" },
+      { url: "/assets/logo/repasta-ico-128.png", sizes: "128x128", type: "image/png" },
+      { url: "/assets/logo/repasta-icon-48.webp", sizes: "48x48", type: "image/webp" },
+      { url: "/assets/logo/logo.webp", type: "image/webp" },
+    ],
     shortcut: "/assets/logo/logo.webp",
-    apple: "/assets/logo/logo.webp",
+    apple: [
+      { url: "/assets/logo/repasta-ico-128.png", sizes: "128x128", type: "image/png" },
+      { url: "/assets/logo/repasta-ico-64.png", sizes: "64x64", type: "image/png" },
+    ],
   },
   robots: { index: true, follow: true },
   other: { "article:modified_time": "2026-06-28" },
