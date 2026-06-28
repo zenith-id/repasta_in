@@ -2,21 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [Unreleased]
-
-### Refactoring
-
-* **contact:** centralize whatsapp/email to env vars ([d11ad56](https://github.com/fukaziroh-id/repasta_in/commit/d11ad56))
-* **contact:** use contact constants in navbar/hero/cta ([271cc6e](https://github.com/fukaziroh-id/repasta_in/commit/271cc6e))
-* **contact:** use contact constants in how-it-works/services/pricing ([d692366](https://github.com/fukaziroh-id/repasta_in/commit/d692366))
-* **contact:** use contact constants in remaining files ([78daae1](https://github.com/fukaziroh-id/repasta_in/commit/78daae1))
-* **contact:** use whatsapp number in json-ld ([c773678](https://github.com/fukaziroh-id/repasta_in/commit/c773678))
-
-### Documentation
-
-* **readme:** update to v1.7.0 ([404dc7d](https://github.com/fukaziroh-id/repasta_in/commit/404dc7d))
-* **readme:** update whatsapp number and env docs ([e2ded70](https://github.com/fukaziroh-id/repasta_in/commit/e2ded70))
-* **seo:** update whatsapp in llms.txt and pricing.md ([436ec0c](https://github.com/fukaziroh-id/repasta_in/commit/436ec0c))
+## [1.8.0](https://github.com/fukaziroh-id/repasta_in/compare/v1.7.0...v1.8.0) (2026-06-28)
 
 ## [1.7.0](https://github.com/fukaziroh-id/repasta_in/compare/v1.6.0...v1.7.0) (2026-06-28)
 
