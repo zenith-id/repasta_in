@@ -49,8 +49,6 @@ export const galleryMasonryItems: GalleryItem[] = [
   { src: "/assets/images/gallery/card-upgrade.webp", label: "Instalasi SSD/RAM" },
   { src: "/assets/images/gallery/compare-1-before.webp", label: "Before Deepclean" },
   { src: "/assets/images/gallery/compare-1-after.webp", label: "After Deepclean" },
-  { src: "/assets/images/gallery/compare-2-before.webp", label: "PC Upgrade - Before" },
-  { src: "/assets/images/gallery/compare-2-after.webp", label: "PC Upgrade - After" },
 ] as const;
 
 // ── Before/After Comparisons ──
