@@ -1,18 +1,50 @@
-"use client";
-
-import { LenisProvider } from "@/components/lenis-provider";
+import dynamic from "next/dynamic";
 import { Navbar } from "@/components/layout/navbar";
 import { Hero } from "@/components/layout/hero";
-import { ProblemAwareness } from "@/components/sections/problem-awareness";
-import { Services } from "@/components/sections/services";
-import { Features } from "@/components/sections/features";
-import { HowItWorks } from "@/components/sections/how-it-works";
-import { Gallery } from "@/components/sections/gallery";
-import { Testimonials } from "@/components/sections/testimonials";
-import { FAQ } from "@/components/sections/faq";
-import { CTA } from "@/components/sections/cta";
-import { Footer } from "@/components/layout/footer";
-import { WhatsAppFloat } from "@/components/sections/whatsapp-float";
+
+// Client boundary for Lenis smooth scroll
+const LenisProvider = dynamic(
+  () => import("@/components/lenis-provider").then((m) => m.LenisProvider)
+);
+
+// Below-fold sections — code-split into separate chunks
+const ProblemAwareness = dynamic(
+  () =>
+    import("@/components/sections/problem-awareness").then(
+      (m) => m.ProblemAwareness
+    )
+);
+const Services = dynamic(
+  () => import("@/components/sections/services").then((m) => m.Services)
+);
+const Features = dynamic(
+  () => import("@/components/sections/features").then((m) => m.Features)
+);
+const HowItWorks = dynamic(
+  () => import("@/components/sections/how-it-works").then((m) => m.HowItWorks)
+);
+const Gallery = dynamic(
+  () => import("@/components/sections/gallery").then((m) => m.Gallery)
+);
+const Testimonials = dynamic(
+  () =>
+    import("@/components/sections/testimonials").then((m) => m.Testimonials)
+);
+const FAQ = dynamic(
+  () => import("@/components/sections/faq").then((m) => m.FAQ)
+);
+const CTA = dynamic(
+  () => import("@/components/sections/cta").then((m) => m.CTA)
+);
+const Footer = dynamic(
+  () => import("@/components/layout/footer").then((m) => m.Footer)
+);
+const WhatsAppFloat = dynamic(
+  () =>
+    import("@/components/sections/whatsapp-float").then(
+      (m) => m.WhatsAppFloat
+    )
+);
 
 export default function Home() {
   return (

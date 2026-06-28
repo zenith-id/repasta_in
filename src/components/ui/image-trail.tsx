@@ -1,4 +1,4 @@
-import { Children, useCallback, useEffect, useMemo, useRef } from "react"
+import { Children, useCallback, useEffect, useMemo, useRef, useState } from "react"
 import {
   AnimationSequence,
   motion,
@@ -7,7 +7,6 @@ import {
   useAnimate,
   useAnimationFrame,
 } from "framer-motion"
-import { v4 as uuidv4 } from "uuid"
 
 import { useMouseVector } from "@/hooks/use-mouse-vector"
 
@@ -46,11 +45,12 @@ const ImageTrail = ({
   interval = 100,
 }: ImageTrailProps) => {
   const trailRef = useRef<TrailItem[]>([])
+  const [, forceRender] = useState(0)
 
   const lastAddedTimeRef = useRef<number>(0)
-  const { position: mousePosition } =
+  const { position: mousePositionRef } =
     useMouseVector(containerRef)
-  const lastMousePosRef = useRef(mousePosition)
+  const lastMousePosRef = useRef({ x: 0, y: 0 })
   const currentIndexRef = useRef(0)
   // Convert children to array for random selection
   const childrenArray = useMemo(() => Children.toArray(children), [children])
@@ -73,7 +73,7 @@ const ImageTrail = ({
       }
 
       const newItem: TrailItem = {
-        id: uuidv4(),
+        id: crypto.randomUUID(),
         x: mousePos.x,
         y: mousePos.y,
         rotation: (Math.random() - 0.5) * rotationRange * 2,
@@ -91,6 +91,7 @@ const ImageTrail = ({
       } else {
         trailRef.current.unshift(newItem)
       }
+      forceRender((n) => n + 1)
     },
     [childrenArray, rotationRange, animationSequence, newOnTop, containerRef]
   )
@@ -99,18 +100,21 @@ const ImageTrail = ({
     const index = trailRef.current.findIndex((item) => item.id === itemId)
     if (index !== -1) {
       trailRef.current.splice(index, 1)
+      forceRender((n) => n + 1)
     }
   }, [])
 
   useAnimationFrame((time, delta) => {
+    const mousePos = mousePositionRef.current
+
     // Skip if mouse hasn't moved
     if (
-      lastMousePosRef.current.x === mousePosition.x &&
-      lastMousePosRef.current.y === mousePosition.y
+      lastMousePosRef.current.x === mousePos.x &&
+      lastMousePosRef.current.y === mousePos.y
     ) {
       return
     }
-    lastMousePosRef.current = mousePosition
+    lastMousePosRef.current = mousePos
 
     const currentTime = time
 
@@ -120,7 +124,7 @@ const ImageTrail = ({
 
     lastAddedTimeRef.current = currentTime
 
-    addToTrail(mousePosition)
+    addToTrail(mousePos)
   })
 
   return (

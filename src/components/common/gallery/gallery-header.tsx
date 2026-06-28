@@ -1,7 +1,11 @@
 "use client";
 
 import { type RefObject } from "react";
-import { ImageTrail } from "@/components/ui/image-trail";
+import dynamic from "next/dynamic";
+
+const ImageTrail = dynamic(
+  () => import("@/components/ui/image-trail").then((m) => m.ImageTrail)
+);
 import { galleryTrailImages } from "@/constants/sections/gallery";
 
 interface GalleryTrailProps {
