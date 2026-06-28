@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [Unreleased]
+
+### Features
+
+* **skeleton:** add boneyard-js and config ([1112e61](https://github.com/fukaziroh-id/repasta_in/commit/1112e61))
+* **skeleton:** wrap sections with skeleton ([b4ea7f3](https://github.com/fukaziroh-id/repasta_in/commit/b4ea7f3))
+* **skeleton:** add bones registry and hero/services ([bf9a0d5](https://github.com/fukaziroh-id/repasta_in/commit/bf9a0d5))
+* **skeleton:** add bones for problem/features/how-it-works ([a28c1d9](https://github.com/fukaziroh-id/repasta_in/commit/a28c1d9))
+* **skeleton:** add bones for gallery/testimonials/faq ([e895a2c](https://github.com/fukaziroh-id/repasta_in/commit/e895a2c))
+* **skeleton:** add cta bones and integrate loading ([139ec9d](https://github.com/fukaziroh-id/repasta_in/commit/139ec9d))
+* **seo:** optimize faq for ai search engines ([f12ceb3](https://github.com/fukaziroh-id/repasta_in/commit/f12ceb3))
+* **ai-seo:** add llms.txt and pricing.md ([7192cb3](https://github.com/fukaziroh-id/repasta_in/commit/7192cb3))
+* **ai-seo:** comparison table and freshness signal ([128fb7a](https://github.com/fukaziroh-id/repasta_in/commit/128fb7a))
+* **seo:** add multi-size icon metadata ([c48c086](https://github.com/fukaziroh-id/repasta_in/commit/c48c086))
+
+### Bug Fixes
+
+* **ui:** update not-found page styling ([8258b27](https://github.com/fukaziroh-id/repasta_in/commit/8258b27))
+
+### Chores
+
+* **assets:** add favicon 16/32/48px png ([0d44eff](https://github.com/fukaziroh-id/repasta_in/commit/0d44eff))
+* **assets:** add favicon 64/128px and webp ([3362ef7](https://github.com/fukaziroh-id/repasta_in/commit/3362ef7))
+* **assets:** optimize favicon 16/32/48px ([4dc1e0c](https://github.com/fukaziroh-id/repasta_in/commit/4dc1e0c))
+* **assets:** optimize favicon 64/128px and remove webp ([2bd4f8c](https://github.com/fukaziroh-id/repasta_in/commit/2bd4f8c))
+* **bones:** regenerate hero and services bones ([b751faf](https://github.com/fukaziroh-id/repasta_in/commit/b751faf))
+* **bones:** regenerate gallery/testimonials bones ([915ba96](https://github.com/fukaziroh-id/repasta_in/commit/915ba96))
+
 ## [1.6.0](https://github.com/fukaziroh-id/repasta_in/compare/v1.5.0...v1.6.0) (2026-06-28)
 
 
