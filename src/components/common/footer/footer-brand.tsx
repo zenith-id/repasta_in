@@ -27,7 +27,7 @@ export function FooterBrand({
         <div className="w-9 h-9 rounded-xl flex items-center justify-center">
           <Image
             src="/assets/logo/logo-512.webp"
-            alt="Logo"
+            alt="Repasta"
             width={24}
             height={24}
           />
