@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef, useState, useCallback } from "react";
+import Image from "next/image";
 import { GripVertical } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -57,10 +58,12 @@ export function ImageComparison({
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
     >
-      <img
+      <Image
         src={afterImage}
         alt={altAfter}
-        className="absolute inset-0 w-full h-full object-cover"
+        fill
+        sizes="(max-width: 768px) 100vw, 50vw"
+        className="object-cover"
         draggable={false}
       />
 
@@ -79,6 +82,8 @@ export function ImageComparison({
             maxWidth: "none",
           }}
           draggable={false}
+          loading="lazy"
+          decoding="async"
         />
       </div>
 

@@ -1,10 +1,10 @@
-import { RefObject, useEffect, useState } from "react"
+import { RefObject, useEffect, useRef } from "react"
 
 export const useMouseVector = (
   containerRef?: RefObject<HTMLElement | SVGElement>
 ) => {
-  const [position, setPosition] = useState({ x: 0, y: 0 })
-  const [vector, setVector] = useState({ dx: 0, dy: 0 })
+  const positionRef = useRef({ x: 0, y: 0 })
+  const vectorRef = useRef({ dx: 0, dy: 0 })
 
   useEffect(() => {
     let lastPosition = { x: 0, y: 0 }
@@ -25,8 +25,8 @@ export const useMouseVector = (
       const dx = newX - lastPosition.x
       const dy = newY - lastPosition.y
 
-      setVector({ dx, dy })
-      setPosition({ x: newX, y: newY })
+      vectorRef.current = { dx, dy }
+      positionRef.current = { x: newX, y: newY }
       lastPosition = { x: newX, y: newY }
     }
 
@@ -49,5 +49,5 @@ export const useMouseVector = (
     }
   }, [containerRef])
 
-  return { position, vector }
+  return { position: positionRef, vector: vectorRef }
 }

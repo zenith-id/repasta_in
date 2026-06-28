@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { useInView } from "framer-motion";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -17,8 +18,8 @@ export function ImageGallery({ items, className }: ImageGalleryProps) {
   const visibleItems = items.slice(0, visibleCount);
 
   const ratios = useMemo(
-    () => visibleItems.map(() => (Math.random() > 0.5 ? 9 / 16 : 16 / 9)),
-    [],
+    () => visibleItems.map((_, i) => (i % 3 === 0 ? 9 / 16 : 16 / 9)),
+    [visibleItems.length],
   );
 
   const cols: GalleryItem[][] = [[], [], []];
@@ -75,15 +76,18 @@ function AnimatedImage({ item, ratio }: AnimatedImageProps) {
       ratio={ratio}
       className="bg-accent relative size-full overflow-hidden rounded-xl border border-border group"
     >
-      <img
+      <Image
         alt={item.label}
         src={item.src}
+        fill
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         className={cn(
-          "size-full object-cover transition-all duration-700 ease-out",
+          "object-cover transition-all duration-700 ease-out",
           isInView && loaded ? "opacity-100 scale-100" : "opacity-0 scale-95",
         )}
         onLoad={() => setLoaded(true)}
         loading="lazy"
+        decoding="async"
       />
       {(!isInView || !loaded) && (
         <div className="absolute inset-0 bg-accent/50 animate-pulse" />
