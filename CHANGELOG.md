@@ -5,16 +5,22 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [Unreleased]
 
+### CI
+
+* **release:** fix release workflow trigger ([090d325](https://github.com/fukaziroh-id/repasta_in/commit/090d325))
+* **release:** add workflow_dispatch to allow manual triggering ([018510c](https://github.com/fukaziroh-id/repasta_in/commit/018510c))
+* **release:** extract changelog for specific tag instead of latest ([1adcaf3](https://github.com/fukaziroh-id/repasta_in/commit/1adcaf3))
+
 ### Bug Fixes
 
-* **responsive:** tab switcher overflow on narrow viewport ([#](TODO))
-* **responsive:** testimonials column height clipping on mobile ([#](TODO))
-* **responsive:** whatsapp float label hidden on touch devices ([#](TODO))
-* **responsive:** infinite testimonials scroll ignores prefers-reduced-motion ([#](TODO))
+* **responsive:** tab switcher overflow on narrow viewport ([9729939](https://github.com/fukaziroh-id/repasta_in/commit/9729939))
+* **responsive:** testimonials column height clipping on mobile ([9729939](https://github.com/fukaziroh-id/repasta_in/commit/9729939))
+* **responsive:** whatsapp float label hidden on touch devices ([9729939](https://github.com/fukaziroh-id/repasta_in/commit/9729939))
+* **responsive:** infinite testimonials scroll ignores prefers-reduced-motion ([3605408](https://github.com/fukaziroh-id/repasta_in/commit/3605408))
 
 ### Performance
 
-* **responsive:** add content-visibility-auto to below-fold sections ([#](TODO))
+* **responsive:** add content-visibility-auto to below-fold sections ([a88b50f](https://github.com/fukaziroh-id/repasta_in/commit/a88b50f))
 
 
 ## [1.8.0](https://github.com/fukaziroh-id/repasta_in/compare/v1.7.0...v1.8.0) (2026-06-28)
