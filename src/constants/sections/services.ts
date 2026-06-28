@@ -1,4 +1,6 @@
 import { Laptop, Monitor, Sparkles } from "lucide-react";
+import { WHATSAPP_LINK } from "@/constants/contact";
+export { WHATSAPP_LINK };
 
 export const laptopServices = [
   {
@@ -117,5 +119,3 @@ export const tabsData = [
   { id: "pc" as const, label: "PC Desktop", icon: Monitor },
 ] as const;
 
-export const WHATSAPP_LINK = (msg: string) =>
-  `https://wa.me/621919423939?text=${encodeURIComponent(msg)}`;

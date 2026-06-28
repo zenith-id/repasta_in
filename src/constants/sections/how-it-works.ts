@@ -1,4 +1,6 @@
 import { MessageCircle, CalendarDays, CheckCircle2 } from "lucide-react";
+import { WHATSAPP_LINK } from "@/constants/contact";
+export { WHATSAPP_LINK };
 
 export const steps = [
   {
@@ -23,9 +25,6 @@ export const steps = [
     badge: "Garansi 7 hari",
   },
 ] as const;
-
-export const WHATSAPP_LINK = (msg: string) =>
-  `https://wa.me/621919423939?text=${encodeURIComponent(msg)}`;
 
 export const accommodationData = {
   freeZone: {
