@@ -13,7 +13,7 @@ export function HowItWorks() {
   return (
     <section
       id="cara-pesan"
-      className="py-24 px-4 sm:px-6 lg:px-8 bg-card overflow-hidden"
+      className="py-24 px-4 sm:px-6 lg:px-8 bg-card overflow-hidden content-visibility-auto"
     >
       <div className="max-w-5xl mx-auto">
         <SectionHeader
