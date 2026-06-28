@@ -5,10 +5,20 @@ All notable changes to this project will be documented in this file. See [standa
 ### [1.8.2](https://github.com/zenith-id/repasta_in/compare/v1.8.0...v1.8.2) (2026-06-28)
 
 
+### CI
+
+* **release:** fix release workflow trigger ([090d325](https://github.com/zenith-id/repasta_in/commit/090d325a1a18e55f31a1d33de292042c2f7e2058))
+* **release:** add workflow_dispatch to allow manual triggering ([018510c](https://github.com/zenith-id/repasta_in/commit/018510c3743892169a33c89bf5eaf22be0acd368))
+* **release:** extract changelog for specific tag instead of latest ([1adcaf3](https://github.com/zenith-id/repasta_in/commit/1adcaf3683e23d8e9a9203e6814b15b5a5a9aa58))
+
 ### Bug Fixes
 
 * **responsive:** fix overflow, touch label, and testimonial height ([9729939](https://github.com/zenith-id/repasta_in/commit/9729939fb8bea4cefd7b75d363ea74de7ce03109))
 * **responsive:** respect prefers-reduced-motion in testimonials ([3605408](https://github.com/zenith-id/repasta_in/commit/360540854d2cddb282014304c8348fa50251b933))
+
+### Performance
+
+* **responsive:** add content-visibility-auto to below-fold sections ([a88b50f](https://github.com/zenith-id/repasta_in/commit/a88b50fad4d3fbc3008de5066b8c4fa2a530f378))
 
 ## [1.8.0](https://github.com/fukaziroh-id/repasta_in/compare/v1.7.0...v1.8.0) (2026-06-28)
 
