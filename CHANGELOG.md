@@ -2,33 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [Unreleased]
+## [1.7.0](https://github.com/fukaziroh-id/repasta_in/compare/v1.6.0...v1.7.0) (2026-06-28)
+
 
 ### Features
 
-* **skeleton:** add boneyard-js and config ([1112e61](https://github.com/fukaziroh-id/repasta_in/commit/1112e61))
-* **skeleton:** wrap sections with skeleton ([b4ea7f3](https://github.com/fukaziroh-id/repasta_in/commit/b4ea7f3))
-* **skeleton:** add bones registry and hero/services ([bf9a0d5](https://github.com/fukaziroh-id/repasta_in/commit/bf9a0d5))
-* **skeleton:** add bones for problem/features/how-it-works ([a28c1d9](https://github.com/fukaziroh-id/repasta_in/commit/a28c1d9))
-* **skeleton:** add bones for gallery/testimonials/faq ([e895a2c](https://github.com/fukaziroh-id/repasta_in/commit/e895a2c))
-* **skeleton:** add cta bones and integrate loading ([139ec9d](https://github.com/fukaziroh-id/repasta_in/commit/139ec9d))
-* **seo:** optimize faq for ai search engines ([f12ceb3](https://github.com/fukaziroh-id/repasta_in/commit/f12ceb3))
-* **ai-seo:** add llms.txt and pricing.md ([7192cb3](https://github.com/fukaziroh-id/repasta_in/commit/7192cb3))
-* **ai-seo:** comparison table and freshness signal ([128fb7a](https://github.com/fukaziroh-id/repasta_in/commit/128fb7a))
-* **seo:** add multi-size icon metadata ([c48c086](https://github.com/fukaziroh-id/repasta_in/commit/c48c086))
+* **ai-seo:** add llms.txt and pricing.md ([7192cb3](https://github.com/fukaziroh-id/repasta_in/commit/7192cb39412bb5923afbdea20905ddd2770d82b9))
+* **ai-seo:** comparison table and freshness signal ([128fb7a](https://github.com/fukaziroh-id/repasta_in/commit/128fb7a57bc9448c895d14eaf4896e9d948e46b6))
+* **seo:** add multi-size icon metadata ([c48c086](https://github.com/fukaziroh-id/repasta_in/commit/c48c086028b1187163f6f49f59377c6c9c233b65))
+* **seo:** optimize faq for ai search engines ([f12ceb3](https://github.com/fukaziroh-id/repasta_in/commit/f12ceb3b4efd30745b43de6cc1f6bc8633369c45))
+* **skeleton:** add bones for gallery/testimonials/faq ([e895a2c](https://github.com/fukaziroh-id/repasta_in/commit/e895a2c7312fb97c1aeb761c99a7021ef4a87cc3))
+* **skeleton:** add bones for problem/features/how-it-works ([a28c1d9](https://github.com/fukaziroh-id/repasta_in/commit/a28c1d95d282a623ad2c06837db99258b7ffe0ca))
+* **skeleton:** add bones registry and hero/services ([bf9a0d5](https://github.com/fukaziroh-id/repasta_in/commit/bf9a0d531c29d0a859d73efca9ed24f3f8e35ad7))
+* **skeleton:** add boneyard-js and config ([1112e61](https://github.com/fukaziroh-id/repasta_in/commit/1112e6118e73fd635a900a1fcc50283e8419b5b2))
+* **skeleton:** add cta bones and integrate loading ([139ec9d](https://github.com/fukaziroh-id/repasta_in/commit/139ec9d0e2652df00c3b96d1517eaaff5121061c))
+* **skeleton:** wrap sections with skeleton ([b4ea7f3](https://github.com/fukaziroh-id/repasta_in/commit/b4ea7f31d6a38d87209b2d3a1aa6539105436213))
+
 
 ### Bug Fixes
 
-* **ui:** update not-found page styling ([8258b27](https://github.com/fukaziroh-id/repasta_in/commit/8258b27))
-
-### Chores
-
-* **assets:** add favicon 16/32/48px png ([0d44eff](https://github.com/fukaziroh-id/repasta_in/commit/0d44eff))
-* **assets:** add favicon 64/128px and webp ([3362ef7](https://github.com/fukaziroh-id/repasta_in/commit/3362ef7))
-* **assets:** optimize favicon 16/32/48px ([4dc1e0c](https://github.com/fukaziroh-id/repasta_in/commit/4dc1e0c))
-* **assets:** optimize favicon 64/128px and remove webp ([2bd4f8c](https://github.com/fukaziroh-id/repasta_in/commit/2bd4f8c))
-* **bones:** regenerate hero and services bones ([b751faf](https://github.com/fukaziroh-id/repasta_in/commit/b751faf))
-* **bones:** regenerate gallery/testimonials bones ([915ba96](https://github.com/fukaziroh-id/repasta_in/commit/915ba96))
+* **ui:** update not-found page styling ([8258b27](https://github.com/fukaziroh-id/repasta_in/commit/8258b27987b448e86863a3b431ed8e3b64425b3f))
 
 ## [1.6.0](https://github.com/fukaziroh-id/repasta_in/compare/v1.5.0...v1.6.0) (2026-06-28)
 
