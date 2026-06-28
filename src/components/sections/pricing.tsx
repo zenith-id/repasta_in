@@ -9,7 +9,7 @@ export function Pricing() {
   return (
     <section
       id="harga"
-      className="py-24 px-4 sm:px-6 lg:px-8 content-visibility-auto"
+      className="py-24 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
         <SectionHeader
