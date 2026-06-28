@@ -18,8 +18,9 @@ node_modules
 
 # ignore markdown files
 *.md
-!CLAUDE.md
 !readme.md
+!public/pricing.md
+!public/llms.txt
 
 .claude/
 .agents/

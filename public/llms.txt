@@ -1,0 +1,37 @@
+# Repasta — Servis Laptop & PC Bandung
+
+> Layanan servis laptop dan PC profesional di Bandung. Spesialisasi repaste thermal paste, deep clean, upgrade SSD/RAM. Teknisi berpengalaman, harga transparan, garansi 7 hari.
+
+## Layanan Utama
+
+### Repaste Thermal Paste
+- **Repaste Premium** (CryoFuze 5 / Arctic MX-6): Rp 120.000 — konduktivitas 12,5 W/mK, suhu turun 10–15°C
+- **Repaste Phase Change** (PTM 7950 by Honeywell): Rp 170.000 — umur pakai 5+ tahun, suhu turun 12–18°C
+- **Repaste Liquid Metal**: Rp 200.000 — konduktivitas 128 W/mK, suhu turun 15–20°C
+
+### Deep Clean & Maintenance
+- **Deep Clean Laptop**: Rp 100.000 — pembersihan menyeluruh fan, heatsink, dan bodi
+- **Cleaning Keyboard**: Rp 100.000 — cuci keycaps dan plate keyboard mechanical
+
+### Upgrade Hardware
+- **Upgrade SSD/RAM**: Harga tergantung komponen — konsultasi gratis
+
+## Keunggulan
+- 500+ servis berhasil, 95% selesai di hari yang sama
+- Garansi 7 hari penuh, tingkat klaim < 2%
+- Harga transparan tanpa biaya tersembunyi
+- Proses transparan di depan pelanggan
+- Melayani semua merek: Asus, Lenovo, HP, Dell, Acer, MSI, MacBook
+
+## Area Layanan
+Bandung Raya — kunjungan ke rumah, kost, kampus, kantor.
+
+## Kontak
+- WhatsApp: wa.me/6282323633819
+- Instagram: @repasta.in
+- Website: https://repasta-in.vercel.app
+
+## Tautan
+- Beranda: https://repasta-in.vercel.app/
+- Layanan: https://repasta-in.vercel.app/layanan/
+- FAQ: https://repasta-in.vercel.app/#faq

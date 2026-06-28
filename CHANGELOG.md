@@ -2,114 +2,107 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [1.4.0](https://github.com/zenith-id/repasta_in/compare/v1.3.1...v1.4.0) (2026-06-17)
+## [1.8.0](https://github.com/fukaziroh-id/repasta_in/compare/v1.7.0...v1.8.0) (2026-06-28)
+
+## [1.7.0](https://github.com/fukaziroh-id/repasta_in/compare/v1.6.0...v1.7.0) (2026-06-28)
 
 
 ### Features
 
-* **ui:** add grainient shader component ([50ae7d3](https://github.com/zenith-id/repasta_in/commit/50ae7d34c367c886f214891f68552b98844cbbf2))
+* **ai-seo:** add llms.txt and pricing.md ([8c258f4](https://github.com/fukaziroh-id/repasta_in/commit/8c258f4))
+* **ai-seo:** comparison table and freshness signal ([d961e4d](https://github.com/fukaziroh-id/repasta_in/commit/d961e4d))
+* **seo:** add multi-size icon metadata ([e55d80d](https://github.com/fukaziroh-id/repasta_in/commit/e55d80d))
+* **seo:** optimize faq for ai search engines ([60b523b](https://github.com/fukaziroh-id/repasta_in/commit/60b523b))
+* **skeleton:** add bones for gallery/testimonials/faq ([222bd3f](https://github.com/fukaziroh-id/repasta_in/commit/222bd3f))
+* **skeleton:** add bones for problem/features/how-it-works ([7bc829b](https://github.com/fukaziroh-id/repasta_in/commit/7bc829b))
+* **skeleton:** add bones registry and hero/services ([bfca6c6](https://github.com/fukaziroh-id/repasta_in/commit/bfca6c6))
+* **skeleton:** add boneyard-js and config ([ef97502](https://github.com/fukaziroh-id/repasta_in/commit/ef97502))
+* **skeleton:** add cta bones and integrate loading ([de2ea86](https://github.com/fukaziroh-id/repasta_in/commit/de2ea86))
+* **skeleton:** wrap sections with skeleton ([b4747a5](https://github.com/fukaziroh-id/repasta_in/commit/b4747a5))
 
 
 ### Bug Fixes
 
-* **navbar:** replace broken harga routing with cara-pesan ([8a4a83e](https://github.com/zenith-id/repasta_in/commit/8a4a83e6dc8123891e825b42dde27a35b176fc72))
+* **ui:** update not-found page styling ([76b1ea5](https://github.com/fukaziroh-id/repasta_in/commit/76b1ea5))
 
-### [1.3.1](https://github.com/zenith-id/repasta_in/compare/v1.3.0...v1.3.1) (2026-05-13)
 
-## [1.3.0](https://github.com/zenith-id/repasta_in/compare/v2.0.1...v1.3.0) (2026-05-13)
+### Chores
 
-### Features
+* **assets:** add favicon 16/32/48px png ([f804365](https://github.com/fukaziroh-id/repasta_in/commit/f804365))
+* **assets:** add favicon 64/128px and webp ([5195514](https://github.com/fukaziroh-id/repasta_in/commit/5195514))
+* **assets:** optimize favicon 16/32/48px ([145899e](https://github.com/fukaziroh-id/repasta_in/commit/145899e))
+* **assets:** optimize favicon 64/128px and remove webp ([1ad5ded](https://github.com/fukaziroh-id/repasta_in/commit/1ad5ded))
+* **bones:** regenerate hero and services bones ([b051435](https://github.com/fukaziroh-id/repasta_in/commit/b051435))
+* **bones:** regenerate gallery/testimonials bones ([089f1d9](https://github.com/fukaziroh-id/repasta_in/commit/089f1d9))
 
-- add automated release workflow and revert package version to 1.1.0 ([a50c610](https://github.com/zenith-id/repasta_in/commit/a50c610dc4e386c21e1e1d8bb9019bdc307a6d2a))
+## [1.6.0](https://github.com/fukaziroh-id/repasta_in/compare/v1.5.0...v1.6.0) (2026-06-28)
 
-### [2.0.1](https://github.com/zenith-id/repasta_in/compare/v2.0.0...v2.0.1) (2026-05-13)
-
-## 1.2.0 (2026-05-13)
-
-### ⚠ BREAKING CHANGES
-
-- **constants:** Static data now in constants/. Components updated to use imports.
 
 ### Features
 
-- add new skills to lockfile and update Next.js types path ([22068b3](https://github.com/zenith-id/repasta_in/commit/22068b3e3623331679eec87d09f99d4982bd271d))
-- **constants:** add problem-awareness and whatsapp-float constants ([a666fec](https://github.com/zenith-id/repasta_in/commit/a666fec98bef5f9fa17c254717e72d7c338a97de))
-- **constants:** extract static data to constants folder ([4725d3a](https://github.com/zenith-id/repasta_in/commit/4725d3ab9fd0165f803e41626a0376d77472f10e))
-- extract static data to constants and optimize opengraph image ([#1](https://github.com/zenith-id/repasta_in/issues/1)) ([12901be](https://github.com/zenith-id/repasta_in/commit/12901be022c30149a92ec54fee7873019622a527))
-- **footer:** show app version in footer ([8ff0095](https://github.com/zenith-id/repasta_in/commit/8ff0095a309399c64ef7f74033429028c5410561))
-- **seo:** add sitemap.xml and robots.txt ([888bb46](https://github.com/zenith-id/repasta_in/commit/888bb46fecbf3c5e7875d3fbac2f6f17a5c2b825))
+* **footer:** add email contact ([7fa0bf0](https://github.com/fukaziroh-id/repasta_in/commit/7fa0bf0))
+* **gallery:** add gallery trail hook and sub-components ([30088ae](https://github.com/fukaziroh-id/repasta_in/commit/30088ae))
+* **gallery:** add image-trail, masonry grid, and comparison slider ([6293c17](https://github.com/fukaziroh-id/repasta_in/commit/6293c17))
+* **navbar:** add kenapa kami, testimoni, faq nav items ([688ca93](https://github.com/fukaziroh-id/repasta_in/commit/688ca93))
+* **testimonials:** add google review card ([deca8ad](https://github.com/fukaziroh-id/repasta_in/commit/deca8ad))
+* **testimonials:** extract column and card components ([c34063d](https://github.com/fukaziroh-id/repasta_in/commit/c34063d))
 
-## 1.1.0 (2026-05-13)
 
-### ⚠ BREAKING CHANGES
+### Bug Fixes
 
-- **constants:** Static data now in constants/. Components updated to use imports.
+* **gallery:** use neutral gray for skeleton loader ([2e73e53](https://github.com/fukaziroh-id/repasta_in/commit/2e73e53))
+* **sections:** remove content-visibility-auto ([c43ba1c](https://github.com/fukaziroh-id/repasta_in/commit/c43ba1c))
+* **seo:** add main tag and loading state ([e7694b8](https://github.com/fukaziroh-id/repasta_in/commit/e7694b8))
+* **seo:** delete static sitemap override ([53583b8](https://github.com/fukaziroh-id/repasta_in/commit/53583b8))
+* **seo:** descriptive alt text for logo images ([e99adca](https://github.com/fukaziroh-id/repasta_in/commit/e99adca))
+* **seo:** per-page canonical and consistent og image ([20219c0](https://github.com/fukaziroh-id/repasta_in/commit/20219c0))
 
-### Features
-
-- add new skills to lockfile and update Next.js types path ([22068b3](https://github.com/fukaziroh-id/repasta_in/commit/22068b3e3623331679eec87d09f99d4982bd271d))
-- **constants:** add problem-awareness and whatsapp-float constants ([a666fec](https://github.com/fukaziroh-id/repasta_in/commit/a666fec98bef5f9fa17c254717e72d7c338a97de))
-- **constants:** extract static data to constants folder ([4725d3a](https://github.com/fukaziroh-id/repasta_in/commit/4725d3ab9fd0165f803e41626a0376d77472f10e))
-- **seo:** add sitemap.xml and robots.txt ([888bb46](https://github.com/fukaziroh-id/repasta_in/commit/888bb46fecbf3c5e7875d3fbac2f6f17a5c2b825))
-
-## [1.1.0] - 2026-04-26
-
-### Changed
-
-- README.md updated with complete constants list
-- Added SemVer section with version 1.0.1
-- Fixed duplicate Stack header in README
-- Added Problem Awareness section to page structure
-
-### Added
-
-- CHANGELOG.md file for tracking releases
-- New constants: `problem-awareness.ts`, `whatsapp-float.ts`
-- SemVer documentation in README
-
-### Refactor
-
-- Static data extraction to `constants/` folder
-- All components updated to import from `@/constants`
-- Separate constants per section (contact, navbar, hero, services, features, testimonials, pricing, cta, footer, gallery, faq, how-it-works, layanan)
 
 ### Performance
 
-- Simplified OpenGraph image to reduce bundle size (< 1MB)
+* **css:** cleanup config and fix navbar observer ([5499f57](https://github.com/fukaziroh-id/repasta_in/commit/5499f57))
+* **images:** use next/image and optimize hooks ([aa1e4d9](https://github.com/fukaziroh-id/repasta_in/commit/aa1e4d9))
+* **split:** add code splitting with dynamic imports ([474078b](https://github.com/fukaziroh-id/repasta_in/commit/474078b))
 
-## [1.0.0] - 2026-04-26
 
-### Added
+### Refactoring
 
-- Initial release of Repasta landing page
-- Hero section with interactive wave canvas
-- Services section with Laptop/PC tabs
-- Features section with bento grid layout
-- How It Works section with 3-step timeline
-- Gallery with masonry grid and lightbox
-- Testimonials with 3-column infinite scroll
-- FAQ with accordion animation
-- Pricing section with 3 plans
-- CTA section with WhatsApp integration
-- Footer with 4-column layout
-- WhatsApp floating button
-- Problem Awareness section
-- Static data extraction to `constants/` folder
-- Semantic Versioning documentation
+* **gallery:** remove image-trail component ([e9680e6](https://github.com/fukaziroh-id/repasta_in/commit/e9680e6))
+* **gallery:** simplify header and remove mouse hook ([8c33627](https://github.com/fukaziroh-id/repasta_in/commit/8c33627))
+
+
+### Chores
+
+* **cleanup:** delete dead files ([7fb1d93](https://github.com/fukaziroh-id/repasta_in/commit/7fb1d93))
+* **cleanup:** remove unused radix wrappers (1/3) ([b75f9d1](https://github.com/fukaziroh-id/repasta_in/commit/b75f9d1))
+* **cleanup:** remove unused radix wrappers (2/3) ([9e36436](https://github.com/fukaziroh-id/repasta_in/commit/9e36436))
+* **cleanup:** remove unused radix wrappers (3/4) ([62ddaa1](https://github.com/fukaziroh-id/repasta_in/commit/62ddaa1))
+* **cleanup:** remove unused toggle-group wrapper (4/4) ([794cdd9](https://github.com/fukaziroh-id/repasta_in/commit/794cdd9))
+* **deps:** remove dead packages ([69dfcf7](https://github.com/fukaziroh-id/repasta_in/commit/69dfcf7))
+
+## [1.5.0](https://github.com/fukaziroh-id/repasta_in/compare/v1.4.2...v1.5.0) (2026-06-21)
+
 
 ### Features
 
-- Dark/Light theme toggle
-- Smooth scrolling with Lenis
-- Responsive design (mobile-first)
-- OpenGraph image generation
+* **cta:** simplify to single whatsapp button ([b061a27](https://github.com/fukaziroh-id/repasta_in/commit/b061a27))
+* **footer:** add email contact ([7fa0bf0](https://github.com/fukaziroh-id/repasta_in/commit/7fa0bf0))
+* **gallery:** add gallery trail hook and sub-components ([30088ae](https://github.com/fukaziroh-id/repasta_in/commit/30088ae))
+* **gallery:** add image-trail, masonry grid, and comparison slider ([6293c17](https://github.com/fukaziroh-id/repasta_in/commit/6293c17))
+* **navbar:** add kenapa kami, testimoni, faq nav items ([688ca93](https://github.com/fukaziroh-id/repasta_in/commit/688ca93))
+* **testimonials:** add google review card ([deca8ad](https://github.com/fukaziroh-id/repasta_in/commit/deca8ad))
+* **testimonials:** extract column and card components ([c34063d](https://github.com/fukaziroh-id/repasta_in/commit/c34063d))
 
-### Stack
 
-- Next.js 16.x (App Router, SSG)
-- React 19.x
-- TypeScript 5.x
-- Tailwind CSS 4.x
-- Framer Motion 12.x
-- Shadcn/ui (New York style)
-- Lenis 1.3.x (smooth scrolling)
+### Refactoring
+
+* **cta:** flatten button data structure ([356be92](https://github.com/fukaziroh-id/repasta_in/commit/356be92))
+* **cta:** update animation imports to use base variants ([2296fb6](https://github.com/fukaziroh-id/repasta_in/commit/2296fb6))
+* **footer:** update animation imports to use base variants ([fd19d99](https://github.com/fukaziroh-id/repasta_in/commit/fd19d99))
+* **gallery:** add header and cta config data, unify image paths ([276d1f3](https://github.com/fukaziroh-id/repasta_in/commit/276d1f3))
+* **gallery:** use section-header and base animations directly ([3639e91](https://github.com/fukaziroh-id/repasta_in/commit/3639e91))
+* **motion:** consolidate variants into base fade-up, stagger, and fade-in ([5e7e341](https://github.com/fukaziroh-id/repasta_in/commit/5e7e341))
+* **sections:** update animation imports to use base variants ([1d00531](https://github.com/fukaziroh-id/repasta_in/commit/1d00531))
+* **sections:** update faq and features animation imports ([124b47e](https://github.com/fukaziroh-id/repasta_in/commit/124b47e))
+* **testimonials:** use extracted components and variants ([544f06e](https://github.com/fukaziroh-id/repasta_in/commit/544f06e))
+* **testimonials:** use local avatars and add google review data ([24cae0c](https://github.com/fukaziroh-id/repasta_in/commit/24cae0c))

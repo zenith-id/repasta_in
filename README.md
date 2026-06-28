@@ -1,61 +1,36 @@
 # Repasta — Landing Page
 
-Halaman marketing statis untuk jasa servis laptop & PC **Repasta** di Padang, Indonesia. Dibangun untuk mendorong konversi via WhatsApp.
+Halaman marketing statis untuk jasa servis laptop & PC **Repasta** di Bandung, Indonesia. Dibangun untuk mendorong konversi via WhatsApp.
 
-**Versi**: `1.1.0`
-
----
-
-## Semantic Versioning
-
-Formato: `MAJOR.MINOR.PATCH`
-
-| Tipe    | Aturan                          |
-| ------- | ------------------------------- |
-| `MAJOR` | API breaking changes            |
-| `MINOR` | Fitur baru, backward compatible |
-| `PATCH` | Bug fix, backward compatible    |
-
-Pre-release: `1.0.0-alpha`, `1.0.0-beta.1`
-Build metadata: `1.0.0+20240426`
-
-Contoh:
-
-```bash
-1.0.0         # Initial release
-1.0.1         # Bug fix
-1.1.0         # Fitur baru
-2.0.0         # Breaking changes
-2.0.0-alpha   # Pre-release
-```
-
-Changelog di `CHANGELOG.md`.
+**Versi**: `1.7.0`
 
 ---
 
 ## Stack
 
-| Teknologi     | Versi | Keterangan                         |
-| ------------- | ----- | ---------------------------------- |
-| Next.js       | 16.x  | App Router, SSG                    |
-| React         | 19.x  | UI Framework                       |
-| TypeScript    | 5.x   | Type safety                        |
-| Tailwind CSS  | 4.x   | Utility-first styling              |
-| Framer Motion | 12.x  | Animasi & scroll reveal            |
-| GSAP          | 3.x   | Dihapus (konflik Lenis)            |
-| Shadcn/ui     | —     | Komponen primitif (New York style) |
-| Lenis         | 1.3.x | Smooth scrolling via context       |
+| Teknologi      | Versi | Keterangan                              |
+| -------------- | ----- | --------------------------------------- |
+| Next.js        | 16.x  | App Router, standalone output           |
+| React          | 19.x  | UI Framework                            |
+| TypeScript     | 5.x   | Type safety                             |
+| Tailwind CSS   | 4.x   | Utility-first styling                   |
+| Framer Motion  | 12.x  | Animasi & scroll reveal                 |
+| Shadcn/ui      | —     | Komponen primitif (New York style)      |
+| Lenis          | 1.3.x | Smooth scrolling via context            |
+| Boneyard-js    | 1.8.x | Pixel-perfect skeleton loading screens  |
 
 ---
 
 ## Perintah
 
 ```bash
-pnpm dev      # Development server → localhost:3000
-pnpm build    # Production build
-pnpm start    # Production server
-pnpm lint     # ESLint check
-pnpm release  # Bump version + update changelog + create tag
+pnpm dev              # Development server → localhost:3000
+pnpm build            # Production build (standalone)
+pnpm start            # Production server
+pnpm lint             # ESLint check
+pnpm release          # Bump patch + changelog + tag
+pnpm release:minor    # Bump minor + changelog + tag
+npx boneyard-js build # Regenerate skeleton bones (dev server harus jalan)
 ```
 
 ---
@@ -63,34 +38,19 @@ pnpm release  # Bump version + update changelog + create tag
 ## Struktur Halaman
 
 ```
-Navbar                ← 3 link (Layanan · Harga · Galeri) + CTA
-Hero                  ← GlowyWaves canvas + counter animation stats
-Problem Awareness     ← 2×2 kartu masalah dengan numbered overlay
-Services              ← Tab Laptop/PC, harga lengkap dari blueprint
-Features (Bento)      ← Bento-grid 5 kartu keunggulan
-How It Works          ← 3 langkah vertical timeline editorial
-Gallery               ← Masonry grid + lightbox portofolio
-Testimonials          ← 3-kolom infinite scroll
-FAQ                   ← Accordion 7 pertanyaan
-CTA                   ← Dark section dengan WhatsApp CTA
-Footer                ← 4-kolom dark footer dengan social links
-WhatsApp Float        ← Tombol mengambang sudut kanan bawah
+Navbar              ← 6 link (Layanan · Kenapa Kami · Cara Pesan · Galeri · Testimoni · FAQ) + CTA
+Hero                ← Canvas wave + counter stats + status badge
+Problem Awareness   ← 2×2 kartu masalah dengan numbered overlay
+Services            ← Tab Laptop/PC, harga lengkap
+Features            ← Bento-grid kartu keunggulan
+How It Works        ← 3 langkah vertical timeline
+Gallery             ← Masonry grid + before/after comparison
+Testimonials        ← 3-kolom infinite scroll + Google Review card
+FAQ                 ← Accordion 10 pertanyaan (dengan statistik & expert quotes)
+CTA                 ← Dark section dengan WhatsApp CTA
+Footer              ← Dark footer dengan social links
+WhatsApp Float      ← Tombol mengambang sudut kanan bawah
 ```
-
-Navbar ← 3 link (Layanan · Harga · Galeri) + CTA
-Hero ← GlowyWaves canvas + counter animation stats
-Problem Awareness ← 2×2 kartu masalah dengan numbered overlay
-Services ← Tab Laptop/PC, harga lengkap dari blueprint
-Features (Bento) ← Bento-grid 5 kartu keunggulan
-How It Works ← 3 langkah vertical timeline editorial
-Gallery ← Masonry grid + lightbox portofolio
-Testimonials ← 3-kolom infinite scroll
-FAQ ← Accordion 7 pertanyaan
-CTA ← Dark section dengan WhatsApp CTA
-Footer ← 4-kolom dark footer dengan social links
-WhatsApp Float ← Tombol mengambang sudut kanan bawah
-
-````
 
 ---
 
@@ -103,43 +63,73 @@ WhatsApp Float ← Tombol mengambang sudut kanan bawah
 | `--primary`    | `#3F72AF` | `213 47% 47%` | Tombol, aksen, ikon            |
 | `--foreground` | `#112D4E` | `213 64% 19%` | Teks utama, hero/CTA/footer bg |
 
-> Tidak ada warna lain di luar 4 token di atas (orange/purple/green dihapus).
-
 ---
 
 ## Tipografi
 
-| Kelas          | Font        | Sumber             |
-| -------------- | ----------- | ------------------ |
-| `font-sans`    | **Inter**   | `next/font/google` |
-| `font-poppins` | **Poppins** | `next/font/google` |
+| Kelas          | Font                  | Sumber             |
+| -------------- | --------------------- | ------------------ |
+| `font-sans`    | **Geist**             | `next/font/google` |
+| `font-poppins` | **Bricolage Grotesque** | `next/font/google` |
 
 ---
 
 ## Static Data (constants/)
 
-Semua konten statis dipisahkan ke folder `constants/`:
+Semua konten statis dipisahkan ke folder `src/constants/`:
 
-| File                             | Konten                          |
-| -------------------------------- | ------------------------------- |
-| `constants/contact.ts`           | WhatsApp number, link helper    |
-| `constants/navbar.ts`            | Navigation links                |
-| `constants/hero.ts`              | Hero section content            |
-| `constants/problem-awareness.ts` | Problem cards data              |
-| `constants/services.ts`          | Laptop & PC services list       |
-| `constants/features.ts`          | Feature cards data              |
-| `constants/testimonials.ts`      | Customer testimonials           |
-| `constants/pricing.ts`           | Pricing plans                   |
-| `constants/cta.ts`               | CTA section content             |
-| `constants/footer.ts`            | Footer columns                  |
-| `constants/gallery.ts`           | Gallery items                   |
-| `constants/faq.ts`               | FAQ questions                   |
-| `constants/how-it-works.ts`      | Steps content                   |
-| `constants/layanan.ts`           | Layanan page services           |
-| `constants/whatsapp-float.ts`    | Floating WhatsApp button config |
-| `constants/index.ts`             | Re-exports all                  |
+| File                                 | Konten                          |
+| ------------------------------------ | ------------------------------- |
+| `constants/contact.ts`               | WhatsApp number, link helper    |
+| `constants/layout/navbar.ts`         | Navigation links                |
+| `constants/layout/hero.ts`           | Hero section content            |
+| `constants/layout/footer.ts`         | Footer content                  |
+| `constants/sections/problem-awareness.ts` | Problem cards data         |
+| `constants/sections/services.ts`     | Laptop & PC services list       |
+| `constants/sections/features.ts`     | Feature cards data              |
+| `constants/sections/testimonials.ts` | Customer testimonials           |
+| `constants/sections/gallery.ts`      | Gallery items & comparisons     |
+| `constants/sections/faq.ts`          | FAQ questions (10 items)        |
+| `constants/sections/how-it-works.ts` | Steps content                   |
+| `constants/sections/cta.ts`          | CTA section content             |
+| `constants/sections/layanan.ts`      | Layanan page services           |
 
 Import dari `@/constants` untuk komponen yang butuh static data.
+
+---
+
+## Skeleton Loading (Boneyard-js)
+
+Skeleton loading di-generate otomatis dari DOM asli menggunakan [boneyard-js](https://github.com/nicholasgriffintn/boneyard-js):
+
+```bash
+pnpm dev                    # Terminal 1: start dev server
+npx boneyard-js build       # Terminal 2: generate bones
+```
+
+Config: `boneyard.config.json` (breakpoints, colors, animation).
+Output: `src/bones/` (registry.ts + .bones.json per section).
+Regenerate setelah layout berubah: `npx boneyard-js build --force`.
+
+---
+
+## SEO & Structured Data
+
+| Element              | Status | File                     |
+| -------------------- | ------ | ------------------------ |
+| JSON-LD @graph       | ✅     | `layout.tsx`             |
+| Organization         | ✅     | `layout.tsx`             |
+| LocalBusiness        | ✅     | `layout.tsx`             |
+| BreadcrumbList       | ✅     | `layout.tsx`             |
+| FAQPage (10 Q&A)     | ✅     | `layout.tsx`             |
+| Canonical per-page   | ✅     | `layout.tsx` + per page  |
+| Dynamic sitemap      | ✅     | `src/app/sitemap.ts`     |
+| robots.txt           | ✅     | `src/app/robots.ts`      |
+| llms.txt             | ✅     | `public/llms.txt`        |
+| pricing.md           | ✅     | `public/pricing.md`      |
+| Multi-size favicon   | ✅     | `layout.tsx` metadata    |
+| OG + Twitter meta    | ✅     | `layout.tsx`             |
+| `<html lang="id">`   | ✅     | `layout.tsx`             |
 
 ---
 
@@ -148,46 +138,27 @@ Import dari `@/constants` untuk komponen yang butuh static data.
 Lenis v1.3 dikonfigurasi via React Context:
 
 ```tsx
-// Expose instance
 import { useLenis } from "@/components/lenis-provider";
 
 const lenis = useLenis();
 lenis?.scrollTo("#section-id", { offset: -80, duration: 1.4 });
-````
+```
 
 Navbar menggunakan `lenis.scrollTo()` untuk semua link navigasi. Fallback ke `scrollIntoView` jika instance belum siap.
 
 ---
 
-## Komponen Kustom
-
-| File                    | Inspirasi                                 | Deskripsi                              |
-| ----------------------- | ----------------------------------------- | -------------------------------------- |
-| `hero.tsx`              | 21st.dev · moumensoliman/glowy-waves-hero | Canvas wave interaktif + counter angka |
-| `testimonials.tsx`      | 21st.dev · avanishverma4/testimonial-v2   | Infinite scroll 3-kolom                |
-| `features.tsx`          | 21st.dev · meschacirung/features-8        | Bento grid 5 kartu                     |
-| `gallery.tsx`           | Custom                                    | Masonry grid + lightbox                |
-| `services.tsx`          | Custom                                    | Tab Laptop/PC dengan harga blueprint   |
-| `how-it-works.tsx`      | Custom                                    | Vertical timeline editorial            |
-| `problem-awareness.tsx` | Custom                                    | 2×2 kartu masalah + resolusi           |
-| `faq.tsx`               | Custom                                    | Accordion AnimatePresence              |
-| `whatsapp-float.tsx`    | Custom                                    | Floating button sudut kanan bawah      |
-
----
-
-## Layanan & Harga (dari Blueprint)
+## Layanan & Harga
 
 ### Laptop
 
 | Layanan                                    | Harga        |
 | ------------------------------------------ | ------------ |
-| Repaste Regular (CryoFuze 5 / Arctic MX-6) | Rp 150.000   |
-| Repaste Phase Change (PTM 7950)            | Rp 180.000   |
+| Repaste Premium (CryoFuze 5 / Arctic MX-6) | Rp 120.000   |
+| Repaste Phase Change (PTM 7950)            | Rp 170.000   |
 | Repaste Liquid Metal (128 W/mK)            | Rp 200.000   |
 | Repaste VRAM / VRM                         | Rp 50.000    |
-| Cleaning Keyboard Eksternal                | Rp 80.000    |
-| Deepclean Phase Change ⭐ Populer          | Rp 230.000   |
-| Deepclean Liquid Metal                     | Rp 250.000   |
+| Cleaning Keyboard Eksternal                | Rp 100.000   |
 | Special Request                            | Hubungi Kami |
 
 ### PC Desktop
@@ -202,21 +173,20 @@ Navbar menggunakan `lenis.scrollTo()` untuk semua link navigasi. Fallback ke `sc
 
 ## Kontak WhatsApp
 
-Nomor: `+62 191 942 3939` → `wa.me/621919423939`
+Nomor: `+62 823-2363-3819` → `wa.me/621919423939`
 
-Muncul di: `navbar.tsx`, `hero.tsx`, `how-it-works.tsx`, `services.tsx`, `cta.tsx`, `footer.tsx`, `whatsapp-float.tsx`
+Muncul di: `navbar`, `hero`, `how-it-works`, `services`, `cta`, `footer`, `whatsapp-float`
 
 ---
 
 ## Catatan Teknis
 
-- `next.config.mjs` — `ignoreBuildErrors: true` dan `unoptimized: true` untuk images
-- GSAP dihapus dari footer karena konflik dengan Lenis (`position: fixed` + `clipPath` tidak kompatibel)
-- CSS `html.lenis body { overflow: hidden }` dihapus — tidak diperlukan lagi
-- Lenis instance di-expose via `LenisContext` dan hook `useLenis()`
-- Path alias `@/` → root project (`tsconfig.json`)
+- `next.config.mjs` — `ignoreBuildErrors: true`, `output: 'standalone'`, `trailingSlash: true`
+- Image optimization: `formats: ['image/avif', 'image/webp']`, `minimumCacheTTL: 30 days`
+- Path alias `@/` → `src/` (`tsconfig.json`)
 - `lang="id"` di `app/layout.tsx` (Bahasa Indonesia)
-- Versi project: `1.1.0` (SemVer)
+- Lenis instance di-expose via `LenisProvider` dan hook `useLenis()`
+- Animations defined in `globals.css` via `@theme inline` (single source of truth)
 - Changelog: `CHANGELOG.md`
 
 ---
@@ -229,7 +199,6 @@ Muncul di: `navbar.tsx`, `hero.tsx`, `how-it-works.tsx`, `services.tsx`, `cta.ts
   - `type` hanya: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `chore`.
   - Subject wajib lower-case.
   - Body max 3 baris non-empty.
-  - `body-max-line-length` 60 karakter per baris.
 - Hook `.husky/pre-commit`:
   - Maksimal 3 file staged per commit.
   - Jika lebih, commit ditolak agar tetap atomic.
