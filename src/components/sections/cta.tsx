@@ -11,7 +11,7 @@ export function CTA() {
   return (
     <section
       id="kontak"
-      className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-foreground"
+      className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-foreground content-visibility-auto"
     >
       {/* Background grid */}
       <div
