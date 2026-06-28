@@ -1,20 +1,21 @@
-import Link from 'next/link'
-import { Wrench, ArrowLeft, MessageCircle } from 'lucide-react'
+import Link from "next/link";
+import { Wrench, ArrowLeft, MessageCircle } from "lucide-react";
+import Image from "next/image";
 
 export default function NotFound() {
   return (
     <div className="min-h-screen bg-background flex items-center justify-center px-4">
       <div className="max-w-md w-full text-center">
-
         {/* Logo */}
         <div className="flex items-center justify-center gap-2.5 mb-12">
-          <div
-            className="w-10 h-10 rounded-xl flex items-center justify-center"
-            style={{ background: 'linear-gradient(135deg, hsl(213 47% 55%), hsl(213 47% 38%))' }}
-          >
-            <Wrench size={18} className="text-white" />
+          <div className="w-10 h-10 rounded-xl flex items-center justify-center">
+            <Image
+              src="/assets/logo/logo.webp"
+              alt="Repasta"
+              width={128}
+              height={128}
+            />
           </div>
-          <span className="font-poppins font-bold text-xl text-foreground">Repasta</span>
         </div>
 
         {/* 404 */}
@@ -26,8 +27,8 @@ export default function NotFound() {
             Halaman Tidak Ditemukan
           </h1>
           <p className="text-muted-foreground leading-relaxed">
-            Halaman yang Anda cari tidak ada atau sudah dipindahkan.
-            Mungkin URL-nya salah ketik?
+            Halaman yang Anda cari tidak ada atau sudah dipindahkan. Mungkin
+            URL-nya salah ketik?
           </p>
         </div>
 
@@ -50,8 +51,7 @@ export default function NotFound() {
             Hubungi Kami
           </a>
         </div>
-
       </div>
     </div>
-  )
+  );
 }
