@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/assets/logo/logo.webp",
+        url: "/og.jpg",
         width: 1200,
         height: 630,
         alt: "Repasta — Servis Laptop & PC Bandung",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     title: "Repasta — Servis Laptop & PC Bandung",
     description:
       "Diagnosa gratis, repaste thermal paste, deep clean, upgrade SSD/RAM. Teknisi berpengalaman, harga transparan, garansi 7 hari.",
-    images: ["/assets/logo/logo.webp"],
+    images: ["/og.jpg"],
   },
   verification: {
     google: "google-site-verification-code-placeholder",
