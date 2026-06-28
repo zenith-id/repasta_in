@@ -71,6 +71,7 @@ export const metadata: Metadata = {
     apple: "/assets/logo/logo.webp",
   },
   robots: { index: true, follow: true },
+  other: { "article:modified_time": "2026-06-28" },
 };
 
 export const viewport: Viewport = {

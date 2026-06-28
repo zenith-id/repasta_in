@@ -13,7 +13,7 @@ export const faqs = [
   },
   {
     q: "Apa bedanya Repaste Regular, Phase Change, dan Liquid Metal?",
-    a: "Regular (CryoFuze 5: 12,5 W/mK / Arctic MX-6: 5,6 W/mK) cocok untuk penggunaan standar, suhu turun 10–15°C. Phase Change (PTM 7950: 8,5 W/mK) lebih tahan lama, umur pakai 5+ tahun tanpa perlu diganti. Liquid Metal (128 W/mK) konduktivitas tertinggi — suhu bisa turun hingga 20°C, ideal untuk gaming dan editing berat. \"Thermal paste yang sudah kering bisa menaikkan suhu hingga 20°C,\" kata teknisi Repasta.",
+    a: "Regular (CryoFuze 5/Arctic MX-6, 12,5 W/mK): Rp 120.000, suhu turun 10–15°C, cocok untuk penggunaan standar. Phase Change (PTM 7950, 8,5 W/mK): Rp 170.000, suhu turun 12–18°C, umur pakai 5+ tahun tanpa perlu diganti. Liquid Metal (128 W/mK): Rp 200.000, suhu turun 15–20°C, ideal untuk gaming dan editing berat. \"Thermal paste yang sudah kering bisa menaikkan suhu hingga 20°C,\" kata teknisi Repasta.",
   },
   {
     q: "Apakah ada garansi jika laptop bermasalah setelah servis?",
