@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "@/components/theme-provider";
 import { faqs } from "@/constants/sections/faq";
+import { WHATSAPP_NUMBER } from "@/constants/contact";
 import "./globals.css";
 import "@/bones/registry";
 
@@ -107,7 +108,7 @@ const jsonLdOrganization = {
   sameAs: ["https://www.instagram.com/repasta.in"],
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+6281919423939",
+    telephone: `+${WHATSAPP_NUMBER}`,
     contactType: "customer service",
     availableLanguage: "Indonesian",
   },
@@ -120,7 +121,7 @@ const jsonLdLocalBusiness = {
   description:
     "Servis laptop & PC profesional di Bandung — repaste thermal paste, deep clean, upgrade hardware.",
   url: siteUrl,
-  telephone: "+6281919423939",
+  telephone: "+6282323633819",
   image: `${siteUrl}/assets/logo/logo.webp`,
   address: {
     "@type": "PostalAddress",
