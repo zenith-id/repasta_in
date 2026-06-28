@@ -24,11 +24,10 @@ export function Navbar() {
       ...primaryNav.map((n) => n.id),
       ...mobileNav.map((n) => n.id),
     ]);
-    const sections = document.querySelectorAll("section[id]");
-    if (!sections.length) return;
 
+    const observed = new Set<Element>();
     const visible = new Set<string>();
-    const observer = new IntersectionObserver(
+    const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           const id = entry.target.id;
@@ -36,14 +35,28 @@ export function Navbar() {
           if (entry.isIntersecting) visible.add(id);
           else visible.delete(id);
         });
-        // pick the first visible nav section (top-down order)
         const match = [...navIds].find((id) => visible.has(id));
         setActiveId(match ?? "");
       },
-      { threshold: 0.2, rootMargin: "-80px 0px -40% 0px" },
+      { threshold: 0, rootMargin: "-80px 0px -40% 0px" },
     );
-    sections.forEach((s) => observer.observe(s));
-    return () => observer.disconnect();
+
+    const observe = (el: Element) => {
+      if (el instanceof HTMLElement && el.id && navIds.has(el.id) && !observed.has(el)) {
+        observed.add(el);
+        io.observe(el);
+      }
+    };
+
+    // Observe all matching sections, retrying until every navId is found
+    const tryObserve = () => {
+      document.querySelectorAll("section[id]").forEach(observe);
+      const allFound = [...navIds].every((id) => observed.has(document.getElementById(id)!));
+      if (!allFound) requestAnimationFrame(tryObserve);
+    };
+    tryObserve();
+
+    return () => io.disconnect();
   }, []);
 
   const scrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -69,7 +82,7 @@ export function Navbar() {
             className="flex items-center gap-2.5 group cursor-pointer"
           >
             <div className=" flex items-center justify-center transition-all ">
-              <Image src="/logo.png" alt="Logo" width={24} height={24} />
+              <Image src="/icon.svg" alt="Logo" width={24} height={24} />
             </div>
             <span className="font-poppins font-bold text-lg text-foreground">
               Repasta In
