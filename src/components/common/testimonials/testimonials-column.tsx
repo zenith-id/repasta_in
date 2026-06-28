@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { TestimonialCard } from "./testimonial-card";
 import type { Testimonial } from "@/constants/sections/testimonials";
@@ -16,6 +16,28 @@ export function TestimonialsColumn({
   items,
   duration = 30,
 }: TestimonialsColumnProps) {
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReducedMotion(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
+  if (reducedMotion) {
+    return (
+      <div className={className}>
+        <ul className="flex flex-col gap-5 pb-5 list-none m-0 p-0">
+          {items.map((t, i) => (
+            <TestimonialCard key={i} testimonial={t} />
+          ))}
+        </ul>
+      </div>
+    );
+  }
+
   return (
     <div className={className}>
       <motion.ul
