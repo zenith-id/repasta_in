@@ -173,7 +173,7 @@ Navbar menggunakan `lenis.scrollTo()` untuk semua link navigasi. Fallback ke `sc
 
 ## Kontak WhatsApp
 
-Nomor: `+62 191 942 3939` → `wa.me/621919423939`
+Nomor: `+62 823-2363-3819` → `wa.me/621919423939`
 
 Muncul di: `navbar`, `hero`, `how-it-works`, `services`, `cta`, `footer`, `whatsapp-float`
 
