@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/icon.webp",
+        url: "/assets/logo/logo.webp",
         width: 1200,
         height: 630,
         alt: "Repasta — Servis Laptop & PC Bandung",
@@ -70,7 +70,6 @@ export const metadata: Metadata = {
     apple: "/assets/logo/logo.webp",
   },
   robots: { index: true, follow: true },
-  alternates: { canonical: siteUrl },
 };
 
 export const viewport: Viewport = {
@@ -203,7 +202,6 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <link rel="preconnect" href="https://images.unsplash.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

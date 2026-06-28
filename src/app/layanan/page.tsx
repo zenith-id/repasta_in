@@ -11,11 +11,16 @@ import {
 } from "lucide-react";
 import { LAYANAN_CONTENT } from "@/constants/sections/layanan";
 
-export const metadata: Metadata = {
-  title: "Layanan Servis Laptop & PC",
-  description:
-    "Daftar lengkap layanan Repasta: repaste thermal paste, deep clean laptop, upgrade SSD/RAM, instalasi OS, rakit PC. Harga transparan, garansi 7 hari, di Bandung.",
-};
+const siteUrl = "https://repasta-in.vercel.app";
+
+export function generateMetadata(): Metadata {
+  return {
+    title: "Layanan Servis Laptop & PC",
+    description:
+      "Daftar lengkap layanan Repasta: repaste thermal paste, deep clean laptop, upgrade SSD/RAM, instalasi OS, rakit PC. Harga transparan, garansi 7 hari, di Bandung.",
+    alternates: { canonical: `${siteUrl}/layanan` },
+  };
+}
 
 const { laptopServices, paketLaptopServices, pcServices, guarantees, notes } = LAYANAN_CONTENT;
 
@@ -68,7 +73,7 @@ function ServiceCard({
 
 export default function LayananPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background">
       {/* Back nav */}
       <div className="sticky top-0 z-40 bg-background/92 backdrop-blur-xl border-b border-border">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between">
@@ -229,6 +234,6 @@ export default function LayananPage() {
           </a>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
