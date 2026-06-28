@@ -33,4 +33,4 @@ Semua harga sudah termasuk material. Pembayaran setelah pekerjaan selesai dan pe
 - Melayani semua merek laptop: Asus, Lenovo, HP, Dell, Acer, MSI, MacBook
 
 ## Kontak
-WhatsApp: wa.me/621919423939
+WhatsApp: wa.me/6282323633819
