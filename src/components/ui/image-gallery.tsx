@@ -90,7 +90,9 @@ function AnimatedImage({ item, ratio }: AnimatedImageProps) {
         decoding="async"
       />
       {(!isInView || !loaded) && (
-        <div className="absolute inset-0 bg-accent/50 animate-pulse" />
+        <div className="absolute inset-0 bg-muted animate-pulse overflow-hidden">
+          <div className="absolute inset-0 -translate-x-full animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+        </div>
       )}
 
       <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-foreground/70 via-foreground/20 to-transparent" />
