@@ -1,3 +1,5 @@
+import { WHATSAPP_NUMBER, WHATSAPP_LINK, EMAIL, EMAIL_LINK } from "@/constants/contact";
+
 export const cols = [
   {
     title: "Layanan",
@@ -27,13 +29,12 @@ export const brand = {
 } as const;
 
 export const contact = {
-  phone: "+62 191 942 3939",
-  email: "repastain@gmail.com",
-  emailLink: "mailto:repastain@gmail.com?subject=Tanya%20Servis%20Laptop%20-%20Repasta&body=Halo%20Repasta!%20Saya%20ingin%20tanya%20mengenai%20servis%20laptop%20saya.",
+  phone: `+${WHATSAPP_NUMBER.slice(0, 2)} ${WHATSAPP_NUMBER.slice(2, 5)}-${WHATSAPP_NUMBER.slice(5, 9)}-${WHATSAPP_NUMBER.slice(9)}`,
+  email: EMAIL,
+  emailLink: EMAIL_LINK("Tanya Servis Laptop - Repasta", "Halo Repasta! Saya ingin tanya mengenai servis laptop saya."),
   ig: "https://www.instagram.com/repasta.in/",
-  waLink: "https://wa.me/621919423939",
-  waConsultLink:
-    "https://wa.me/621919423939?text=Halo%20Repasta!%20Saya%20ingin%20konsultasi.",
+  waLink: `https://wa.me/${WHATSAPP_NUMBER}`,
+  waConsultLink: WHATSAPP_LINK("Halo Repasta! Saya ingin konsultasi."),
   location: "Bojongsoang, Bandung, Jawa Barat",
   gmaps: "https://maps.app.goo.gl/6wkYfFzpS8EjyJ4p8",
   hours: {
