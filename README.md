@@ -1,6 +1,6 @@
-# Repasta — Landing Page
+# Repastain — Landing Page
 
-Halaman marketing statis untuk jasa servis laptop & PC **Repasta** di Bandung, Indonesia. Dibangun untuk mendorong konversi via WhatsApp.
+Halaman marketing statis untuk jasa servis laptop & PC **Repastain** di Bandung, Indonesia. Dibangun untuk mendorong konversi via WhatsApp.
 
 **Versi**: `1.7.0`
 
@@ -81,6 +81,7 @@ Semua konten statis dipisahkan ke folder `src/constants/`:
 | File                                 | Konten                          |
 | ------------------------------------ | ------------------------------- |
 | `constants/contact.ts`               | WhatsApp number, link helper    |
+| `constants/seo.ts`                   | SEO metadata & app URL helper   |
 | `constants/layout/navbar.ts`         | Navigation links                |
 | `constants/layout/hero.ts`           | Hero section content            |
 | `constants/layout/footer.ts`         | Footer content                  |
