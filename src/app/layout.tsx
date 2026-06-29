@@ -18,49 +18,39 @@ const bricolage = Bricolage_Grotesque({
   weight: ["400", "600", "700"],
   display: "swap",
 });
-const siteUrl = "https://repasta-in.vercel.app";
+
+import { SEO, getAppUrl } from "@/constants/seo";
+const siteUrl = getAppUrl();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Repasta — Servis Laptop & PC Profesional di Bandung",
-    template: "%s | Repasta",
+    default: SEO.title,
+    template: "%s | Repastain",
   },
-  description:
-    "Repasta menyediakan servis laptop dan PC profesional di Bandung. Repaste thermal paste, deep clean, upgrade SSD/RAM. Diagnosa gratis, teknisi berpengalaman, harga transparan, garansi 7 hari.",
-  keywords: [
-    "servis laptop Bandung",
-    "repaste laptop Bandung",
-    "cleaning laptop Bandung",
-    "ganti thermal paste laptop",
-    "teknisi laptop panggilan Bandung",
-    "deepclean laptop Bandung",
-    "upgrade SSD laptop Bandung",
-    "servis PC Bandung",
-  ],
-  authors: [{ name: "Repasta" }],
+  description: SEO.description,
+  keywords: SEO.keywords,
+  authors: [{ name: SEO.author }],
   openGraph: {
-    title: "Repasta — Servis Laptop & PC Profesional di Bandung",
-    description:
-      "Diagnosa gratis, repaste thermal paste, deep clean, upgrade SSD/RAM. Teknisi berpengalaman, harga transparan, garansi 7 hari.",
-    url: siteUrl,
-    siteName: "Repasta",
-    locale: "id_ID",
+    title: SEO.title,
+    description: SEO.description,
+    url: "/",
+    siteName: SEO.siteName,
+    locale: SEO.locale,
     type: "website",
     images: [
       {
         url: "/og.jpg",
         width: 1200,
         height: 630,
-        alt: "Repasta — Servis Laptop & PC Bandung",
+        alt: SEO.title,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Repasta — Servis Laptop & PC Bandung",
-    description:
-      "Diagnosa gratis, repaste thermal paste, deep clean, upgrade SSD/RAM. Teknisi berpengalaman, harga transparan, garansi 7 hari.",
+    title: SEO.title,
+    description: SEO.description,
     images: ["/og.jpg"],
   },
   verification: {
@@ -68,18 +58,50 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/assets/logo/repasta-ico-16.png", sizes: "16x16", type: "image/png" },
-      { url: "/assets/logo/repasta-ico-32.png", sizes: "32x32", type: "image/png" },
-      { url: "/assets/logo/repasta-ico-48.png", sizes: "48x48", type: "image/png" },
-      { url: "/assets/logo/repasta-ico-64.png", sizes: "64x64", type: "image/png" },
-      { url: "/assets/logo/repasta-ico-128.png", sizes: "128x128", type: "image/png" },
-      { url: "/assets/logo/repasta-icon-48.webp", sizes: "48x48", type: "image/webp" },
+      {
+        url: "/assets/logo/repasta-ico-16.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
+      {
+        url: "/assets/logo/repasta-ico-32.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: "/assets/logo/repasta-ico-48.png",
+        sizes: "48x48",
+        type: "image/png",
+      },
+      {
+        url: "/assets/logo/repasta-ico-64.png",
+        sizes: "64x64",
+        type: "image/png",
+      },
+      {
+        url: "/assets/logo/repasta-ico-128.png",
+        sizes: "128x128",
+        type: "image/png",
+      },
+      {
+        url: "/assets/logo/repasta-icon-48.webp",
+        sizes: "48x48",
+        type: "image/webp",
+      },
       { url: "/assets/logo/logo.webp", type: "image/webp" },
     ],
     shortcut: "/assets/logo/logo.webp",
     apple: [
-      { url: "/assets/logo/repasta-ico-128.png", sizes: "128x128", type: "image/png" },
-      { url: "/assets/logo/repasta-ico-64.png", sizes: "64x64", type: "image/png" },
+      {
+        url: "/assets/logo/repasta-ico-128.png",
+        sizes: "128x128",
+        type: "image/png",
+      },
+      {
+        url: "/assets/logo/repasta-ico-64.png",
+        sizes: "64x64",
+        type: "image/png",
+      },
     ],
   },
   robots: { index: true, follow: true },
@@ -203,7 +225,12 @@ const jsonLdFAQ = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@graph": [jsonLdOrganization, jsonLdLocalBusiness, jsonLdBreadcrumb, jsonLdFAQ],
+  "@graph": [
+    jsonLdOrganization,
+    jsonLdLocalBusiness,
+    jsonLdBreadcrumb,
+    jsonLdFAQ,
+  ],
 };
 
 export default function RootLayout({
