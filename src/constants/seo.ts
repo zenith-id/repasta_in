@@ -24,8 +24,5 @@ export const getAppUrl = () => {
   if (process.env.NEXT_PUBLIC_SECONDARY_APP_URL) {
     return process.env.NEXT_PUBLIC_SECONDARY_APP_URL;
   }
-  if (process.env.VERCEL_URL) {
-    return `https://${process.env.VERCEL_URL}`;
-  }
   return "https://www.repastain.my.id";
 };
