@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${siteUrl}/og.jpg`,
+        url: `${siteUrl}/og.png`,
         width: 1200,
         height: 630,
         alt: SEO.title,
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: SEO.title,
     description: SEO.description,
-    images: [`${siteUrl}/og.jpg`],
+    images: [`${siteUrl}/og.png`],
   },
   verification: {
     google: "google-site-verification-code-placeholder",
