@@ -11,13 +11,16 @@ import {
 
 export function Features() {
   return (
-    <section id="keunggulan" className="py-20 md:py-32 bg-background content-visibility-auto">
+    <section
+      id="keunggulan"
+      className="py-20 md:py-32 bg-background content-visibility-auto"
+    >
       <div className="mx-auto max-w-3xl lg:max-w-5xl px-6">
         <SectionHeader
           icon={CheckCircle}
           badge="Keunggulan Kami"
           titlePrefix="Kenapa Pilih "
-          titleHighlight="Repasta?"
+          titleHighlight="Repastain?"
           desc="Standar profesional yang mengutamakan kejujuran, kecepatan, dan kualitas kerja."
           variant={2}
         />
