@@ -2,44 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [Unreleased]
+## [1.9.0](https://github.com/zenith-id/repasta_in/compare/v1.8.2...v1.9.0) (2026-06-30)
 
 
 ### Features
 
-* **data:** add features constants configuration file ([a29e4de](https://github.com/zenith-id/repasta_in/commit/a29e4de))
-* **gallery:** remove unused assets const ([c93cfb6](https://github.com/zenith-id/repasta_in/commit/c93cfb6))
-* **seo:** add detailed googlebot directives to robots meta ([eea92c3](https://github.com/zenith-id/repasta_in/commit/eea92c3))
-* **seo:** add social preview image ([4eb6904](https://github.com/zenith-id/repasta_in/commit/4eb6904))
+* **data:** add features constants configuration file ([a29e4de](https://github.com/zenith-id/repasta_in/commit/a29e4dec21dd93042119013ce0a65271610a04dc))
+* **gallery:** remove unused assets const ([c93cfb6](https://github.com/zenith-id/repasta_in/commit/c93cfb6f02bdd33cd867d60e4d358366f5342001))
+* **seo:** add detailed googlebot directives to robots meta ([eea92c3](https://github.com/zenith-id/repasta_in/commit/eea92c36b69f050e33067c010eb6ea2276c113e0))
+* **seo:** add social preview image ([4eb6904](https://github.com/zenith-id/repasta_in/commit/4eb6904be9b9a7feaca3ffbf3783a50784005a40))
+
 
 ### Bug Fixes
 
-* **seo:** use absolute url for og and twitter images ([ce7c7e3](https://github.com/zenith-id/repasta_in/commit/ce7c7e3))
-* **seo:** use og.jpg instead of logo.webp for social images ([0476b88](https://github.com/zenith-id/repasta_in/commit/0476b88))
-* **seo:** replace og image with png format ([43e8662](https://github.com/zenith-id/repasta_in/commit/43e8662))
-* **seo:** use relative path for og image and remove wrong mime type ([d7b9fdd](https://github.com/zenith-id/repasta_in/commit/d7b9fdd))
-
-### Refactoring
-
-* **seo:** centralize metadata to constants/seo.ts ([fb7d205](https://github.com/zenith-id/repasta_in/commit/fb7d205))
-* **seo:** simplify app url resolution logic ([dd5372f](https://github.com/zenith-id/repasta_in/commit/dd5372f))
-* **hero:** remove emoji from status badge ([14447b3](https://github.com/zenith-id/repasta_in/commit/14447b3))
-
-### Style
-
-* **features:** rebrand title to repastain ([04acea8](https://github.com/zenith-id/repasta_in/commit/04acea8))
-* **not-found:** enlarge logo and remove unused import ([687dfa1](https://github.com/zenith-id/repasta_in/commit/687dfa1))
-* **hero:** improve stats grid layout on mobile ([1105858](https://github.com/zenith-id/repasta_in/commit/1105858))
-* **footer:** add author credit link and improve layout ([ad67482](https://github.com/zenith-id/repasta_in/commit/ad67482))
-
-### Documentation
-
-* **readme:** rebrand to repastain and add seo.ts entry ([bb4110a](https://github.com/zenith-id/repasta_in/commit/bb4110a))
-* **changelog:** restore missing ci and perf entries in v1.8.2 ([9212bb6](https://github.com/zenith-id/repasta_in/commit/9212bb6))
-
-### CI
-
-* **release:** fix awk script to support patch version headers ([804107b](https://github.com/zenith-id/repasta_in/commit/804107b))
+* **seo:** replace og image with png format ([43e8662](https://github.com/zenith-id/repasta_in/commit/43e8662833be2a7eb8151dadf52d028e55b0954a))
+* **seo:** use absolute url for og and twitter images ([ce7c7e3](https://github.com/zenith-id/repasta_in/commit/ce7c7e3f97847aa211c58d712d91ced256c9e622))
+* **seo:** use og.jpg instead of logo.webp for social images ([0476b88](https://github.com/zenith-id/repasta_in/commit/0476b88c3319491ba95ac5351bbaa71f30a91def))
+* **seo:** use relative path for og image and remove wrong mime type ([d7b9fdd](https://github.com/zenith-id/repasta_in/commit/d7b9fdde0fefea3c0874dd8ef88ce697e7a30406))
 
 ### [1.8.2](https://github.com/zenith-id/repasta_in/compare/v1.8.0...v1.8.2) (2026-06-28)
 
