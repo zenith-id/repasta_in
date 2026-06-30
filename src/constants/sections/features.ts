@@ -42,7 +42,7 @@ export const qualityCard = {
   title: "Material Premium",
   desc: "Hanya pakai thermal compound kelas atas, bukan pasta abal-abal.",
   materials: [
-    { name: "CryoFuze 5", type: "Regular" },
+    { name: "CryoFuze 5", type: "Premium" },
     { name: "PTM7950", type: "Phase Change" },
     { name: "Liquid Metal", type: "128 W/mK" },
   ],
