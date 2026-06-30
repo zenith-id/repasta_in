@@ -109,12 +109,12 @@ export function Hero() {
           {/* Stats */}
           <motion.div
             variants={fadeInUp}
-            className="grid grid-cols-1 md:grid-cols-3 gap-px rounded-3xl overflow-hidden border border-foreground/10 bg-foreground/10 backdrop-blur-md"
+            className="grid grid-cols-3 gap-px rounded-3xl overflow-hidden border border-foreground/10 bg-foreground/10 backdrop-blur-md"
           >
             {statsData.map((s, i) => (
               <div
                 key={i}
-                className="bg-background/70 p-6 sm:p-8 hover:bg-background/50 transition-colors group border-b md:border-b-0 last:border-0 border-foreground/5"
+                className="bg-background/70 p-3 sm:p-8 flex items-center justify-center hover:bg-background/50 transition-colors group"
               >
                 <StatItem {...s} />
               </div>
