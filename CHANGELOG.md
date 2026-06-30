@@ -30,6 +30,7 @@ All notable changes to this project will be documented in this file. See [standa
 * **features:** rebrand title to repastain ([04acea8](https://github.com/zenith-id/repasta_in/commit/04acea8))
 * **not-found:** enlarge logo and remove unused import ([687dfa1](https://github.com/zenith-id/repasta_in/commit/687dfa1))
 * **hero:** improve stats grid layout on mobile ([1105858](https://github.com/zenith-id/repasta_in/commit/1105858))
+* **footer:** add author credit link and improve layout ([ad67482](https://github.com/zenith-id/repasta_in/commit/ad67482))
 
 ### Documentation
 
