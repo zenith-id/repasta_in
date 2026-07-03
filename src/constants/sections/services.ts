@@ -37,14 +37,20 @@ export const laptopServices = [
 
 export const paketLaptopServices = [
   {
-    name: "Deepclean Phase Change",
-    desc: "Repastain menggunakan bahan phase change terbaik di kelasnya! berserta cleaning bagian body laptop yang mencakup keyboard, layar dan palmrest.",
-    price: "Rp 220.000",
+    name: "Deepclean Premium",
+    desc: "Repastain menggunakan bahan phase change premium di kelasnya! beserta cleaning bagian body laptop yang mencakup keyboard, layar dan palmrest.",
+    price: "Rp 200.000",
     popular: true,
   },
   {
+    name: "Deepclean Phase Change",
+    desc: "Repastain menggunakan bahan phase change terbaik di kelasnya! beserta cleaning bagian body laptop yang mencakup keyboard, layar dan palmrest.",
+    price: "Rp 220.000",
+    popular: false,
+  },
+  {
     name: "Deepclean Liquid Metal",
-    desc: "Repastain menggunakan bahan Liquid metal berserta cleaning bagian body laptop yang mencakup keyboard, layar dan palmrest.",
+    desc: "Repastain menggunakan bahan Liquid metal beserta cleaning bagian body laptop yang mencakup keyboard, layar dan palmrest.",
     price: "Rp 250.000",
     popular: false,
   },
@@ -120,4 +126,3 @@ export const tabsData = [
   { id: "paket_laptop" as const, label: "Paket Laptop", icon: Sparkles },
   { id: "pc" as const, label: "PC Desktop", icon: Monitor },
 ] as const;
-

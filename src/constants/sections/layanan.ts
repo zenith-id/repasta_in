@@ -70,9 +70,23 @@ export const LAYANAN_CONTENT = {
   ],
   paketLaptopServices: [
     {
+      name: "Deepclean Premium",
+      price: "Rp 200.000",
+      badge: "Paling Populer",
+      material:
+        "Repasta menggunakan bahan phase change premium di kelasnya! berserta cleaning bagian body laptop yang mencakup keyboard, layar dan palmrest.",
+      includes: [
+        "Bersih fan, heatsink, body dalam",
+        "Repaste CryoFuze 5 / Arctic MX-6",
+        "Bersih keyboard, layar, palmrest",
+        "Test suhu & benchmark",
+        "Garansi 7 hari",
+      ],
+    },
+    {
       name: "Deepclean Phase Change",
       price: "Rp 220.000",
-      badge: "Paling Populer",
+      badge: null,
       material: "PTM 7950 + Full Cleaning Kit",
       desc: "Repasta menggunakan bahan phase change terbaik di kelasnya! berserta cleaning bagian body laptop yang mencakup keyboard, layar dan palmrest.",
       includes: [
@@ -88,7 +102,7 @@ export const LAYANAN_CONTENT = {
       price: "Rp 250.000",
       badge: null,
       material: "Liquid Metal + Full Cleaning Kit",
-      desc: "Repasta menggunakan bahan Liquid metal berserta cleaning bagian body laptop yang mencakup keyboard, layar dan palmrest.",
+      desc: "Repastain menggunakan bahan Liquid metal beserta cleaning bagian body laptop yang mencakup keyboard, layar dan palmrest.",
       includes: [
         "Deep clean seluruh body & internal",
         "Repaste liquid metal presisi",
