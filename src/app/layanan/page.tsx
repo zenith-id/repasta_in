@@ -23,7 +23,7 @@ export function generateMetadata(): Metadata {
   };
 }
 
-const { laptopServices, paketLaptopServices, pcServices, guarantees, notes } = LAYANAN_CONTENT;
+const { laptopServices, paketLaptopServices, pcServices, guarantees, notes, addons } = LAYANAN_CONTENT;
 
 function ServiceCard({
   svc,
@@ -152,6 +152,38 @@ export default function LayananPage() {
             ))}
           </div>
         </div>
+
+        {/* Add-ons */}
+        {addons.length > 0 && (
+          <div className="mb-16 p-6 rounded-2xl border border-dashed border-primary/30 bg-primary/5">
+            <h3 className="text-lg font-bold font-poppins text-foreground mb-1">
+              Add-on
+            </h3>
+            <p className="text-sm text-muted-foreground mb-4">
+              Bisa ditambahkan ke setiap layanan repaste
+            </p>
+            <div className="space-y-3">
+              {addons.map((addon) => (
+                <div
+                  key={addon.name}
+                  className="flex items-center justify-between gap-4 p-4 rounded-xl bg-background/80"
+                >
+                  <div>
+                    <p className="font-bold text-foreground text-sm font-poppins">
+                      {addon.name}
+                    </p>
+                    <p className="text-xs text-muted-foreground mt-0.5">
+                      {addon.desc}
+                    </p>
+                  </div>
+                  <span className="shrink-0 font-bold text-sm text-primary font-poppins">
+                    {addon.price}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Paket Laptop section */}
         <div className="mb-16">
