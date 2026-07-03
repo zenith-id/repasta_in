@@ -42,19 +42,6 @@ export const LAYANAN_CONTENT = {
       ],
     },
     {
-      name: "Repaste vram/vrm",
-      price: "Rp 50.000",
-      badge: null,
-      material: "Thermal Putty / Pad Berkualitas",
-      desc: "Repasta bagian VRAM/VRM menggunakan thermal putty performa terbaik.",
-      includes: [
-        "Ganti thermal pad/putty VRAM",
-        "Ganti thermal pad/putty VRM",
-        "Test stabilitas GPU",
-        "Garansi 7 hari",
-      ],
-    },
-    {
       name: "Cleaning Keyboard ext",
       price: "Mulai dari Rp 100.000*",
       badge: null,
@@ -176,5 +163,12 @@ export const LAYANAN_CONTENT = {
     "Diagnosa gratis untuk semua jenis kerusakan — tidak ada kewajiban melanjutkan ke servis.",
     "Home visit tersedia untuk area Bandung — jadwalkan via WhatsApp.",
     "Pembayaran dilakukan setelah pekerjaan selesai dan Anda puas.",
+  ],
+  addons: [
+    {
+      name: "Repaste VRAM/VRM",
+      price: "Rp 50.000",
+      desc: "Thermal putty performa terbaik untuk bagian VRAM & VRM. Bisa ditambahkan ke setiap layanan repaste.",
+    },
   ],
 } as const;

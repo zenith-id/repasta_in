@@ -22,12 +22,6 @@ export const laptopServices = [
     popular: false,
   },
   {
-    name: "Repaste VRAM/VRM",
-    desc: "Repastain bagian VRAM/VRM menggunakan thermal putty performa terbaik.",
-    price: "Rp 50.000",
-    popular: false,
-  },
-  {
     name: "Cleaning Keyboard ext",
     desc: "Cleaning keyboard mechanical, membersihkan kerak yang menempel pada keycaps (cuci) dan plate keyboard.",
     price: "Mulai dari Rp 100.000*",
@@ -112,6 +106,14 @@ export const note = {
     message: "Halo Repastain! Saya ingin tanya layanan yang sesuai.",
   },
 } as const;
+
+export const laptopAddons = [
+  {
+    name: "Repaste VRAM/VRM",
+    desc: "Thermal putty performa terbaik untuk bagian VRAM & VRM.",
+    price: "Rp 50.000",
+  },
+] as const;
 
 export const tabsData = [
   { id: "laptop" as const, label: "Laptop", icon: Laptop },
