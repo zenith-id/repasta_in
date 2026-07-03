@@ -12,8 +12,8 @@ export const faqs = [
     a: "Ya! Teknisi kami melayani kunjungan ke rumah, kost, kampus, maupun kantor di area Bandung. Layanan panggilan mencakup seluruh wilayah Bandung Raya. Hubungi kami untuk menjadwalkan kunjungan.",
   },
   {
-    q: "Apa bedanya Repaste Regular, Phase Change, dan Liquid Metal?",
-    a: "Regular (CryoFuze 5/Arctic MX-6, 12,5 W/mK): Rp 120.000, suhu turun 10–15°C, cocok untuk penggunaan standar. Phase Change (PTM 7950, 8,5 W/mK): Rp 170.000, suhu turun 12–18°C, umur pakai 5+ tahun tanpa perlu diganti. Liquid Metal (128 W/mK): Rp 200.000, suhu turun 15–20°C, ideal untuk gaming dan editing berat. \"Thermal paste yang sudah kering bisa menaikkan suhu hingga 20°C,\" kata teknisi Repasta.",
+    q: "Apa bedanya Repaste Premium, Phase Change, dan Liquid Metal?",
+    a: 'Premium (CryoFuze 5/Arctic MX-6, 12,5 W/mK): Rp 120.000, suhu turun 10–15°C, cocok untuk penggunaan standar. Phase Change (PTM 7950, 8,5 W/mK): Rp 170.000, suhu turun 12–18°C, umur pakai 5+ tahun tanpa perlu diganti. Liquid Metal (128 W/mK): Rp 200.000, suhu turun 15–20°C, ideal untuk gaming dan editing berat. "Thermal paste yang sudah kering bisa menaikkan suhu hingga 20°C," kata teknisi Repastain.',
   },
   {
     q: "Apakah ada garansi jika laptop bermasalah setelah servis?",
@@ -29,11 +29,11 @@ export const faqs = [
   },
   {
     q: "Berapa biaya servis laptop di Bandung?",
-    a: "Biaya servis laptop di Bandung mulai dari Rp 50.000 (cleaning keyboard) hingga Rp 200.000 (repaste liquid metal). Di Repasta, semua harga transparan dan tertera di awal — tanpa biaya tersembunyi. Pembayaran dilakukan setelah pekerjaan selesai dan pelanggan puas.",
+    a: "Biaya servis laptop di Bandung mulai dari Rp 50.000 (cleaning keyboard) hingga Rp 200.000 (repaste liquid metal). Di Repastain, semua harga transparan dan tertera di awal — tanpa biaya tersembunyi. Pembayaran dilakukan setelah pekerjaan selesai dan pelanggan puas.",
   },
   {
     q: "Kapan harus repaste laptop?",
-    a: "Repaste direkomendasikan setiap 1–2 tahun penggunaan reguler, atau ketika suhu CPU/GPU naik 10–15°C dari kondisi normal. Tanda lain yang perlu diperhatikan: kipas berisik, performa turun saat gaming, atau laptop sering mengalami thermal throttle. \"Banyak pelanggan datang dengan suhu 90°C+, setelah repaste turun ke 70°C — perbedaan yang sangat signifikan,\" kata teknisi Repasta.",
+    a: 'Repaste direkomendasikan setiap 1–2 tahun penggunaan reguler, atau ketika suhu CPU/GPU naik 10–15°C dari kondisi normal. Tanda lain yang perlu diperhatikan: kipas berisik, performa turun saat gaming, atau laptop sering mengalami thermal throttle. "Banyak pelanggan datang dengan suhu 90°C+, setelah repaste turun ke 70°C — perbedaan yang sangat signifikan," kata teknisi Repastain.',
   },
   {
     q: "Apakah repaste bisa merusak laptop?",

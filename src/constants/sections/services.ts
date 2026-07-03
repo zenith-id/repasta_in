@@ -5,13 +5,13 @@ export { WHATSAPP_LINK };
 export const laptopServices = [
   {
     name: "Repaste Premium",
-    desc: "Repasta menggunakan bahan cair terbaik dengan CryoFuze 5 / Arctic MX-6, bahan terbaik untuk suhu lebih adem.",
+    desc: "Repastain menggunakan bahan cair terbaik dengan CryoFuze 5 / Arctic MX-6, bahan terbaik untuk suhu lebih adem.",
     price: "Rp 120.000",
     popular: false,
   },
   {
     name: "Repaste Phase change",
-    desc: "Repasta menggunakan bahan phase change terbaik di kelasnya! Opsi pasta: PTM 7950 by Honeywell & ID-Cooling PTM2 - solusi suhu adem maksimal dengan umur yang lebih panjang.",
+    desc: "Repastain menggunakan bahan phase change terbaik di kelasnya! Opsi pasta: PTM 7950 by Honeywell & ID-Cooling PTM2 - solusi suhu adem maksimal dengan umur yang lebih panjang.",
     price: "Rp 170.000",
     popular: false,
   },
@@ -23,14 +23,14 @@ export const laptopServices = [
   },
   {
     name: "Repaste VRAM/VRM",
-    desc: "Repasta bagian VRAM/VRM menggunakan thermal putty performa terbaik.",
+    desc: "Repastain bagian VRAM/VRM menggunakan thermal putty performa terbaik.",
     price: "Rp 50.000",
     popular: false,
   },
   {
     name: "Cleaning Keyboard ext",
     desc: "Cleaning keyboard mechanical, membersihkan kerak yang menempel pada keycaps (cuci) dan plate keyboard.",
-    price: "Rp 100.000*",
+    price: "Mulai dari Rp 100.000*",
     popular: false,
   },
   {
@@ -44,13 +44,13 @@ export const laptopServices = [
 export const paketLaptopServices = [
   {
     name: "Deepclean Phase Change",
-    desc: "Repasta menggunakan bahan phase change terbaik di kelasnya! berserta cleaning bagian body laptop yang mencakup keyboard, layar dan palmrest.",
+    desc: "Repastain menggunakan bahan phase change terbaik di kelasnya! berserta cleaning bagian body laptop yang mencakup keyboard, layar dan palmrest.",
     price: "Rp 220.000",
     popular: true,
   },
   {
     name: "Deepclean Liquid Metal",
-    desc: "Repasta menggunakan bahan Liquid metal berserta cleaning bagian body laptop yang mencakup keyboard, layar dan palmrest.",
+    desc: "Repastain menggunakan bahan Liquid metal berserta cleaning bagian body laptop yang mencakup keyboard, layar dan palmrest.",
     price: "Rp 250.000",
     popular: false,
   },
@@ -109,7 +109,7 @@ export const note = {
   detail: "— kami bantu cari tahu.",
   cta: {
     text: "Konsultasi Gratis",
-    message: "Halo Repasta! Saya ingin tanya layanan yang sesuai.",
+    message: "Halo Repastain! Saya ingin tanya layanan yang sesuai.",
   },
 } as const;
 
