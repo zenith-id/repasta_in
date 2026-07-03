@@ -132,7 +132,7 @@ export const viewport: Viewport = {
 const jsonLdOrganization = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Repasta",
+  name: "Repastain",
   url: siteUrl,
   logo: `${siteUrl}/assets/logo/logo.webp`,
   description:

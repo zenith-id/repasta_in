@@ -11,7 +11,7 @@ export default function NotFound() {
           <div className="w-10 h-10 rounded-xl flex items-center justify-center">
             <Image
               src="/assets/logo/logo.webp"
-              alt="Repasta"
+              alt="Repastain"
               width={256}
               height={256}
             />

@@ -12,13 +12,13 @@ import {
 import { LAYANAN_CONTENT } from "@/constants/sections/layanan";
 import { WHATSAPP_LINK } from "@/constants/contact";
 
-const siteUrl = "https://repasta-in.vercel.app";
+const siteUrl = "https://repastain.my.id";
 
 export function generateMetadata(): Metadata {
   return {
     title: "Layanan Servis Laptop & PC",
     description:
-      "Daftar lengkap layanan Repasta: repaste thermal paste, deep clean laptop, upgrade SSD/RAM, instalasi OS, rakit PC. Harga transparan, garansi 7 hari, di Bandung.",
+      "Daftar lengkap layanan Repastain: repaste thermal paste, deep clean laptop, upgrade SSD/RAM, instalasi OS, rakit PC. Harga transparan, garansi 7 hari, di Bandung.",
     alternates: { canonical: `${siteUrl}/layanan` },
   };
 }
@@ -86,7 +86,7 @@ export default function LayananPage() {
             Kembali ke Beranda
           </Link>
           <a
-            href={WHATSAPP_LINK("Halo Repasta! Saya ingin konsultasi layanan.")}
+            href={WHATSAPP_LINK("Halo Repastain! Saya ingin konsultasi layanan.")}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground text-sm font-semibold rounded-xl hover:bg-primary/90 transition-colors"
@@ -101,7 +101,7 @@ export default function LayananPage() {
         {/* Page header */}
         <div className="mb-14">
           <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3">
-            Repasta · Bandung
+            Repastain · Bandung
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold font-poppins text-foreground mb-5 leading-tight">
             Layanan Servis
@@ -225,7 +225,7 @@ export default function LayananPage() {
             terbaik. Gratis.
           </p>
           <a
-            href={WHATSAPP_LINK("Halo Repasta! Saya ingin konsultasi masalah laptop saya.")}
+            href={WHATSAPP_LINK("Halo Repastain! Saya ingin konsultasi masalah laptop saya.")}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 bg-background dark:bg-primary text-foreground dark:text-primary-foreground font-semibold rounded-xl hover:opacity-90 hover:-translate-y-0.5 transition-all shadow-lg"
