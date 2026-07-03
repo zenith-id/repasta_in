@@ -2,31 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [Unreleased]
+## [1.10.0](https://github.com/zenith-id/repasta_in/compare/v1.9.0...v1.10.0) (2026-07-03)
+
 
 ### Features
 
-* **services:** add deepclean premium rp 200k to paket laptop ([40f4146](https://github.com/zenith-id/repasta_in/commit/40f4146))
-* **services:** add vram/vrm as laptop addon ([3ddb384](https://github.com/zenith-id/repasta_in/commit/3ddb384))
-* **ui:** render addon section on services and layanan pages ([aa102a7](https://github.com/zenith-id/repasta_in/commit/aa102a7))
+* **services:** add deepclean premium rp 200k ([40f4146](https://github.com/zenith-id/repasta_in/commit/40f414617ae95ff837ec9faeb89038253c0bf6ed))
+* **services:** add vram/vrm as laptop addon ([3ddb384](https://github.com/zenith-id/repasta_in/commit/3ddb3842c90b70a095cf77bd1241ee6d9ea19346))
+* **ui:** render addon section on services and layanan ([aa102a7](https://github.com/zenith-id/repasta_in/commit/aa102a7c86f67a10a40d0faabd515535e2331fd9))
+
 
 ### Bug Fixes
 
-* **seo:** update LocalBusiness schema name and priceRange ([94a64ee](https://github.com/zenith-id/repasta_in/commit/94a64ee))
-* **seo:** fix canonical url inconsistency (remove www prefix) ([94a64ee](https://github.com/zenith-id/repasta_in/commit/94a64ee))
-
-### Documentation
-
-* **content:** update llms.txt with new services and fix stats ([9cf1e42](https://github.com/zenith-id/repasta_in/commit/9cf1e42))
-* **content:** update faq pricing reference ([9cf1e42](https://github.com/zenith-id/repasta_in/commit/9cf1e42))
-
-### Chores
-
-* **rebrand:** rename repasta to repastain across all files ([1a1f986](https://github.com/zenith-id/repasta_in/commit/1a1f986))
-* **seo:** update domain to repastain.my.id ([6474948](https://github.com/zenith-id/repasta_in/commit/6474948))
-* **ui:** update hero stats and image comparison ([57dd7ba](https://github.com/zenith-id/repasta_in/commit/57dd7ba))
-
----
+* **seo:** update schema and canonical url ([94a64ee](https://github.com/zenith-id/repasta_in/commit/94a64ee053f050f61282618b9d163450013c7ead))
 
 ## [1.9.0](https://github.com/zenith-id/repasta_in/compare/v1.8.2...v1.9.0) (2026-06-30)
 
