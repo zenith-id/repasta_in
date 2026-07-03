@@ -82,7 +82,7 @@ export function Navbar() {
             className="flex items-center gap-2.5 group cursor-pointer"
           >
             <div className=" flex items-center justify-center transition-all ">
-              <Image src="/icon.svg" alt="Repasta" width={24} height={24} />
+              <Image src="/icon.svg" alt="Repastain" width={24} height={24} />
             </div>
             <span className="font-poppins font-bold text-lg text-foreground">
               Repasta In
@@ -172,7 +172,7 @@ export function Navbar() {
                 </Link>
                 <a
                   href={WHATSAPP_LINK(
-                    "Halo Repasta! Saya ingin konsultasi servis.",
+                    "Halo Repastain! Saya ingin konsultasi servis.",
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
