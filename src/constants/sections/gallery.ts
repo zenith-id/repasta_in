@@ -11,7 +11,7 @@ export const galleryHeader = {
 export const galleryCta = {
   prefix: "Punya proyek servis laptop atau PC? ",
   linkText: "Hubungi kami sekarang →",
-  message: "Halo Repasta! Saya ingin konsultasi.",
+  message: "Halo Repastain! Saya ingin konsultasi.",
 } as const;
 
 // ── Image Trail ──

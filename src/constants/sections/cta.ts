@@ -11,7 +11,7 @@ export const ctaContent = {
     "Diagnosa gratis, penanganan cepat, dan harga transparan. Tim teknisi kami siap menjawab pertanyaan Anda via WhatsApp.",
   cta: {
     text: "Chat via WhatsApp",
-    href: WHATSAPP_LINK("Halo Repasta! Saya ingin servis laptop."),
+    href: WHATSAPP_LINK("Halo Repastain! Saya ingin servis laptop."),
   },
   hours: {
     weekday: "Sen–Jum 09–18",
