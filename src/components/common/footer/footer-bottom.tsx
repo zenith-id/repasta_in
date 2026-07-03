@@ -14,7 +14,7 @@ export function FooterBottom() {
       <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
         <div className="text-slate-500 text-xs flex flex-wrap items-center gap-x-1.5 gap-y-1">
           <span>
-            © {year} Repasta. Semua hak dilindungi. · v{packageJson.version} ·
+            © {year} Repastain. Semua hak dilindungi. · v{packageJson.version} ·
           </span>
           <a
             href={contact.emailLink}

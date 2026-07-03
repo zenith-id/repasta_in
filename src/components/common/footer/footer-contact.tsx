@@ -85,14 +85,14 @@ export function FooterContact({ contact }: FooterContactProps) {
       <div className="flex items-center gap-3">
         <Link
           href={contact.ig}
-          aria-label="Instagram Repasta"
+          aria-label="Instagram Repastain"
           className="w-9 h-9 rounded-lg border border-slate-800 flex items-center justify-center text-slate-500 hover:text-primary hover:border-primary/40 transition-colors"
         >
           <Instagram size={16} />
         </Link>
         <a
           href={contact.emailLink}
-          aria-label="Email Repasta"
+          aria-label="Email Repastain"
           className="w-9 h-9 rounded-lg border border-slate-800 flex items-center justify-center text-slate-500 hover:text-primary hover:border-primary/40 transition-colors"
         >
           <Mail size={16} />
@@ -101,7 +101,7 @@ export function FooterContact({ contact }: FooterContactProps) {
           href={contact.gmaps}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Google Maps Repasta"
+          aria-label="Google Maps Repastain"
           className="w-9 h-9 rounded-lg border border-slate-800 flex items-center justify-center text-slate-500 hover:text-primary hover:border-primary/40 transition-colors"
         >
           <MapPin size={16} />
