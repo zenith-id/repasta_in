@@ -15,7 +15,7 @@ export const heroContent = {
   cta: {
     primary: {
       text: "Chat via WhatsApp",
-      href: WHATSAPP_LINK("Halo Repasta! Saya ingin konsultasi servis laptop."),
+      href: WHATSAPP_LINK("Halo Repastain! Saya ingin konsultasi servis laptop."),
     },
     secondary: {
       text: "Lihat Layanan Kami",

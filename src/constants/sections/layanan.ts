@@ -56,7 +56,7 @@ export const LAYANAN_CONTENT = {
     },
     {
       name: "Cleaning Keyboard ext",
-      price: "Rp 100.000*",
+      price: "Mulai dari Rp 100.000*",
       badge: null,
       material: "—",
       desc: "Cleaning keyboard mechanical, membersihkan kerak yang menempel pada keycaps (cuci) dan plate keyboard.",
