@@ -24,5 +24,5 @@ export const getAppUrl = () => {
   if (process.env.NEXT_PUBLIC_SECONDARY_APP_URL) {
     return process.env.NEXT_PUBLIC_SECONDARY_APP_URL;
   }
-  return "https://www.repastain.my.id";
+  return "https://repastain.my.id";
 };

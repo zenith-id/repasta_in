@@ -149,7 +149,7 @@ const jsonLdOrganization = {
 const jsonLdLocalBusiness = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "Repasta",
+  name: "Repastain",
   description:
     "Servis laptop & PC profesional di Bandung — repaste thermal paste, deep clean, upgrade hardware.",
   url: siteUrl,
@@ -180,7 +180,7 @@ const jsonLdLocalBusiness = {
       closes: "15:00",
     },
   ],
-  priceRange: "Rp 50.000 – Rp 250.000",
+  priceRange: "Rp 50.000 – Rp 300.000",
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "4.9",
@@ -196,7 +196,11 @@ const jsonLdLocalBusiness = {
       },
       {
         "@type": "Offer",
-        itemOffered: { "@type": "Service", name: "Deep Clean" },
+        itemOffered: { "@type": "Service", name: "Deep Clean Premium" },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name: "Deep Clean Phase Change" },
       },
       {
         "@type": "Offer",
