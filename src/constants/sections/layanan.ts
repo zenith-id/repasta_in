@@ -73,8 +73,8 @@ export const LAYANAN_CONTENT = {
       name: "Deepclean Premium",
       price: "Rp 200.000",
       badge: "Paling Populer",
-      material:
-        "Repasta menggunakan bahan phase change premium di kelasnya! berserta cleaning bagian body laptop yang mencakup keyboard, layar dan palmrest.",
+      material: "CryoFuze 5 / Arctic MX-6",
+      desc: "Repasta menggunakan bahan cair terbaik dengan CryoFuze 5 / Arctic MX-6, beserta cleaning bagian body laptop yang mencakup keyboard, layar dan palmrest.",
       includes: [
         "Bersih fan, heatsink, body dalam",
         "Repaste CryoFuze 5 / Arctic MX-6",
