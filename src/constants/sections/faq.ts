@@ -29,7 +29,7 @@ export const faqs = [
   },
   {
     q: "Berapa biaya servis laptop di Bandung?",
-    a: "Biaya servis laptop di Bandung mulai dari Rp 50.000 (cleaning keyboard) hingga Rp 200.000 (repaste liquid metal). Di Repastain, semua harga transparan dan tertera di awal — tanpa biaya tersembunyi. Pembayaran dilakukan setelah pekerjaan selesai dan pelanggan puas.",
+    a: "Biaya servis laptop di Bandung mulai dari Rp 50.000 (repaste VRAM/VRM) hingga Rp 300.000+ (paket premium). Di Repastain, semua harga transparan dan tertera di awal — tanpa biaya tersembunyi. Pembayaran dilakukan setelah pekerjaan selesai dan pelanggan puas.",
   },
   {
     q: "Kapan harus repaste laptop?",

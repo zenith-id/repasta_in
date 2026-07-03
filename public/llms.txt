@@ -9,15 +9,25 @@
 - **Repaste Phase Change** (PTM 7950 by Honeywell): Rp 170.000 — umur pakai 5+ tahun, suhu turun 12–18°C
 - **Repaste Liquid Metal**: Rp 200.000 — konduktivitas 128 W/mK, suhu turun 15–20°C
 
-### Deep Clean & Maintenance
-- **Deep Clean Laptop**: Rp 100.000 — pembersihan menyeluruh fan, heatsink, dan bodi
+### Paket Laptop (Repaste + Deep Clean)
+- **Deepclean Premium**: Rp 200.000 — full cleaning + repaste CryoFuze 5 / Arctic MX-6
+- **Deepclean Phase Change**: Rp 220.000 — full cleaning + repaste PTM 7950
+- **Deepclean Liquid Metal**: Rp 250.000 — full cleaning + repaste liquid metal
+
+### Add-on
+- **Repaste VRAM/VRM**: Rp 50.000 — thermal putty performa terbaik untuk VRAM & VRM
+
+### Cleaning & Lainnya
 - **Cleaning Keyboard**: Mulai dari Rp 100.000 — cuci keycaps dan plate keyboard mechanical
 
-### Upgrade Hardware
-- **Upgrade SSD/RAM**: Harga tergantung komponen — konsultasi gratis
+### PC Desktop
+- **PC Repaste**: Rp 220.000 — penggantian pasta termal PC desktop
+- **GPU Repaste**: Mulai dari Rp 150.000 — penggantian pasta thermal GPU
+- **Instal Ulang OS**: Rp 75.000 — instalasi Windows 10/11 atau Linux
+- **Jasa Rakit PC**: Rp 150.000 — perakitan PC dari komponen yang Anda sediakan
 
 ## Keunggulan
-- 500+ servis berhasil, 95% selesai di hari yang sama
+- 200+ servis berhasil, 95% selesai di hari yang sama
 - Garansi 7 hari penuh, tingkat klaim < 2%
 - Harga transparan tanpa biaya tersembunyi
 - Proses transparan di depan pelanggan
