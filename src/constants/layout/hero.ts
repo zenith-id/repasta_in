@@ -15,7 +15,9 @@ export const heroContent = {
   cta: {
     primary: {
       text: "Chat via WhatsApp",
-      href: WHATSAPP_LINK("Halo Repastain! Saya ingin konsultasi servis laptop."),
+      href: WHATSAPP_LINK(
+        "Halo Repastain! Saya ingin konsultasi servis laptop.",
+      ),
     },
     secondary: {
       text: "Lihat Layanan Kami",
@@ -30,7 +32,7 @@ export const heroContent = {
 export const statsData = [
   {
     label: "Pelanggan Puas",
-    target: 500,
+    target: 200,
     suffix: "+",
     prefix: "",
     delay: 0.55,

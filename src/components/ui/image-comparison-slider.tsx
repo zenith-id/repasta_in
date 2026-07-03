@@ -51,8 +51,8 @@ export function ImageComparison({
     <div
       ref={containerRef}
       className={cn(
-        "relative w-full aspect-[16/10] overflow-hidden rounded-2xl border border-border cursor-col-resize select-none",
-        className
+        "relative w-full aspect-square overflow-hidden rounded-2xl border border-border cursor-col-resize select-none",
+        className,
       )}
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
