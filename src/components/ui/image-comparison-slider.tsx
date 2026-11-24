@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState, useCallback } from "react";
+import React, { useRef, useState, useCallback, useLayoutEffect } from "react";
 import Image from "next/image";
 import { GripVertical } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -22,6 +22,15 @@ export function ImageComparison({
 }: ImageComparisonProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState(50);
+  const [width, setWidth] = useState(0);
+
+  useLayoutEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const ro = new ResizeObserver(([entry]) => setWidth(entry.contentRect.width));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
   const [isDragging, setIsDragging] = useState(false);
 
   const updatePosition = useCallback((clientX: number) => {
@@ -76,9 +85,7 @@ export function ImageComparison({
           alt={altBefore}
           className="absolute inset-0 h-full object-cover"
           style={{
-            width: containerRef.current
-              ? `${containerRef.current.offsetWidth}px`
-              : "100%",
+            width: width ? `${width}px` : "100%",
             maxWidth: "none",
           }}
           draggable={false}
