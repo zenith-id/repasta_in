@@ -9,14 +9,14 @@ export const heroContent = {
   },
   subtext: {
     prefix:
-      "Layanan repaste, deep clean, dan perawatan laptop/PC profesional langsung di depan Anda — ",
-    highlight: "cepat, transparan, bergaransi.",
+      "Repaste, deep clean, dan perawatan laptop/PC dikerjakan di depan Anda, ",
+    highlight: "cepat, transparan, bergaransi",
   },
   cta: {
     primary: {
       text: "Chat via WhatsApp",
       href: WHATSAPP_LINK(
-        "Halo Repastain! Saya ingin konsultasi servis laptop.",
+        "Halo Repastain, mau tanya servis laptop.",
       ),
     },
     secondary: {

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://repasta-in.vercel.app/sitemap.xml
+Sitemap: https://repastain.my.id/sitemap.xml
