@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.11.0](https://github.com/zenith-id/repasta_in/compare/v1.10.0...v1.11.0) (2026-11-24)
+
+### Features
+
+* **seo:** add geo seo bandung padang, json-ld localbusiness areaserved itemlist
+* **skeleton:** shimmer 1:1 semua section 5 breakpoint responsive
+* **constants:** humanize semua constants kecuali testimonials
+* **services:** tab default semua grid responsif
+
+### Bug Fixes
+
+* **ci:** release workflow_dispatch tag shell injection validation
+* **ci:** release changelog extract heading for missing section
+
 ## [1.10.0](https://github.com/zenith-id/repasta_in/compare/v1.9.0...v1.10.0) (2026-07-03)
 
 
