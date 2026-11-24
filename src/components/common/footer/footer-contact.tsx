@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageCircle, MapPin, Clock, Instagram, Mail } from "lucide-react";
+import { MessageCircle, MapPin, Clock, Share2, Mail } from "lucide-react";
 import Link from "next/link";
 import { fadeIn } from "@/lib/motion/animations";
 
@@ -88,7 +88,7 @@ export function FooterContact({ contact }: FooterContactProps) {
           aria-label="Instagram Repastain"
           className="w-9 h-9 rounded-lg border border-slate-800 flex items-center justify-center text-slate-500 hover:text-primary hover:border-primary/40 transition-colors"
         >
-          <Instagram size={16} />
+          <Share2 size={16} />
         </Link>
         <a
           href={contact.emailLink}
