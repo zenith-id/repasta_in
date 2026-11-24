@@ -45,13 +45,17 @@ jobs:
           TAG="${{ steps.get_tag.outputs.tag }}"
           VERSION="${TAG#v}"
           awk -v ver="$VERSION" '
-            $0 ~ "^#+ \\[" ver "\\]" || $0 ~ "^#+ " ver " " || $0 ~ "^#+ " ver "$" {
-              found = 1
-              print
-              next
+            function is_version_line(line) {
+              return line ~ "^#+ \\[" ver "\\]" || line ~ "^#+ " ver " " || line ~ "^#+ " ver "$"
             }
-            /^#+ \[[0-9]+\.[0-9]+\.[0-9]+\]/ || /^#+ [0-9]+\.[0-9]+\.[0-9]+/ {
-              if (found) exit
+            function is_other_version(line) {
+              return line ~ "^#+ \\[[0-9]+\\.[0-9]+\\.[0-9]+\\]" || line ~ "^#+ [0-9]+\\.[0-9]+\\.[0-9]+"
+            }
+            /^#+ / {
+              if (found && is_other_version($0)) exit
+              if (is_version_line($0)) { found = 1; next }
+              if (found) print
+              next
             }
             found { print }
           ' CHANGELOG.md > RELEASE_NOTES.md
