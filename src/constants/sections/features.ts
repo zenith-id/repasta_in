@@ -15,10 +15,10 @@ export const honestyCard = {
   icon: Eye,
   tag: "Kejujuran",
   title: "Dikerjakan di Depan Anda",
-  desc: "Setiap proses transparan — tidak ada part ditukar diam-diam. Anda lihat sendiri dari awal sampai selesai.",
+  desc: "Semua proses kelihatan. Nggak ada part yang diganti diam-diam — Anda lihat sendiri dari awal sampai beres.",
   points: [
-    "Estimasi biaya di awal",
-    "Tanpa biaya tersembunyi",
+    "Biaya dijelaskan di awal",
+    "Nggak ada biaya tersembunyi",
     "Part lama dikembalikan",
   ],
 };
@@ -29,7 +29,7 @@ export const speedCard = {
   icon: Zap,
   tag: "Kecepatan",
   title: "Selesai 1–2 Jam",
-  desc: "Diagnosa cepat & home visit area Bandung. Perangkat Anda balik di hari yang sama.",
+  desc: "Diagnosa cepat, bisa home visit di area Bandung. Perangkat balik di hari yang sama.",
   bars: [40, 55, 48, 70, 62, 100],
   chartLabels: ["Masuk", "Diagnosa", "Selesai"],
 };
@@ -40,13 +40,13 @@ export const qualityCard = {
   icon: Shield,
   tag: "Kualitas",
   title: "Material Premium",
-  desc: "Hanya pakai thermal compound kelas atas, bukan pasta abal-abal.",
+  desc: "Pakai thermal compound kelas atas, bukan pasta asal-asalan.",
   materials: [
     { name: "CryoFuze 5", type: "Premium" },
     { name: "PTM7950", type: "Phase Change" },
     { name: "Liquid Metal", type: "128 W/mK" },
   ],
-  warranty: "Bergaransi hingga 7 hari",
+  warranty: "Garansi hingga 7 hari",
 };
 
 /* ── Social Proof Card ────────────────────────────────────── */
@@ -59,5 +59,5 @@ export const socialProofCard = {
     "Laptop gaming saya overheat parah, sehari langsung beres dan adem lagi. Prosesnya ditunjukin di depan saya.",
   successRate: 98,
   successLabel: "Sukses",
-  ctaLabel: "& ratusan pelanggan lainnya",
+  ctaLabel: "dan ratusan pelanggan lainnya",
 };
