@@ -2,34 +2,34 @@ export const problems = [
   {
     num: "01",
     emoji: "🔥",
-    title: "Laptop Overheat & Mati Mendadak",
-    desc: "Pasta termal mengering membuat suhu prosesor melonjak — laptop melambat, lag, bahkan shutdown sendiri tanpa peringatan.",
+    title: "Laptop Panas Terus, Mati Sendiri",
+    desc: "Pasta termal kering bikin suhu processor naik. Laptop jadi lemot, lag, bisa mati sendiri tanpa warning.",
   },
   {
     num: "02",
     emoji: "🐌",
-    title: "Performa Melambat Drastis",
-    desc: "Meski RAM dan storage masih cukup, laptop terasa sangat berat? Debu menumpuk di heatsink jadi penyebab utama yang sering diabaikan.",
+    title: "Laptop Tiba-tiba Berat",
+    desc: "RAM dan storage masih oke, tapi laptop kerasa berat? Debu di heatsink sering jadi biangnya, dan biasanya diabaikan.",
   },
   {
     num: "03",
     emoji: "💸",
-    title: "Takut Servis Tidak Transparan",
-    desc: "Khawatir biaya tiba-tiba membengkak? Atau komponen diganti diam-diam tanpa sepengetahuan Anda? Pengalaman buruk ini nyata.",
+    title: "Takut Biaya Servis Nggak Jelas",
+    desc: "Khawatir harga tiba-tiba nambah? Atau komponen diganti tanpa bilang? Pengalaman kayak gitu memang pernah terjadi.",
   },
   {
     num: "04",
     emoji: "⏳",
-    title: "Tidak Ada Waktu Antri Lama",
-    desc: "Service center resmi bisa minta waktu 3–7 hari. Mahasiswa dan pekerja tidak bisa menunggu selama itu.",
+    title: "Nggak Mau Ngantri Berhari-hari",
+    desc: "Service center resmi bisa 3–7 hari. Mahasiswa dan pekerja biasanya nggak bisa nunggu selama itu.",
   },
 ] as const;
 
 export const resolutionTagline = {
-  heading: "Kami punya solusinya.",
+  heading: "Bisa kami bantu beresin.",
   description:
-    "Pasta termal mengering & debu menumpuk adalah penyebab utama — dan kami selesaikan dalam",
-  highlight: "1–2 jam, di depan Anda, bergaransi.",
+    "Pasta kering dan debu menumpuk biasanya biang masalahnya. Kami beresin dalam",
+  highlight: "1–2 jam, di depan Anda, ada garansi.",
   ctaLabel: "Cara Pesan",
   ctaHref: "#cara-pesan",
 } as const;
