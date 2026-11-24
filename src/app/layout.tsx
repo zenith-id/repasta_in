@@ -115,7 +115,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  other: { "article:modified_time": "2026-06-28" },
+  other: { "article:modified_time": "2026-11-24" },
 };
 
 export const viewport: Viewport = {
@@ -136,36 +136,47 @@ const jsonLdOrganization = {
   url: siteUrl,
   logo: `${siteUrl}/assets/logo/logo.webp`,
   description:
-    "Servis laptop & PC profesional di Bandung — repaste thermal paste, deep clean, upgrade hardware.",
+    "Servis laptop & PC di Bandung. Repaste, deep clean, dan upgrade SSD/RAM — harga jelas di awal, garansi 7 hari.",
   sameAs: ["https://www.instagram.com/repasta.in"],
   contactPoint: {
     "@type": "ContactPoint",
     telephone: `+${WHATSAPP_NUMBER}`,
     contactType: "customer service",
     availableLanguage: "Indonesian",
+    areaServed: ["Bandung", "Padang"],
   },
 };
 
 const jsonLdLocalBusiness = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "@id": `${siteUrl}/#localbusiness`,
   name: "Repastain",
   description:
-    "Servis laptop & PC profesional di Bandung — repaste thermal paste, deep clean, upgrade hardware.",
+    "Servis laptop & PC di Bandung. Repaste, deep clean, dan upgrade SSD/RAM — harga jelas di awal, garansi 7 hari.",
   url: siteUrl,
   telephone: "+6282323633819",
   image: `${siteUrl}/assets/logo/logo.webp`,
   address: {
     "@type": "PostalAddress",
+    streetAddress: "Bojongsoang",
     addressLocality: "Bandung",
     addressRegion: "Jawa Barat",
+    postalCode: "40288",
     addressCountry: "ID",
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: "-6.9175",
-    longitude: "107.6191",
+    latitude: "-6.9812",
+    longitude: "107.6631",
   },
+  areaServed: [
+    { "@type": "City", name: "Bandung" },
+    { "@type": "AdministrativeArea", name: "Bandung Raya" },
+    { "@type": "City", name: "Bojongsoang" },
+    { "@type": "City", name: "Padang" },
+    { "@type": "AdministrativeArea", name: "Sumatera Barat" },
+  ],
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
@@ -247,6 +258,64 @@ const jsonLd = {
   ],
 };
 
+const jsonLdServiceArea = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Area Layanan Repastain",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      item: {
+        "@type": "Service",
+        name: "Servis Laptop Bandung",
+        areaServed: { "@type": "City", name: "Bandung" },
+        provider: { "@id": `${siteUrl}/#localbusiness` },
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      item: {
+        "@type": "Service",
+        name: "Repaste Laptop Bandung",
+        areaServed: { "@type": "City", name: "Bandung" },
+        provider: { "@id": `${siteUrl}/#localbusiness` },
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      item: {
+        "@type": "Service",
+        name: "Deep Clean Laptop Bandung",
+        areaServed: { "@type": "City", name: "Bandung" },
+        provider: { "@id": `${siteUrl}/#localbusiness` },
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 4,
+      item: {
+        "@type": "Service",
+        name: "Servis Laptop Padang",
+        areaServed: { "@type": "City", name: "Padang" },
+        provider: { "@id": `${siteUrl}/#localbusiness` },
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 5,
+      item: {
+        "@type": "Service",
+        name: "Repaste Laptop Padang",
+        areaServed: { "@type": "City", name: "Padang" },
+        provider: { "@id": `${siteUrl}/#localbusiness` },
+      },
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -260,6 +329,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdServiceArea) }}
         />
         <script
           async

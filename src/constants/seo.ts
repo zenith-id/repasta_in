@@ -1,16 +1,21 @@
 export const SEO = {
-  title: "Repastain — Servis Laptop & PC Profesional di Bandung",
+  title: "Repastain | Servis Laptop & PC Profesional di Bandung ",
   description:
-    "Repastain menyediakan servis laptop dan PC profesional di Bandung. Repaste thermal paste, deep clean, upgrade SSD/RAM. Diagnosa gratis, teknisi berpengalaman, harga transparan, garansi 7 hari.",
+    "Servis laptop & PC di Bandung dan Padang: repaste, deep clean, upgrade SSD/RAM. Diagnosa gratis, harga jelas, garansi 7 hari.",
   keywords: [
     "servis laptop Bandung",
+    "servis laptop Padang",
     "repaste laptop Bandung",
+    "repaste laptop Padang",
     "cleaning laptop Bandung",
     "ganti thermal paste laptop",
     "teknisi laptop panggilan Bandung",
+    "teknisi laptop panggilan Padang",
     "deepclean laptop Bandung",
+    "deepclean laptop Padang",
     "upgrade SSD laptop Bandung",
     "servis PC Bandung",
+    "servis PC Padang",
   ],
   author: "Repastain",
   siteName: "Repastain",

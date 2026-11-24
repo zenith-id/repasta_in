@@ -5,13 +5,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: base,
-      lastModified: new Date(),
+      lastModified: new Date("2026-06-28"),
       changeFrequency: "weekly",
       priority: 1,
     },
     {
       url: `${base}/layanan`,
-      lastModified: new Date(),
+      lastModified: new Date("2026-06-28"),
       changeFrequency: "monthly",
       priority: 0.9,
     },
