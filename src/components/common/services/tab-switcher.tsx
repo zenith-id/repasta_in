@@ -2,7 +2,7 @@
 
 import type { LucideIcon } from "lucide-react";
 
-export type TabId = "laptop" | "paket_laptop" | "pc";
+export type TabId = "all" | "laptop" | "paket_laptop" | "pc";
 
 interface TabItem {
   id: TabId;
