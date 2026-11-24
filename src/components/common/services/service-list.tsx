@@ -9,6 +9,7 @@ interface ServiceItem {
   desc: string;
   price: string;
   popular: boolean;
+  category?: string;
 }
 
 interface ServiceListProps {
@@ -38,12 +39,16 @@ export function ServiceList({ activeKey, services }: ServiceListProps) {
         </div>
 
         {/* Rows */}
-        <div className="divide-y divide-border/60">
+        <div className="grid grid-cols-1 md:grid-cols-2">
           {services.map((svc, i) => (
-            <ServiceRow key={svc.name} {...svc} index={i} />
+            <div
+              key={svc.name}
+              className="border-b border-border/60 md:odd:border-r"
+            >
+              <ServiceRow {...svc} index={i} />
+            </div>
           ))}
         </div>
-
         {/* Footnote */}
         <div className="flex flex-col gap-2.5 px-6 py-5 bg-card/45 dark:bg-muted/20 border-t border-border/60 text-left">
           <div className="flex items-start gap-2.5 text-xs sm:text-sm text-foreground/75 leading-relaxed">

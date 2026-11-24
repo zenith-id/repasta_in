@@ -8,6 +8,7 @@ interface ServiceRowProps {
   desc: string;
   price: string;
   popular: boolean;
+  category?: string;
   index: number;
 }
 
@@ -16,6 +17,7 @@ export function ServiceRow({
   desc,
   price,
   popular,
+  category,
   index,
 }: ServiceRowProps) {
   return (
@@ -37,6 +39,11 @@ export function ServiceRow({
             </span>
           )}
         </div>
+        {category && (
+          <p className="mt-1 text-[10px] font-bold uppercase tracking-wider text-primary/70 font-poppins">
+            {category}
+          </p>
+        )}
         <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mt-1">
           {desc}
         </p>

@@ -13,21 +13,23 @@ import {
   laptopAddons,
   paketLaptopServices,
   pcServices,
+  allServices,
   servicesHeader,
   tabsData,
 } from "@/constants/sections/services";
 
 const serviceMap: Record<
   TabId,
-  readonly { name: string; desc: string; price: string; popular: boolean }[]
+  readonly { name: string; desc: string; price: string; popular: boolean; category?: string }[]
 > = {
+  all: allServices,
   laptop: laptopServices,
   paket_laptop: paketLaptopServices,
   pc: pcServices,
 };
 
 export function Services() {
-  const [active, setActive] = useState<TabId>("laptop");
+  const [active, setActive] = useState<TabId>("all");
 
   return (
     <section
