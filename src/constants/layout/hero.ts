@@ -10,7 +10,7 @@ export const heroContent = {
   subtext: {
     prefix:
       "Servis laptop & PC: repaste thermal paste, deep clean, upgrade SSD/RAM. Dikerjakan di depan Anda, ",
-    highlight: "cepat, transparan, bergaransi",
+    highlight: "cepat, transparan & bergaransi",
   },
   cta: {
     primary: {
@@ -21,7 +21,7 @@ export const heroContent = {
     },
     secondary: {
       text: "Lihat Layanan Kami",
-      href: "#layanan",
+      href: "/layanan",
     },
   },
   highlightPills: ["Diagnosa Gratis", "Garansi 7 Hari", "Home visit"] as const,

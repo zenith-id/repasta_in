@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, MessageCircle } from "lucide-react";
+import Link from "next/link";
 import { useWaveCanvas } from "@/hooks/use-wave-canvas";
 import { StatItem } from "@/components/shared";
 import { heroContent, statsData } from "@/constants/layout/hero";
@@ -16,16 +17,7 @@ export function Hero() {
       id="hero"
       className="relative min-h-[95vh] w-full overflow-hidden flex items-center justify-center"
     >
-      {/* Canvas */}
-      <canvas ref={canvasRef} className="absolute inset-0 z-0 h-full w-full" />
-
-      {/* Noise */}
-      <div
-        className="absolute inset-0 z-1 opacity-[0.03] pointer-events-none mix-blend-overlay"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-        }}
-      />
+    
 
       {/* Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-primary/20 blur-[140px] rounded-full opacity-30 animate-pulse-glow z-0 pointer-events-none" />
@@ -79,12 +71,12 @@ export function Hero() {
               <span className="relative z-10">{cta.primary.text}</span>
               <ArrowRight className="h-5 w-5 relative z-10 transition-transform group-hover:translate-x-1" />
             </a>
-            <a
+            <Link
               href={cta.secondary.href}
               className="inline-flex items-center gap-2 rounded-2xl border border-foreground/10 bg-background/40 px-8 py-4 text-sm font-bold text-foreground/80 backdrop-blur-md hover:bg-background/80 hover:border-primary/40 hover:text-primary transition-all active:scale-95"
             >
               {cta.secondary.text}
-            </a>
+            </Link>
           </div>
 
           {/* Stats */}
