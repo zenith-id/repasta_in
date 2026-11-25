@@ -7,6 +7,7 @@ import { useWaveCanvas } from "@/hooks/use-wave-canvas";
 import { StatItem } from "@/components/shared";
 import { heroContent, statsData } from "@/constants/layout/hero";
 import { HeroStatusBadge } from "@/components/common/hero/hero-status-badge";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 export function Hero() {
   const canvasRef = useWaveCanvas();
@@ -64,6 +65,7 @@ export function Hero() {
               href={cta.primary.href}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick({ location: "hero" })}
               className="group relative inline-flex items-center gap-2.5 rounded-2xl bg-primary px-8 py-4 text-sm font-bold text-primary-foreground hover:bg-primary/95 transition-all shadow-xl shadow-primary/20 hover:shadow-primary/35 hover:-translate-y-1 active:translate-y-0 overflow-hidden"
             >
               <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />

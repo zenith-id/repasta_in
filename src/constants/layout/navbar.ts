@@ -7,6 +7,7 @@ export const primaryNav = [
   { label: 'Galeri',      href: '#galeri',      id: 'galeri'      },
   { label: 'Testimoni',   href: '#testimoni',   id: 'testimoni'   },
   { label: 'FAQ',         href: '#faq',         id: 'faq'         },
+  { label: 'Blog',        href: '/blog',        id: 'blog'        },
 ] as const
 
 export const mobileNav = [
@@ -16,4 +17,5 @@ export const mobileNav = [
   { label: 'Galeri',      href: '#galeri',      id: 'galeri'      },
   { label: 'Testimoni',   href: '#testimoni',   id: 'testimoni'   },
   { label: 'FAQ',         href: '#faq',         id: 'faq'         },
+  { label: 'Blog',        href: '/blog',        id: 'blog'        },
 ] as const
