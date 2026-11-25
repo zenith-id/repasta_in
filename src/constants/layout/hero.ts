@@ -4,7 +4,7 @@ import { WHATSAPP_LINK } from "@/constants/contact";
 
 export const heroContent = {
   headline: {
-    prefix: "Repaste Laptop Bandung — ",
+    prefix: "Repaste Laptop Bandung",
     highlight: "Panas & Lemot Beres",
   },
   subtext: {
