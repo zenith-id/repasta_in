@@ -5,6 +5,7 @@ import { SectionHeader } from "@/components/shared";
 import { ComparisonItem } from "@/components/common/gallery";
 import { ImageGallery } from "@/components/ui/image-gallery";
 import { WHATSAPP_LINK } from "@/constants/contact";
+import { trackWhatsAppClick } from "@/lib/analytics";
 import {
   galleryHeader,
   galleryCta,
@@ -53,6 +54,7 @@ export function Gallery() {
             href={WHATSAPP_LINK(galleryCta.message)}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackWhatsAppClick({ location: "galeri" })}
             className="text-primary font-semibold hover:underline underline-offset-4"
           >
             {galleryCta.linkText}

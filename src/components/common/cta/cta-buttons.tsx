@@ -3,13 +3,15 @@
 import { motion } from "framer-motion";
 import { MessageCircle, ArrowRight } from "lucide-react";
 import { fadeInUp } from "@/lib/motion/animations";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 interface CTAButtonsProps {
   text: string;
   href: string;
+  location?: string;
 }
 
-export function CTAButtons({ text, href }: CTAButtonsProps) {
+export function CTAButtons({ text, href, location = "cta-section" }: CTAButtonsProps) {
   return (
     <motion.div
       className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
@@ -22,6 +24,7 @@ export function CTAButtons({ text, href }: CTAButtonsProps) {
         href={href}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => trackWhatsAppClick({ location })}
         className="group inline-flex items-center gap-3 px-8 py-4 bg-background text-foreground font-semibold rounded-xl hover:bg-background/90 hover:-translate-y-0.5 transition-all shadow-lg shadow-background/15 w-full sm:w-auto justify-center"
       >
         <MessageCircle size={20} />

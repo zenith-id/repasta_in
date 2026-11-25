@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 import { fadeIn } from "@/lib/motion/animations";
 import { WHATSAPP_LINK } from "@/constants/sections/how-it-works";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 export function HowItWorksCTA() {
   return (
@@ -20,6 +21,7 @@ export function HowItWorksCTA() {
         )}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => trackWhatsAppClick({ location: "cara-pesan" })}
         className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-primary text-primary-foreground font-semibold rounded-xl hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 transition-all text-sm"
       >
         <MessageCircle size={18} />
