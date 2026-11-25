@@ -1,19 +1,19 @@
-import type { MetadataRoute } from "next";
+﻿import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://repasta-in.vercel.app";
-  return [
-    {
-      url: base,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    {
-      url: `${base}/layanan`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
+  const base = "https://repasta-in.vercel.app"
+  const routes: { path: string; priority: number; freq: "weekly" | "monthly" }[] = [
+    { path: "", priority: 1, freq: "weekly" },
+    { path: "/layanan", priority: 0.9, freq: "monthly" },
+    { path: "/layanan/repaste-laptop", priority: 0.8, freq: "monthly" },
+    { path: "/layanan/deep-cleaning-laptop", priority: 0.8, freq: "monthly" },
+    { path: "/layanan/repaste-pc", priority: 0.8, freq: "monthly" },
+    { path: "/layanan/servis-pc", priority: 0.8, freq: "monthly" },
   ];
+  return routes.map((r) => ({
+    url: `${base}${r.path}`,
+    lastModified: new Date(),
+    changeFrequency: r.freq,
+    priority: r.priority,
+  }));
 }
