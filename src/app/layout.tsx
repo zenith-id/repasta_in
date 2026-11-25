@@ -4,7 +4,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { faqs } from "@/constants/sections/faq";
 import { WHATSAPP_NUMBER } from "@/constants/contact";
 import "./globals.css";
-import "@/bones/registry";
 
 import { Bricolage_Grotesque, Geist } from "next/font/google";
 const geist = Geist({
