@@ -2,7 +2,7 @@
 import { SERVICE_PAGES } from "@/constants/seo-pages";
 import { ServicePage } from "@/components/seo/service-page";
 
-const siteUrl = "https://repasta-in.vercel.app"
+const siteUrl = "https://repastain.my.id"
 const page = SERVICE_PAGES.find((p) => p.slug === "servis-pc")!;
 
 export function generateMetadata(): Metadata {

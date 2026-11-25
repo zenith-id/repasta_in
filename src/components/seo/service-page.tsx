@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { WaCta } from "@/components/seo/wa-cta";
 import { SERVICE_PAGES, type ServicePageData } from "@/constants/seo-pages";
 
-const siteUrl = "https://repasta-in.vercel.app"
+const siteUrl = "https://repastain.my.id"
 
 export function ServicePage({ page }: { page: ServicePageData }) {
   const jsonLd = {
