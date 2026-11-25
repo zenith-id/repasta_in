@@ -1,9 +1,10 @@
 ﻿import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { WaCta } from "@/components/seo/wa-cta";
+import { getAppUrl } from "@/constants/seo";
 import { SERVICE_PAGES, type ServicePageData } from "@/constants/seo-pages";
 
-const siteUrl = "https://repastain.my.id"
+const siteUrl = getAppUrl();
 
 export function ServicePage({ page }: { page: ServicePageData }) {
   const jsonLd = {
