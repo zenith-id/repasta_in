@@ -352,7 +352,7 @@ gtag('config', 'G-G69Z7C3WBE');`,
           }}
         />
       </head>
-      <body className="bg-background text-foreground font-sans antialiased">
+      <body className="bg-background text-foreground font-sans antialiased" suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
