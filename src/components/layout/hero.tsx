@@ -61,7 +61,7 @@ export function Hero() {
           </h1>
 
           {/* Subtext */}
-          <p className="mx-auto mb-10 max-w-2xl text-base sm:text-lg text-foreground/65 leading-relaxed font-medium px-4">
+          <p className="mx-auto mb-10 max-w-2xl text-base sm:text-lg text-foreground/75 leading-relaxed font-medium px-4">
             {subtext.prefix}
             <span className="text-foreground">{subtext.highlight}</span>
           </p>

@@ -101,7 +101,7 @@ export function Navbar() {
                   className={`relative px-4 py-2 rounded-xl text-sm font-medium transition-colors cursor-pointer ${
                     isActive
                       ? "text-primary bg-primary/8"
-                      : "text-foreground/60 hover:text-primary hover:bg-primary/6"
+                      : "text-foreground/80 hover:text-primary hover:bg-primary/6"
                   }`}
                 >
                   {item.label}
