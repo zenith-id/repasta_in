@@ -5,10 +5,6 @@ import { ArrowRight, MessageCircle } from "lucide-react";
 import { useWaveCanvas } from "@/hooks/use-wave-canvas";
 import { StatItem } from "@/components/shared";
 import { heroContent, statsData } from "@/constants/layout/hero";
-import {
-  heroContainerVariants,
-  fadeInUp,
-} from "@/lib/motion/animations";
 import { HeroStatusBadge } from "@/components/common/hero/hero-status-badge";
 
 export function Hero() {
@@ -36,23 +32,14 @@ export function Hero() {
 
       {/* Content */}
       <div className="container-section relative z-10 py-20">
-        <motion.div
-          variants={heroContainerVariants}
-          initial="hidden"
-          animate="visible"
-          className="mx-auto max-w-4xl text-center"
-        >
+        <div className="mx-auto max-w-4xl text-center">
           {/* Status Badge */}
-          <motion.div
-            variants={fadeInUp}
-            className="flex justify-center"
-          >
+          <div className="flex justify-center">
             <HeroStatusBadge kicker={highlightPills.join(" • ")} />
-          </motion.div>
+          </div>
 
-          {/* Headline */}
-          <motion.h1
-            variants={fadeInUp}
+          {/* Headline — plain h1, no motion variants (SSR must be visible for SEO) */}
+          <h1
             className="mb-6 font-extrabold tracking-tight text-foreground font-poppins"
             style={{
               fontSize: "clamp(2.25rem, 6vw, 4.5rem)",
@@ -64,29 +51,23 @@ export function Hero() {
               <span className="bg-gradient-to-br from-primary via-primary to-foreground bg-clip-text text-transparent drop-shadow-sm">
                 {headline.highlight}
               </span>
-              <motion.div
+              <motion.span
                 className="absolute -bottom-2 left-0 h-1.5 w-full bg-primary/20 rounded-full blur-sm"
                 initial={{ width: 0 }}
                 animate={{ width: "100%" }}
                 transition={{ delay: 0.8, duration: 1 }}
               />
             </span>
-          </motion.h1>
+          </h1>
 
           {/* Subtext */}
-          <motion.p
-            variants={fadeInUp}
-            className="mx-auto mb-10 max-w-2xl text-base sm:text-lg text-foreground/65 leading-relaxed font-medium px-4"
-          >
+          <p className="mx-auto mb-10 max-w-2xl text-base sm:text-lg text-foreground/65 leading-relaxed font-medium px-4">
             {subtext.prefix}
             <span className="text-foreground">{subtext.highlight}</span>
-          </motion.p>
+          </p>
 
           {/* CTA */}
-          <motion.div
-            variants={fadeInUp}
-            className="mb-12 flex flex-col items-center justify-center gap-4 sm:flex-row"
-          >
+          <div className="mb-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
               href={cta.primary.href}
               target="_blank"
@@ -104,13 +85,10 @@ export function Hero() {
             >
               {cta.secondary.text}
             </a>
-          </motion.div>
+          </div>
 
           {/* Stats */}
-          <motion.div
-            variants={fadeInUp}
-            className="grid grid-cols-3 gap-px rounded-3xl overflow-hidden border border-foreground/10 bg-foreground/10 backdrop-blur-md"
-          >
+          <div className="grid grid-cols-3 gap-px rounded-3xl overflow-hidden border border-foreground/10 bg-foreground/10 backdrop-blur-md">
             {statsData.map((s, i) => (
               <div
                 key={i}
@@ -119,8 +97,8 @@ export function Hero() {
                 <StatItem {...s} />
               </div>
             ))}
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );
