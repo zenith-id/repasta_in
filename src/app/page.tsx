@@ -1,19 +1,12 @@
-"use client";
-
 import { SectionSkeleton } from "@/components/skeleton-wrapper";
 import dynamic from "next/dynamic";
 import { Navbar } from "@/components/layout/navbar";
-
-const Hero = dynamic(
-  () => import("@/components/layout/hero").then((m) => m.Hero),
-  { loading: () => <SectionSkeleton name="hero" /> }
-);
-
-// Client boundary for Lenis smooth scroll
-const LenisProvider = dynamic(
-  () => import("@/components/lenis-provider").then((m) => m.LenisProvider),
-  { ssr: false, loading: () => <SectionSkeleton name="lenis-provider" /> }
-);
+import { Hero } from "@/components/layout/hero";
+import {
+  LenisProvider,
+  Footer,
+  WhatsAppFloat,
+} from "@/components/client-sections";
 
 // Below-fold sections — code-split into separate chunks
 const ProblemAwareness = dynamic(
@@ -51,17 +44,6 @@ const FAQ = dynamic(
 const CTA = dynamic(
   () => import("@/components/sections/cta").then((m) => m.CTA),
   { loading: () => <SectionSkeleton name="cta" /> }
-);
-const Footer = dynamic(
-  () => import("@/components/layout/footer").then((m) => m.Footer),
-  { ssr: false, loading: () => <SectionSkeleton name="footer" /> }
-);
-const WhatsAppFloat = dynamic(
-  () =>
-    import("@/components/sections/whatsapp-float").then(
-      (m) => m.WhatsAppFloat
-    ),
-  { ssr: false, loading: () => <SectionSkeleton name="whatsapp-float" /> }
 );
 
 export default function Home() {
