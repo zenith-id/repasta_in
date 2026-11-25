@@ -21,7 +21,7 @@ export function StatItem({
 
   return (
     <div className="space-y-1 text-center">
-      <div className="text-[9px] sm:text-[10px] uppercase tracking-widest sm:tracking-[0.28em] text-foreground/45 font-medium line-clamp-2 leading-tight min-h-[22px] flex items-center justify-center">
+      <div className="text-[9px] sm:text-[10px] uppercase tracking-widest sm:tracking-[0.28em] text-foreground/70 font-medium line-clamp-2 leading-tight min-h-[22px] flex items-center justify-center">
         {label}
       </div>
       <div
