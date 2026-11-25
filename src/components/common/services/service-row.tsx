@@ -40,7 +40,7 @@ export function ServiceRow({
           )}
         </div>
         {category && (
-          <p className="mt-1 text-[10px] font-bold uppercase tracking-wider text-primary/70 font-poppins">
+          <p className="mt-1 text-[10px] font-bold uppercase tracking-wider text-primary font-poppins">
             {category}
           </p>
         )}
@@ -50,7 +50,7 @@ export function ServiceRow({
       </div>
       <span
         className={`shrink-0 font-bold text-sm sm:text-base font-poppins whitespace-nowrap ${
-          price === "Hubungi Kami" ? "text-foreground/60" : "text-primary"
+          price === "Hubungi Kami" ? "text-foreground/80" : "text-primary"
         }`}
       >
         {price}

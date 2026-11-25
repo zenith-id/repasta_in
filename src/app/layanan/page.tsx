@@ -44,7 +44,7 @@ function ServiceCard({
       <div className="flex items-start justify-between gap-3 mb-3">
         <h3 className="font-bold text-foreground font-poppins">{svc.name}</h3>
         <span
-          className={`flex-shrink-0 font-bold font-poppins text-sm ${svc.price === "Hubungi Kami" ? "text-foreground/50" : "text-primary"}`}
+          className={`flex-shrink-0 font-bold font-poppins text-sm ${svc.price === "Hubungi Kami" ? "text-foreground/80" : "text-primary"}`}
         >
           {svc.price}
         </span>
@@ -80,7 +80,7 @@ export default function LayananPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-sm font-medium text-foreground/60 hover:text-primary transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
           >
             <ArrowLeft size={16} />
             Kembali ke Beranda

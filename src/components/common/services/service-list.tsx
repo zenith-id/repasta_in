@@ -30,10 +30,10 @@ export function ServiceList({ activeKey, services }: ServiceListProps) {
       >
         {/* List header */}
         <div className="flex items-center justify-between px-6 py-3.5 border-b border-border bg-card dark:bg-muted/40">
-          <span className="text-xs font-bold text-foreground/50 uppercase tracking-widest font-poppins">
+          <span className="text-xs font-bold text-foreground/70 uppercase tracking-widest font-poppins">
             Layanan
           </span>
-          <span className="text-xs font-bold text-foreground/50 uppercase tracking-widest font-poppins">
+          <span className="text-xs font-bold text-foreground/70 uppercase tracking-widest font-poppins">
             Harga
           </span>
         </div>
