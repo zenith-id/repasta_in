@@ -1,4 +1,4 @@
-import { SERVICE_PAGES } from "../src/constants/seo-pages";
+﻿import { SERVICE_PAGES } from "../src/constants/seo-pages";
 import { laptopServices } from "../src/constants/sections/services";
 
 let failed = 0;
@@ -53,5 +53,9 @@ for (const n of ["Repaste Premium", "Repaste Phase change", "Repaste Liquid Meta
   assert(repaste.sections.some((s) => s.body.includes(n)), `repaste-laptop harus sebut ${n}`);
 }
 
+import { pricingPlans } from "../src/constants/sections/pricing";
+import { pcServices } from "../src/constants/sections/services";
+assert(pricingPlans.length === 3, "pricingPlans harus 3 paket");
+assert(pcServices.some((s) => s.name === "PC Repaste"), "pcServices harus punya PC Repaste");
 if (failed) { process.exit(1); }
 console.log("all seo-pages assertions passed");
