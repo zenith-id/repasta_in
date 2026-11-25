@@ -57,5 +57,28 @@ import { pricingPlans } from "../src/constants/sections/pricing";
 import { pcServices } from "../src/constants/sections/services";
 assert(pricingPlans.length === 3, "pricingPlans harus 3 paket");
 assert(pcServices.some((s) => s.name === "PC Repaste"), "pcServices harus punya PC Repaste");
+
+import { BLOG_POSTS } from "../src/constants/blog";
+
+assert(BLOG_POSTS.length === 3, "blog harus 3 artikel dulu");
+const blogSlugs = BLOG_POSTS.map((p) => p.slug);
+assert(
+  JSON.stringify(blogSlugs) ===
+    JSON.stringify(["tanda-laptop-perlu-repaste", "perbedaan-thermal-paste-ptm7950-liquid-metal", "kenapa-laptop-cepat-panas"]),
+  "slug blog harus exact 3 ini"
+);
+for (const p of BLOG_POSTS) {
+  assert(p.title.length <= 60, `title blog ${p.slug} max 60 char, dapat ${p.title.length}`);
+  assert(p.description.length <= 160, `description blog ${p.slug} max 160 char`);
+  assert(/^\d{4}-\d{2}-\d{2}$/.test(p.published), `published ${p.slug} format YYYY-MM-DD`);
+  assert(/^\d{4}-\d{2}-\d{2}$/.test(p.updated), `updated ${p.slug} format YYYY-MM-DD`);
+  assert(p.sections.length >= 4, `blog ${p.slug} min 4 section`);
+  for (const s of p.sections) {
+    assert(s.body.length > 100, `blog ${p.slug}/${s.h2} body min 100 char`);
+    assert(!s.body.includes("—") && !s.h2.includes("—"), `em dash dilarang di blog ${p.slug}`);
+  }
+  assert(slugs.includes(p.relatedServiceSlug), `relatedServiceSlug ${p.relatedServiceSlug} harus ada di SERVICE_PAGES`);
+}
+
 if (failed) { process.exit(1); }
 console.log("all seo-pages assertions passed");
