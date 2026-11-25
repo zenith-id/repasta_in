@@ -24,6 +24,7 @@ const siteUrl = getAppUrl();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  alternates: { canonical: "/" },
   title: {
     default: SEO.title,
     template: "%s | Repastain",
@@ -328,11 +329,15 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+          }}
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdServiceArea) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLdServiceArea).replace(/</g, "\\u003c"),
+          }}
         />
         <script
           async

@@ -80,9 +80,11 @@ export function ImageComparison({
         className="absolute inset-0 overflow-hidden"
         style={{ width: `${position}%` }}
       >
-        <img
+        <Image
           src={beforeImage}
           alt={altBefore}
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
           className="absolute inset-0 h-full object-cover"
           style={{
             width: width ? `${width}px` : "100%",
