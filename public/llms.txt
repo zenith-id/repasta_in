@@ -1,48 +1,28 @@
-# Repastain — Servis Laptop & PC Bandung & Padang
+# Repastain
 
 > Layanan servis laptop dan PC profesional di Bandung dan Padang. Spesialisasi repaste thermal paste, deep clean, upgrade SSD/RAM. Teknisi berpengalaman, harga transparan, garansi 7 hari.
 
-## Layanan Utama
+200+ servis berhasil, 95% selesai di hari yang sama. Garansi 7 hari penuh, tingkat klaim < 2%. Melayani semua merek: Asus, Lenovo, HP, Dell, Acer, MSI, MacBook.
 
-### Repaste Thermal Paste
-- **Repaste Premium** (CryoFuze 5 / Arctic MX-6): Rp 120.000 — konduktivitas 12,5 W/mK, suhu turun 10–15°C
-- **Repaste Phase Change** (PTM 7950 by Honeywell): Rp 170.000 — umur pakai 5+ tahun, suhu turun 12–18°C
-- **Repaste Liquid Metal**: Rp 200.000 — konduktivitas 128 W/mK, suhu turun 15–20°C
+## Layanan
 
-### Paket Laptop (Repaste + Deep Clean)
-- **Deepclean Premium**: Rp 200.000 — full cleaning + repaste CryoFuze 5 / Arctic MX-6
-- **Deepclean Phase Change**: Rp 220.000 — full cleaning + repaste PTM 7950
-- **Deepclean Liquid Metal**: Rp 250.000 — full cleaning + repaste liquid metal
-
-### Add-on
-- **Repaste VRAM/VRM**: Rp 50.000 — thermal putty performa terbaik untuk VRAM & VRM
-
-### Cleaning & Lainnya
-- **Cleaning Keyboard**: Mulai dari Rp 100.000 — cuci keycaps dan plate keyboard mechanical
-
-### PC Desktop
-- **PC Repaste**: Rp 220.000 — penggantian pasta termal PC desktop
-- **GPU Repaste**: Mulai dari Rp 150.000 — penggantian pasta thermal GPU
-- **Instal Ulang OS**: Rp 75.000 — instalasi Windows 10/11 atau Linux
-- **Jasa Rakit PC**: Rp 150.000 — perakitan PC dari komponen yang Anda sediakan
-
-## Keunggulan
-- 200+ servis berhasil, 95% selesai di hari yang sama
-- Garansi 7 hari penuh, tingkat klaim < 2%
-- Harga transparan tanpa biaya tersembunyi
-- Proses transparan di depan pelanggan
-- Melayani semua merek: Asus, Lenovo, HP, Dell, Acer, MSI, MacBook
+- [Repaste Thermal Paste](<PII> Repaste Premium Rp 120.000 (CryoFuze 5 / Arctic MX-6), Phase Change Rp 170.000 (PTM 7950), Liquid Metal Rp 200.000 (128 W/mK)
+- [Paket Deep Clean](<PII> Deepclean Premium Rp 200.000, Phase Change Rp 220.000, Liquid Metal Rp 250.000 — repaste + full cleaning body
+- [Layanan PC Desktop](<PII> PC Repaste Rp 220.000, GPU Repaste mulai Rp 150.000, Instal Ulang OS Rp 75.000, Jasa Rakit PC Rp 150.000
+- [Daftar Harga Lengkap](<PII> Semua layanan dan harga terperinci
 
 ## Area Layanan
-Bandung Raya — kunjungan ke rumah, kost, kampus, kantor.
-Padang, Sumatera Barat — home visit juga tersedia.
+
+- [Bandung](<PII> Home visit ke rumah, kost, kampus, kantor di Bandung Raya
+- [Padang](<PII> Home visit tersedia di Padang, Sumatera Barat
+
+## Informasi
+
+- [FAQ](<PII> Pertanyaan yang sering ditanyakan
+- [Testimoni](<PII> Ulasan pelanggan terverifikasi Google
+- [Cara Pesan](<PII> 3 langkah mudah pesan servis
 
 ## Kontak
-- WhatsApp: wa.me/6282323633819
-- Instagram: @repasta.in
-- Website: https://repastain.my.id
 
-## Tautan
-- Beranda: https://repastain.my.id/
-- Layanan: https://repastain.my.id/layanan/
-- FAQ: https://repastain.my.id/#faq
+- [WhatsApp](<PII> Chat langsung untuk konsultasi gratis
+- [Instagram](<PII> @repasta.in
