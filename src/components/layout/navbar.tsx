@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useLenis } from "@/components/lenis-provider";
-// import { ThemeToggle } from "@/components/common/layout";
 import {
   primaryNav,
   mobileNav,
@@ -12,13 +11,15 @@ import {
 } from "@/constants/layout/navbar";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function Navbar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [activeId, setActiveId] = useState("");
   const lenis = useLenis();
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
-  /* active section via IntersectionObserver */
   useEffect(() => {
     const navIds = new Set<string>([
       ...primaryNav.map((n) => n.id),
@@ -48,7 +49,6 @@ export function Navbar() {
       }
     };
 
-    // Observe all matching sections, retrying until every navId is found
     const tryObserve = () => {
       document.querySelectorAll("section[id]").forEach(observe);
       const allFound = [...navIds].every((id) => observed.has(document.getElementById(id)!));
@@ -71,14 +71,31 @@ export function Navbar() {
     }
   };
 
+  const navClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("#")) {
+      if (!isHome) {
+        e.preventDefault();
+        window.location.href = `/${href}`;
+        return;
+      }
+      scrollTo(e, href);
+    } else {
+      setIsMobileOpen(false);
+    }
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/92 backdrop-blur-xl ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a
-            href="#hero"
-            onClick={(e) => scrollTo(e, "#hero")}
+            href="/"
+            onClick={(e) => {
+              if (!isHome) return;
+              e.preventDefault();
+              scrollTo(e, "#hero");
+            }}
             className="flex items-center gap-2.5 group cursor-pointer"
           >
             <div className=" flex items-center justify-center transition-all ">
@@ -90,19 +107,23 @@ export function Navbar() {
           </a>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-0.5 lg:gap-1">
             {primaryNav.map((item) => {
-              const isActive = activeId === item.id;
-              return (
+              const isActive =
+                item.href === "/blog"
+                  ? pathname.startsWith("/blog")
+                  : activeId === item.id;
+              const cls = `relative px-2.5 lg:px-4 py-2 rounded-xl text-sm font-medium transition-colors cursor-pointer ${
+                isActive
+                  ? "text-primary bg-primary/8"
+                  : "text-foreground/80 hover:text-primary hover:bg-primary/6"
+              }`;
+              return item.href.startsWith("#") ? (
                 <a
                   key={item.label}
                   href={item.href}
-                  onClick={(e) => scrollTo(e, item.href)}
-                  className={`relative px-4 py-2 rounded-xl text-sm font-medium transition-colors cursor-pointer ${
-                    isActive
-                      ? "text-primary bg-primary/8"
-                      : "text-foreground/80 hover:text-primary hover:bg-primary/6"
-                  }`}
+                  onClick={(e) => navClick(e, item.href)}
+                  className={cls}
                 >
                   {item.label}
                   {isActive && (
@@ -112,6 +133,16 @@ export function Navbar() {
                     />
                   )}
                 </a>
+              ) : (
+                <Link key={item.label} href={item.href} className={cls}>
+                  {item.label}
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-active"
+                      className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-primary"
+                    />
+                  )}
+                </Link>
               );
             })}
           </div>
@@ -121,8 +152,8 @@ export function Navbar() {
             {/* <ThemeToggle /> */}
             <a
               href="#kontak"
-              onClick={(e) => scrollTo(e, "#kontak")}
-              className="hidden sm:inline-flex items-center gap-2 px-5 py-2 bg-primary text-primary-foreground text-sm font-semibold rounded-xl hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20 transition-all cursor-pointer"
+              onClick={(e) => navClick(e, "#kontak")}
+              className="hidden lg:inline-flex items-center gap-2 px-5 py-2 bg-primary text-primary-foreground text-sm font-semibold rounded-xl hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20 transition-all cursor-pointer"
             >
               Pesan Sekarang
             </a>
@@ -148,20 +179,35 @@ export function Navbar() {
             className="md:hidden border-t border-border bg-background/96 backdrop-blur-xl"
           >
             <div className="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-0.5">
-              {mobileNav.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  onClick={(e) => scrollTo(e, item.href)}
-                  className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-colors cursor-pointer ${
-                    activeId === item.id
-                      ? "text-primary bg-primary/8"
-                      : "text-foreground/70 hover:text-primary hover:bg-primary/5"
-                  }`}
-                >
-                  {item.label}
-                </a>
-              ))}
+              {mobileNav.map((item) =>
+                item.href.startsWith("#") ? (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    onClick={(e) => navClick(e, item.href)}
+                    className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-colors cursor-pointer ${
+                      activeId === item.id
+                        ? "text-primary bg-primary/8"
+                        : "text-foreground/70 hover:text-primary hover:bg-primary/5"
+                    }`}
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    onClick={() => setIsMobileOpen(false)}
+                    className={`px-4 py-2.5 rounded-xl text-sm font-medium transition-colors ${
+                      pathname.startsWith("/blog")
+                        ? "text-primary bg-primary/8"
+                        : "text-foreground/70 hover:text-primary hover:bg-primary/5"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                ),
+              )}
               <div className="pt-2 border-t border-border mt-1 space-y-1.5">
                 <Link
                   href="/layanan"
