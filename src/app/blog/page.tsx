@@ -1,10 +1,11 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { BLOG_POSTS } from "@/constants/blog";
 import { WaCta } from "@/components/seo/wa-cta";
+import { getAppUrl } from "@/constants/seo";
 
-const siteUrl = "https://repastain.my.id";
+const siteUrl = getAppUrl();
 
 export function generateMetadata(): Metadata {
   return {

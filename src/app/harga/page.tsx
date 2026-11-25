@@ -4,7 +4,8 @@ import { ArrowLeft, Check } from "lucide-react";
 import { pricingPlans } from "@/constants/sections/pricing";
 import { laptopServices, paketLaptopServices, pcServices } from "@/constants/sections/services";
 import { WaCta } from "@/components/seo/wa-cta";
-const siteUrl = "https://repastain.my.id";
+import { getAppUrl } from "@/constants/seo";
+const siteUrl = getAppUrl();
 
 export function generateMetadata(): Metadata {
   return {

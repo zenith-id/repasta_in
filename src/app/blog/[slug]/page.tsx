@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { BLOG_POSTS } from "@/constants/blog";
 import { SERVICE_PAGES } from "@/constants/seo-pages";
 import { WaCta } from "@/components/seo/wa-cta";
+import { getAppUrl } from "@/constants/seo";
 
-const siteUrl = "https://repastain.my.id";
+const siteUrl = getAppUrl();
 
 export function generateStaticParams() {
   return BLOG_POSTS.map((p) => ({ slug: p.slug }));
