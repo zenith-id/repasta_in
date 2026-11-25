@@ -17,7 +17,7 @@ export function Gallery() {
   return (
     <section
       id="galeri"
-      className="py-24 px-4 sm:px-6 lg:px-8 bg-background"
+      className="py-24 px-4 sm:px-6 lg:px-8 bg-background content-visibility-auto"
     >
       <div className="max-w-6xl mx-auto">
         <SectionHeader

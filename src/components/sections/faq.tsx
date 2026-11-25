@@ -7,7 +7,7 @@ import { faqs } from "@/constants/sections/faq";
 
 export function FAQ() {
   return (
-    <section id="faq" className="py-20 px-4 sm:px-6 lg:px-8 bg-card">
+    <section id="faq" className="py-20 px-4 sm:px-6 lg:px-8 bg-card content-visibility-auto">
       <div className="max-w-3xl mx-auto">
         <SectionHeader
           icon={HelpCircle}

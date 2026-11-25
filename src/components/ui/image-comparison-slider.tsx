@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState, useCallback } from "react";
+import React, { useRef, useState, useCallback, useLayoutEffect } from "react";
 import Image from "next/image";
 import { GripVertical } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -22,6 +22,15 @@ export function ImageComparison({
 }: ImageComparisonProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState(50);
+  const [width, setWidth] = useState(0);
+
+  useLayoutEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const ro = new ResizeObserver(([entry]) => setWidth(entry.contentRect.width));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
   const [isDragging, setIsDragging] = useState(false);
 
   const updatePosition = useCallback((clientX: number) => {
@@ -51,8 +60,8 @@ export function ImageComparison({
     <div
       ref={containerRef}
       className={cn(
-        "relative w-full aspect-[16/10] overflow-hidden rounded-2xl border border-border cursor-col-resize select-none",
-        className
+        "relative w-full aspect-square overflow-hidden rounded-2xl border border-border cursor-col-resize select-none",
+        className,
       )}
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
@@ -71,14 +80,14 @@ export function ImageComparison({
         className="absolute inset-0 overflow-hidden"
         style={{ width: `${position}%` }}
       >
-        <img
+        <Image
           src={beforeImage}
           alt={altBefore}
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
           className="absolute inset-0 h-full object-cover"
           style={{
-            width: containerRef.current
-              ? `${containerRef.current.offsetWidth}px`
-              : "100%",
+            width: width ? `${width}px` : "100%",
             maxWidth: "none",
           }}
           draggable={false}

@@ -9,8 +9,16 @@ interface SkeletonWrapperProps {
 
 export function SkeletonWrapper({ name, children }: SkeletonWrapperProps) {
   return (
-    <Skeleton name={name} loading={false}>
+    <Skeleton name={name} loading={false} animate="shimmer">
       {children}
+    </Skeleton>
+  );
+}
+
+export function SectionSkeleton({ name }: { name: string }) {
+  return (
+    <Skeleton name={name} loading animate="shimmer">
+      {null}
     </Skeleton>
   );
 }

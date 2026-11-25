@@ -27,9 +27,9 @@ export function FooterLinks({ columns }: FooterLinksProps) {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <h4 className="font-poppins font-bold text-slate-100 mb-4 text-sm tracking-wide">
+          <h2 className="font-poppins font-bold text-slate-100 mb-4 text-sm tracking-wide">
             {col.title}
-          </h4>
+          </h2>
           <ul className="space-y-2.5">
             {col.links.map((link) => (
               <li key={link.label}>

@@ -1,17 +1,17 @@
 // ── Header Config ──
 export const galleryHeader = {
-  tag: "Galeri Portofolio",
+  tag: "Galeri Pekerjaan",
   titlePrefix: "Hasil Kerja ",
   titleHighlight: "Nyata",
   subtitle:
-    "Setiap pekerjaan dikerjakan dengan presisi. Ini sebagian dokumentasi layanan kami.",
+    "Dokumentasi hasil servis kami. Sebagian dari pekerjaan yang sudah kami kerjakan.",
 } as const;
 
 // ── CTA Config ──
 export const galleryCta = {
-  prefix: "Punya proyek servis laptop atau PC? ",
-  linkText: "Hubungi kami sekarang →",
-  message: "Halo Repasta! Saya ingin konsultasi.",
+  prefix: "Mau servis laptop atau PC? ",
+  linkText: "Chat kami sekarang →",
+  message: "Halo Repastain, mau tanya servis.",
 } as const;
 
 // ── Image Trail ──
@@ -49,8 +49,6 @@ export const galleryMasonryItems: GalleryItem[] = [
   { src: "/assets/images/gallery/card-upgrade.webp", label: "Instalasi SSD/RAM" },
   { src: "/assets/images/gallery/compare-1-before.webp", label: "Before Deepclean" },
   { src: "/assets/images/gallery/compare-1-after.webp", label: "After Deepclean" },
-  { src: "/assets/images/gallery/compare-2-before.webp", label: "PC Upgrade - Before" },
-  { src: "/assets/images/gallery/compare-2-after.webp", label: "PC Upgrade - After" },
 ] as const;
 
 // ── Before/After Comparisons ──

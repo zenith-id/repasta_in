@@ -18,72 +18,105 @@ const bricolage = Bricolage_Grotesque({
   weight: ["400", "600", "700"],
   display: "swap",
 });
-const siteUrl = "https://repasta-in.vercel.app";
+
+import { SEO, getAppUrl } from "@/constants/seo";
+const siteUrl = getAppUrl();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  alternates: { canonical: "/" },
   title: {
-    default: "Repasta — Servis Laptop & PC Profesional di Bandung",
-    template: "%s | Repasta",
+    default: SEO.title,
+    template: "%s | Repastain",
   },
-  description:
-    "Repasta menyediakan servis laptop dan PC profesional di Bandung. Repaste thermal paste, deep clean, upgrade SSD/RAM. Diagnosa gratis, teknisi berpengalaman, harga transparan, garansi 7 hari.",
-  keywords: [
-    "servis laptop Bandung",
-    "repaste laptop Bandung",
-    "cleaning laptop Bandung",
-    "ganti thermal paste laptop",
-    "teknisi laptop panggilan Bandung",
-    "deepclean laptop Bandung",
-    "upgrade SSD laptop Bandung",
-    "servis PC Bandung",
-  ],
-  authors: [{ name: "Repasta" }],
+  description: SEO.description,
+  keywords: SEO.keywords,
+  authors: [{ name: SEO.author }],
   openGraph: {
-    title: "Repasta — Servis Laptop & PC Profesional di Bandung",
-    description:
-      "Diagnosa gratis, repaste thermal paste, deep clean, upgrade SSD/RAM. Teknisi berpengalaman, harga transparan, garansi 7 hari.",
-    url: siteUrl,
-    siteName: "Repasta",
-    locale: "id_ID",
+    title: SEO.title,
+    description: SEO.description,
+    url: "/",
+    siteName: SEO.siteName,
+    locale: SEO.locale,
     type: "website",
     images: [
       {
-        url: "/assets/logo/logo.webp",
+        url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Repasta — Servis Laptop & PC Bandung",
+        alt: SEO.title,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Repasta — Servis Laptop & PC Bandung",
-    description:
-      "Diagnosa gratis, repaste thermal paste, deep clean, upgrade SSD/RAM. Teknisi berpengalaman, harga transparan, garansi 7 hari.",
-    images: ["/assets/logo/logo.webp"],
+    title: SEO.title,
+    description: SEO.description,
+    images: ["/og.png"],
   },
   verification: {
     google: "google-site-verification-code-placeholder",
   },
   icons: {
     icon: [
-      { url: "/assets/logo/repasta-ico-16.png", sizes: "16x16", type: "image/png" },
-      { url: "/assets/logo/repasta-ico-32.png", sizes: "32x32", type: "image/png" },
-      { url: "/assets/logo/repasta-ico-48.png", sizes: "48x48", type: "image/png" },
-      { url: "/assets/logo/repasta-ico-64.png", sizes: "64x64", type: "image/png" },
-      { url: "/assets/logo/repasta-ico-128.png", sizes: "128x128", type: "image/png" },
-      { url: "/assets/logo/repasta-icon-48.webp", sizes: "48x48", type: "image/webp" },
+      {
+        url: "/assets/logo/repasta-ico-16.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
+      {
+        url: "/assets/logo/repasta-ico-32.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: "/assets/logo/repasta-ico-48.png",
+        sizes: "48x48",
+        type: "image/png",
+      },
+      {
+        url: "/assets/logo/repasta-ico-64.png",
+        sizes: "64x64",
+        type: "image/png",
+      },
+      {
+        url: "/assets/logo/repasta-ico-128.png",
+        sizes: "128x128",
+        type: "image/png",
+      },
+      {
+        url: "/assets/logo/repasta-icon-48.webp",
+        sizes: "48x48",
+        type: "image/webp",
+      },
       { url: "/assets/logo/logo.webp", type: "image/webp" },
     ],
     shortcut: "/assets/logo/logo.webp",
     apple: [
-      { url: "/assets/logo/repasta-ico-128.png", sizes: "128x128", type: "image/png" },
-      { url: "/assets/logo/repasta-ico-64.png", sizes: "64x64", type: "image/png" },
+      {
+        url: "/assets/logo/repasta-ico-128.png",
+        sizes: "128x128",
+        type: "image/png",
+      },
+      {
+        url: "/assets/logo/repasta-ico-64.png",
+        sizes: "64x64",
+        type: "image/png",
+      },
     ],
   },
-  robots: { index: true, follow: true },
-  other: { "article:modified_time": "2026-06-28" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  other: { "article:modified_time": "2026-11-24" },
 };
 
 export const viewport: Viewport = {
@@ -100,40 +133,53 @@ export const viewport: Viewport = {
 const jsonLdOrganization = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Repasta",
+  name: "Repastain",
+  alternateName: "Repasta.in",
   url: siteUrl,
   logo: `${siteUrl}/assets/logo/logo.webp`,
   description:
-    "Servis laptop & PC profesional di Bandung — repaste thermal paste, deep clean, upgrade hardware.",
+    "Servis laptop & PC di Bandung. Repaste, deep clean, dan upgrade SSD/RAM — harga jelas di awal, garansi 7 hari.",
   sameAs: ["https://www.instagram.com/repasta.in"],
   contactPoint: {
     "@type": "ContactPoint",
     telephone: `+${WHATSAPP_NUMBER}`,
     contactType: "customer service",
     availableLanguage: "Indonesian",
+    areaServed: ["Bandung", "Padang"],
   },
 };
 
 const jsonLdLocalBusiness = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "Repasta",
+  "@id": `${siteUrl}/#localbusiness`,
+  name: "Repastain",
+  alternateName: "Repasta.in",
   description:
-    "Servis laptop & PC profesional di Bandung — repaste thermal paste, deep clean, upgrade hardware.",
+    "Servis laptop & PC di Bandung. Repaste, deep clean, dan upgrade SSD/RAM — harga jelas di awal, garansi 7 hari.",
   url: siteUrl,
   telephone: "+6282323633819",
   image: `${siteUrl}/assets/logo/logo.webp`,
   address: {
     "@type": "PostalAddress",
+    streetAddress: "Bojongsoang",
     addressLocality: "Bandung",
     addressRegion: "Jawa Barat",
+    postalCode: "40288",
     addressCountry: "ID",
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: "-6.9175",
-    longitude: "107.6191",
+    latitude: "-6.9812",
+    longitude: "107.6631",
   },
+  areaServed: [
+    { "@type": "City", name: "Bandung" },
+    { "@type": "AdministrativeArea", name: "Bandung Raya" },
+    { "@type": "City", name: "Bojongsoang" },
+    { "@type": "City", name: "Padang" },
+    { "@type": "AdministrativeArea", name: "Sumatera Barat" },
+  ],
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
@@ -148,7 +194,8 @@ const jsonLdLocalBusiness = {
       closes: "15:00",
     },
   ],
-  priceRange: "Rp 50.000 – Rp 250.000",
+  priceRange: "Rp 50.000 – Rp 300.000",
+  sameAs: ["https://www.instagram.com/repasta.in"],
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "4.9",
@@ -156,15 +203,18 @@ const jsonLdLocalBusiness = {
   },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Servis Laptop",
-    itemListElement: [
+    name: "Servis Laptop",    itemListElement: [
       {
         "@type": "Offer",
         itemOffered: { "@type": "Service", name: "Repaste Thermal Paste" },
       },
       {
         "@type": "Offer",
-        itemOffered: { "@type": "Service", name: "Deep Clean" },
+        itemOffered: { "@type": "Service", name: "Deep Clean Premium" },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name: "Deep Clean Phase Change" },
       },
       {
         "@type": "Offer",
@@ -203,7 +253,70 @@ const jsonLdFAQ = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@graph": [jsonLdOrganization, jsonLdLocalBusiness, jsonLdBreadcrumb, jsonLdFAQ],
+  "@graph": [
+    jsonLdOrganization,
+    jsonLdLocalBusiness,
+    jsonLdBreadcrumb,
+    jsonLdFAQ,
+  ],
+};
+
+const jsonLdServiceArea = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Area Layanan Repastain",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      item: {
+        "@type": "Service",
+        name: "Servis Laptop Bandung",
+        areaServed: { "@type": "City", name: "Bandung" },
+        provider: { "@id": `${siteUrl}/#localbusiness` },
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      item: {
+        "@type": "Service",
+        name: "Repaste Laptop Bandung",
+        areaServed: { "@type": "City", name: "Bandung" },
+        provider: { "@id": `${siteUrl}/#localbusiness` },
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      item: {
+        "@type": "Service",
+        name: "Deep Clean Laptop Bandung",
+        areaServed: { "@type": "City", name: "Bandung" },
+        provider: { "@id": `${siteUrl}/#localbusiness` },
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 4,
+      item: {
+        "@type": "Service",
+        name: "Servis Laptop Padang",
+        areaServed: { "@type": "City", name: "Padang" },
+        provider: { "@id": `${siteUrl}/#localbusiness` },
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 5,
+      item: {
+        "@type": "Service",
+        name: "Repaste Laptop Padang",
+        areaServed: { "@type": "City", name: "Padang" },
+        provider: { "@id": `${siteUrl}/#localbusiness` },
+      },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -218,10 +331,30 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLdServiceArea).replace(/</g, "\\u003c"),
+          }}
+        />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-G69Z7C3WBE"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-G69Z7C3WBE');`,
+          }}
         />
       </head>
-      <body className="bg-background text-foreground font-sans antialiased">
+      <body className="bg-background text-foreground font-sans antialiased" suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

@@ -16,7 +16,7 @@ export function HowItWorksCTA() {
     >
       <a
         href={WHATSAPP_LINK(
-          "Halo Repasta! Saya ingin pesan servis laptop.",
+          "Halo Repastain! Saya ingin pesan servis laptop.",
         )}
         target="_blank"
         rel="noopener noreferrer"

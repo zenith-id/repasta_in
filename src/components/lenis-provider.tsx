@@ -4,8 +4,9 @@ import {
   createContext,
   useContext,
   useEffect,
+  useRef,
   useState,
-  ReactNode,
+  type ReactNode,
 } from "react";
 import Lenis from "lenis";
 
@@ -17,6 +18,7 @@ export function useLenis() {
 
 export function LenisProvider({ children }: { children: ReactNode }) {
   const [lenis, setLenis] = useState<Lenis | null>(null);
+  const rafRef = useRef<number>(0);
 
   useEffect(() => {
     const instance = new Lenis({
@@ -26,12 +28,17 @@ export function LenisProvider({ children }: { children: ReactNode }) {
 
     const raf = (time: number) => {
       instance.raf(time);
-      requestAnimationFrame(raf);
+      rafRef.current = requestAnimationFrame(raf);
     };
-    requestAnimationFrame(raf);
-    setLenis(instance);
+    rafRef.current = requestAnimationFrame(raf);
 
-    return () => instance.destroy();
+    const id = setTimeout(() => setLenis(instance), 0);
+
+    return () => {
+      clearTimeout(id);
+      cancelAnimationFrame(rafRef.current);
+      instance.destroy();
+    };
   }, []);
 
   return (

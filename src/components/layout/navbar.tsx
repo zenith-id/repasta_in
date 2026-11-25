@@ -82,7 +82,7 @@ export function Navbar() {
             className="flex items-center gap-2.5 group cursor-pointer"
           >
             <div className=" flex items-center justify-center transition-all ">
-              <Image src="/icon.svg" alt="Repasta" width={24} height={24} />
+              <Image src="/icon.svg" alt="Repastain" width={24} height={24} />
             </div>
             <span className="font-poppins font-bold text-lg text-foreground">
               Repasta In
@@ -101,7 +101,7 @@ export function Navbar() {
                   className={`relative px-4 py-2 rounded-xl text-sm font-medium transition-colors cursor-pointer ${
                     isActive
                       ? "text-primary bg-primary/8"
-                      : "text-foreground/60 hover:text-primary hover:bg-primary/6"
+                      : "text-foreground/80 hover:text-primary hover:bg-primary/6"
                   }`}
                 >
                   {item.label}
@@ -172,7 +172,7 @@ export function Navbar() {
                 </Link>
                 <a
                   href={WHATSAPP_LINK(
-                    "Halo Repasta! Saya ingin konsultasi servis.",
+                    "Halo Repastain! Saya ingin konsultasi servis.",
                   )}
                   target="_blank"
                   rel="noopener noreferrer"

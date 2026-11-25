@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useSyncExternalStore } from "react";
 import { motion } from "framer-motion";
 import { TestimonialCard } from "./testimonial-card";
 import type { Testimonial } from "@/constants/sections/testimonials";
@@ -11,11 +11,35 @@ interface TestimonialsColumnProps {
   duration?: number;
 }
 
+function subscribe(callback: () => void) {
+  const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+  mq.addEventListener("change", callback);
+  return () => mq.removeEventListener("change", callback);
+}
+
 export function TestimonialsColumn({
   className,
   items,
   duration = 30,
 }: TestimonialsColumnProps) {
+  const reducedMotion = useSyncExternalStore(
+    subscribe,
+    () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+    () => false,
+  );
+
+  if (reducedMotion) {
+    return (
+      <div className={className}>
+        <ul className="flex flex-col gap-5 pb-5 list-none m-0 p-0">
+          {items.map((t, i) => (
+            <TestimonialCard key={i} testimonial={t} />
+          ))}
+        </ul>
+      </div>
+    );
+  }
+
   return (
     <div className={className}>
       <motion.ul

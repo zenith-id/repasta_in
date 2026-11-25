@@ -24,17 +24,17 @@ export const cols = [
 ] as const;
 
 export const brand = {
-  name: "Repasta",
-  desc: "Servis laptop & PC profesional di Bandung. Kami mengutamakan transparansi, kecepatan, dan hasil yang bergaransi.",
+  name: "Repastain",
+  desc: "Servis laptop & PC profesional di Bandung. Harga jelas, kerja cepat, ada garansi.",
 } as const;
 
 export const contact = {
   phone: `+${WHATSAPP_NUMBER.slice(0, 2)} ${WHATSAPP_NUMBER.slice(2, 5)}-${WHATSAPP_NUMBER.slice(5, 9)}-${WHATSAPP_NUMBER.slice(9)}`,
   email: EMAIL,
-  emailLink: EMAIL_LINK("Tanya Servis Laptop - Repasta", "Halo Repasta! Saya ingin tanya mengenai servis laptop saya."),
+  emailLink: EMAIL_LINK("Tanya Servis Laptop - Repastain", "Halo Repastain, mau tanya soal servis laptop saya."),
   ig: "https://www.instagram.com/repasta.in/",
   waLink: `https://wa.me/${WHATSAPP_NUMBER}`,
-  waConsultLink: WHATSAPP_LINK("Halo Repasta! Saya ingin konsultasi."),
+  waConsultLink: WHATSAPP_LINK("Halo Repastain, mau konsultasi servis."),
   location: "Bojongsoang, Bandung, Jawa Barat",
   gmaps: "https://maps.app.goo.gl/6wkYfFzpS8EjyJ4p8",
   hours: {

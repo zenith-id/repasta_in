@@ -4,22 +4,24 @@ import { WHATSAPP_LINK } from "@/constants/contact";
 
 export const heroContent = {
   headline: {
-    prefix: "Laptop Panas & Lemot? ",
-    highlight: "Kami Solusinya",
+    prefix: "Repaste Laptop Bandung",
+    highlight: "Panas & Lemot Beres",
   },
   subtext: {
     prefix:
-      "Layanan repaste, deep clean, dan perawatan laptop/PC profesional langsung di depan Anda — ",
-    highlight: "cepat, transparan, bergaransi.",
+      "Servis laptop & PC: repaste thermal paste, deep clean, upgrade SSD/RAM. Dikerjakan di depan Anda, ",
+    highlight: "cepat, transparan & bergaransi",
   },
   cta: {
     primary: {
       text: "Chat via WhatsApp",
-      href: WHATSAPP_LINK("Halo Repasta! Saya ingin konsultasi servis laptop."),
+      href: WHATSAPP_LINK(
+        "Halo Repastain, mau tanya servis laptop.",
+      ),
     },
     secondary: {
       text: "Lihat Layanan Kami",
-      href: "#layanan",
+      href: "/layanan",
     },
   },
   highlightPills: ["Diagnosa Gratis", "Garansi 7 Hari", "Home visit"] as const,
@@ -30,7 +32,7 @@ export const heroContent = {
 export const statsData = [
   {
     label: "Pelanggan Puas",
-    target: 500,
+    target: 200,
     suffix: "+",
     prefix: "",
     delay: 0.55,

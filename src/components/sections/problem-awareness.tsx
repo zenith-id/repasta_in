@@ -7,7 +7,7 @@ import { problems } from "@/constants/sections/problem-awareness";
 
 export function ProblemAwareness() {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-card relative overflow-hidden">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-card relative overflow-hidden content-visibility-auto">
       {/* Background decoration */}
       <div
         className="absolute inset-0 opacity-[0.025] pointer-events-none"

@@ -2,7 +2,102 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.11.1](https://github.com/zenith-id/repasta_in/compare/v1.11.0...v1.11.1) (2026-11-25)
+
+### Features
+
+* **seo:** server-render homepage, H1 + all sections in initial HTML
+* **seo:** canonical URL on homepage
+* **seo:** JSON-LD escape `<` for injection safety
+* **a11y:** color contrast raised to pass WCAG 4.5:1
+* **a11y:** footer heading order h4 → h2
+* **seo:** llms.txt rewritten to llmstxt.org link format
+
+### Bug Fixes
+
+* **hydration:** suppress extension-injected attribute warning
+* **seo:** hero H1, subtext, CTA, stats visible in SSR HTML (framer variants made them opacity 0)
+* **seo:** image comparison slider uses next/image
+
+## [1.11.0](https://github.com/zenith-id/repasta_in/compare/v1.10.0...v1.11.0) (2026-11-24)
+
+### Features
+
+* **seo:** add geo seo bandung padang, json-ld localbusiness areaserved itemlist
+* **skeleton:** shimmer 1:1 semua section 5 breakpoint responsive
+* **constants:** humanize semua constants kecuali testimonials
+* **services:** tab default semua grid responsif
+
+### Bug Fixes
+
+* **ci:** release workflow_dispatch tag shell injection validation
+* **ci:** release changelog extract heading for missing section
+
+## [1.10.0](https://github.com/zenith-id/repasta_in/compare/v1.9.0...v1.10.0) (2026-07-03)
+
+
+### Features
+
+* **services:** add deepclean premium rp 200k ([40f4146](https://github.com/zenith-id/repasta_in/commit/40f414617ae95ff837ec9faeb89038253c0bf6ed))
+* **services:** add vram/vrm as laptop addon ([3ddb384](https://github.com/zenith-id/repasta_in/commit/3ddb3842c90b70a095cf77bd1241ee6d9ea19346))
+* **ui:** render addon section on services and layanan ([aa102a7](https://github.com/zenith-id/repasta_in/commit/aa102a7c86f67a10a40d0faabd515535e2331fd9))
+
+
+### Bug Fixes
+
+* **seo:** update schema and canonical url ([94a64ee](https://github.com/zenith-id/repasta_in/commit/94a64ee053f050f61282618b9d163450013c7ead))
+
+## [1.9.0](https://github.com/zenith-id/repasta_in/compare/v1.8.2...v1.9.0) (2026-06-30)
+
+
+### Features
+
+* **data:** add features constants configuration file ([a29e4de](https://github.com/zenith-id/repasta_in/commit/a29e4dec21dd93042119013ce0a65271610a04dc))
+* **gallery:** remove unused assets const ([c93cfb6](https://github.com/zenith-id/repasta_in/commit/c93cfb6f02bdd33cd867d60e4d358366f5342001))
+* **seo:** add detailed googlebot directives to robots meta ([eea92c3](https://github.com/zenith-id/repasta_in/commit/eea92c36b69f050e33067c010eb6ea2276c113e0))
+* **seo:** add social preview image ([4eb6904](https://github.com/zenith-id/repasta_in/commit/4eb6904be9b9a7feaca3ffbf3783a50784005a40))
+
+
+### Bug Fixes
+
+* **seo:** replace og image with png format ([43e8662](https://github.com/zenith-id/repasta_in/commit/43e8662833be2a7eb8151dadf52d028e55b0954a))
+* **seo:** use absolute url for og and twitter images ([ce7c7e3](https://github.com/zenith-id/repasta_in/commit/ce7c7e3f97847aa211c58d712d91ced256c9e622))
+* **seo:** use og.jpg instead of logo.webp for social images ([0476b88](https://github.com/zenith-id/repasta_in/commit/0476b88c3319491ba95ac5351bbaa71f30a91def))
+* **seo:** use relative path for og image and remove wrong mime type ([d7b9fdd](https://github.com/zenith-id/repasta_in/commit/d7b9fdde0fefea3c0874dd8ef88ce697e7a30406))
+
+### [1.8.2](https://github.com/zenith-id/repasta_in/compare/v1.8.0...v1.8.2) (2026-06-28)
+
+
+### CI
+
+* **release:** fix release workflow trigger ([090d325](https://github.com/zenith-id/repasta_in/commit/090d325a1a18e55f31a1d33de292042c2f7e2058))
+* **release:** add workflow_dispatch to allow manual triggering ([018510c](https://github.com/zenith-id/repasta_in/commit/018510c3743892169a33c89bf5eaf22be0acd368))
+* **release:** extract changelog for specific tag instead of latest ([1adcaf3](https://github.com/zenith-id/repasta_in/commit/1adcaf3683e23d8e9a9203e6814b15b5a5a9aa58))
+
+### Bug Fixes
+
+* **responsive:** fix overflow, touch label, and testimonial height ([9729939](https://github.com/zenith-id/repasta_in/commit/9729939fb8bea4cefd7b75d363ea74de7ce03109))
+* **responsive:** respect prefers-reduced-motion in testimonials ([3605408](https://github.com/zenith-id/repasta_in/commit/360540854d2cddb282014304c8348fa50251b933))
+
+### Performance
+
+* **responsive:** add content-visibility-auto to below-fold sections ([a88b50f](https://github.com/zenith-id/repasta_in/commit/a88b50fad4d3fbc3008de5066b8c4fa2a530f378))
+
 ## [1.8.0](https://github.com/fukaziroh-id/repasta_in/compare/v1.7.0...v1.8.0) (2026-06-28)
+
+
+### Refactoring
+
+* **contact:** centralize whatsapp/email to env vars ([d11ad56](https://github.com/fukaziroh-id/repasta_in/commit/d11ad56))
+* **contact:** use contact constants in navbar/hero/cta ([271cc6e](https://github.com/fukaziroh-id/repasta_in/commit/271cc6e))
+* **contact:** use contact constants in how-it-works/services/pricing ([d692366](https://github.com/fukaziroh-id/repasta_in/commit/d692366))
+* **contact:** use contact constants in remaining files ([78daae1](https://github.com/fukaziroh-id/repasta_in/commit/78daae1))
+* **contact:** use whatsapp number in json-ld ([c773678](https://github.com/fukaziroh-id/repasta_in/commit/c773678))
+
+
+### Documentation
+
+* **readme:** update whatsapp number and env docs ([e2ded70](https://github.com/fukaziroh-id/repasta_in/commit/e2ded70))
 
 ## [1.7.0](https://github.com/fukaziroh-id/repasta_in/compare/v1.6.0...v1.7.0) (2026-06-28)
 

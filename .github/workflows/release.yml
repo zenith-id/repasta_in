@@ -2,8 +2,13 @@ name: Release
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to release (e.g. v1.8.0)'
+        required: true
 
 jobs:
   release:
@@ -16,50 +21,46 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 10.33.0
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-          cache: "pnpm"
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Configure Git
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Create Release
-        id: standard_version
-        run: pnpm run release
+      - name: Get latest tag
+        id: get_tag
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_TAG: ${{ github.event.inputs.tag }}
+          REF_NAME: ${{ github.ref }}
+        run: |
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            tag="$INPUT_TAG"
+          else
+            tag="${REF_NAME#refs/tags/}"
+          fi
+          case "$tag" in
+            v[0-9]*.[0-9]*.[0-9]*) ;;
+            *) echo "Invalid tag format: $tag" >&2; exit 1 ;;
+          esac
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
 
-      - name: Push changes
-        run: git push --follow-tags origin main
-
-      - name: Extract Latest Version Changelog
+      - name: Extract Version Changelog
         id: extract_changelog
         run: |
-          awk '
-            /^## \[[0-9]+\.[0-9]+\.[0-9]+\]/ || /^## [0-9]+\.[0-9]+\.[0-9]+/ {
-              if (found) exit
-              found = 1
+          TAG="${{ steps.get_tag.outputs.tag }}"
+          VERSION="${TAG#v}"
+          awk -v ver="$VERSION" '
+            function is_version_line(line) {
+              return line ~ "^#+ \\[" ver "\\]" || line ~ "^#+ " ver " " || line ~ "^#+ " ver "$"
+            }
+            function is_other_version(line) {
+              return line ~ "^#+ \\[[0-9]+\\.[0-9]+\\.[0-9]+\\]" || line ~ "^#+ [0-9]+\\.[0-9]+\\.[0-9]+"
+            }
+            /^#+ / {
+              if (found && is_other_version($0)) exit
+              if (is_version_line($0)) { found = 1; next }
+              if (found) print
+              next
             }
             found { print }
           ' CHANGELOG.md > RELEASE_NOTES.md
 
           test -s RELEASE_NOTES.md
-
-      - name: Get latest tag
-        id: get_tag
-        run: echo "tag=$(git describe --tags --abbrev=0)" >> "$GITHUB_OUTPUT"
 
       - name: Create GitHub Release
         env:

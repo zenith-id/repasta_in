@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageCircle, MapPin, Clock, Instagram, Mail } from "lucide-react";
+import { MessageCircle, MapPin, Clock, Share2, Mail } from "lucide-react";
 import Link from "next/link";
 import { fadeIn } from "@/lib/motion/animations";
 
@@ -29,9 +29,9 @@ export function FooterContact({ contact }: FooterContactProps) {
       whileInView="visible"
       viewport={{ once: true }}
     >
-      <h4 className="font-poppins font-bold text-slate-100 mb-4 text-sm tracking-wide">
+      <h2 className="font-poppins font-bold text-slate-100 mb-4 text-sm tracking-wide">
         Kontak
-      </h4>
+      </h2>
       <div className="space-y-3 mb-6">
         <div className="flex items-start gap-2.5">
           <MessageCircle
@@ -85,14 +85,14 @@ export function FooterContact({ contact }: FooterContactProps) {
       <div className="flex items-center gap-3">
         <Link
           href={contact.ig}
-          aria-label="Instagram Repasta"
+          aria-label="Instagram Repastain"
           className="w-9 h-9 rounded-lg border border-slate-800 flex items-center justify-center text-slate-500 hover:text-primary hover:border-primary/40 transition-colors"
         >
-          <Instagram size={16} />
+          <Share2 size={16} />
         </Link>
         <a
           href={contact.emailLink}
-          aria-label="Email Repasta"
+          aria-label="Email Repastain"
           className="w-9 h-9 rounded-lg border border-slate-800 flex items-center justify-center text-slate-500 hover:text-primary hover:border-primary/40 transition-colors"
         >
           <Mail size={16} />
@@ -101,7 +101,7 @@ export function FooterContact({ contact }: FooterContactProps) {
           href={contact.gmaps}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Google Maps Repasta"
+          aria-label="Google Maps Repastain"
           className="w-9 h-9 rounded-lg border border-slate-800 flex items-center justify-center text-slate-500 hover:text-primary hover:border-primary/40 transition-colors"
         >
           <MapPin size={16} />

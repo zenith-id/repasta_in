@@ -122,7 +122,7 @@ export function Pricing() {
           </p>
           <a
             href={WHATSAPP_LINK(
-              "Halo Repasta! Saya ingin minta estimasi harga.",
+              "Halo Repastain! Saya ingin minta estimasi harga.",
             )}
             target="_blank"
             rel="noopener noreferrer"
