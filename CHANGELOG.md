@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.11.1](https://github.com/zenith-id/repasta_in/compare/v1.11.0...v1.11.1) (2026-11-25)
+
+### Features
+
+* **seo:** server-render homepage, H1 + all sections in initial HTML
+* **seo:** canonical URL on homepage
+* **seo:** JSON-LD escape `<` for injection safety
+* **a11y:** color contrast raised to pass WCAG 4.5:1
+* **a11y:** footer heading order h4 → h2
+* **seo:** llms.txt rewritten to llmstxt.org link format
+
+### Bug Fixes
+
+* **hydration:** suppress extension-injected attribute warning
+* **seo:** hero H1, subtext, CTA, stats visible in SSR HTML (framer variants made them opacity 0)
+* **seo:** image comparison slider uses next/image
+
 ## [1.11.0](https://github.com/zenith-id/repasta_in/compare/v1.10.0...v1.11.0) (2026-11-24)
 
 ### Features
