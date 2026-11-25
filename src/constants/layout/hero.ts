@@ -4,12 +4,12 @@ import { WHATSAPP_LINK } from "@/constants/contact";
 
 export const heroContent = {
   headline: {
-    prefix: "Laptop Panas & Lemot? ",
-    highlight: "Kami Solusinya",
+    prefix: "Repasta Laptop Bandung — ",
+    highlight: "Panas & Lemot Beres",
   },
   subtext: {
     prefix:
-      "Repaste, deep clean, dan perawatan laptop/PC dikerjakan di depan Anda, ",
+      "Servis laptop & PC: repaste thermal paste, deep clean, upgrade SSD/RAM. Dikerjakan di depan Anda, ",
     highlight: "cepat, transparan, bergaransi",
   },
   cta: {

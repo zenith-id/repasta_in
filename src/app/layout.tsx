@@ -134,6 +134,7 @@ const jsonLdOrganization = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Repastain",
+  alternateName: "Repasta.in",
   url: siteUrl,
   logo: `${siteUrl}/assets/logo/logo.webp`,
   description:
@@ -153,6 +154,7 @@ const jsonLdLocalBusiness = {
   "@type": "LocalBusiness",
   "@id": `${siteUrl}/#localbusiness`,
   name: "Repastain",
+  alternateName: "Repasta.in",
   description:
     "Servis laptop & PC di Bandung. Repaste, deep clean, dan upgrade SSD/RAM — harga jelas di awal, garansi 7 hari.",
   url: siteUrl,
@@ -193,6 +195,7 @@ const jsonLdLocalBusiness = {
     },
   ],
   priceRange: "Rp 50.000 – Rp 300.000",
+  sameAs: ["https://www.instagram.com/repasta.in"],
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "4.9",
@@ -200,8 +203,7 @@ const jsonLdLocalBusiness = {
   },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Servis Laptop",
-    itemListElement: [
+    name: "Servis Laptop",    itemListElement: [
       {
         "@type": "Offer",
         itemOffered: { "@type": "Service", name: "Repaste Thermal Paste" },
