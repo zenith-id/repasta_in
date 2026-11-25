@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.12.0](https://github.com/zenith-id/repasta_in/compare/v1.11.1...v1.12.0) (2026-11-25)
+
+### Features
+
+* **seo:** 4 halaman layanan detail (repaste-laptop, deep-cleaning-laptop, repaste-pc, servis-pc) + index /layanan
+* **seo:** halaman /harga dengan OfferCatalog JSON-LD
+* **blog:** 3 artikel edukasi (tanda perlu repaste, perbedaan thermal paste, penyebab laptop panas) + index /blog
+* **sitemap:** 11 url total, canonical repastain.my.id semua page
+* **analytics:** GA4 event whatsapp_click di 6 komponen CTA
+* **nav:** blog link di navbar desktop + mobile, active state via usePathname
+* **skeleton:** manual animate-pulse ganti boneyard-js, tinggi match section asli, responsif desktop + mobile
+
+### Bug Fixes
+
+* **seo:** domain repastain.my.id di semua page + template
+* **seo:** site URL single source getAppUrl() di constants/seo.ts, ganti domain cukup 1 tempat
+
+### Performance
+
+* **deps:** hapus boneyard-js + folder src/bones (9 JSON + registry)
+
+### Docs
+
+* **seo:** NAP.md untuk GBP + Instagram bio
+
 ## [1.11.1](https://github.com/zenith-id/repasta_in/compare/v1.11.0...v1.11.1) (2026-11-25)
 
 ### Features
