@@ -31,7 +31,7 @@ export function StepCardAccommodation({
       <div className="border-t border-dashed border-border/80 my-6" />
 
       <div className="space-y-4">
-        <h4 className="text-[11px] font-bold tracking-[0.15em] text-foreground/50 uppercase font-poppins">
+        <h4 className="text-[11px] font-bold tracking-[0.15em] text-foreground/70 uppercase font-poppins">
           Jangkauan & Biaya Akomodasi
         </h4>
 

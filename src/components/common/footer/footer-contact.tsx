@@ -29,9 +29,9 @@ export function FooterContact({ contact }: FooterContactProps) {
       whileInView="visible"
       viewport={{ once: true }}
     >
-      <h4 className="font-poppins font-bold text-slate-100 mb-4 text-sm tracking-wide">
+      <h2 className="font-poppins font-bold text-slate-100 mb-4 text-sm tracking-wide">
         Kontak
-      </h4>
+      </h2>
       <div className="space-y-3 mb-6">
         <div className="flex items-start gap-2.5">
           <MessageCircle
