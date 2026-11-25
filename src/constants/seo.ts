@@ -1,5 +1,5 @@
 export const SEO = {
-  title: "Repastain | Servis Laptop & PC Profesional di Bandung ",
+  title: "Repastain (Repasta.in) | Servis Laptop & PC Profesional di Bandung",
   description:
     "Servis laptop & PC di Bandung dan Padang: repaste, deep clean, upgrade SSD/RAM. Diagnosa gratis, harga jelas, garansi 7 hari.",
   keywords: [
