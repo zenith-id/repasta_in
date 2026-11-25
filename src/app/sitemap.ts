@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
+import { getAppUrl } from "@/constants/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://repastain.my.id";
+  const base = getAppUrl();
   const routes: { path: string; priority: number; freq: "weekly" | "monthly" }[] = [
     { path: "", priority: 1, freq: "weekly" },
     { path: "/layanan", priority: 0.9, freq: "monthly" },
